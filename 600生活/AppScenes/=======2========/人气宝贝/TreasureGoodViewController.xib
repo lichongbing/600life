@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TreasureGoodViewController">
+            <connections>
+                <outlet property="bgImageView" destination="xRK-9i-4B0" id="mYY-Jk-twM"/>
+                <outlet property="contentView" destination="Ga0-jw-6k0" id="tsU-9C-YaO"/>
+                <outlet property="scrollView" destination="YUA-Vd-EIN" id="DYp-ox-uIh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUA-Vd-EIN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Oba-kC-epv"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Ccs-95-DtM"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="YUA-Vd-EIN" secondAttribute="bottom" id="09P-zn-pNQ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="YUA-Vd-EIN" secondAttribute="trailing" id="0HW-xe-bBs"/>
+                <constraint firstItem="YUA-Vd-EIN" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="4T2-Ce-Cr0"/>
+                <constraint firstItem="YUA-Vd-EIN" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="lM4-F8-9nK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="90"/>
+        </view>
+        <view contentMode="scaleToFill" id="Ga0-jw-6k0">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="631"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="人气宝贝_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xRK-9i-4B0">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-Zn-3Fv">
+                    <rect key="frame" x="0.0" y="157" width="320" height="421.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="wZR-fT-RAx"/>
+            <point key="canvasLocation" x="1018" y="113"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="人气宝贝_bg" width="375" height="175"/>
+    </resources>
+</document>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WanJuanViewController">
+            <connections>
+                <outlet property="bgImageView" destination="f64-yN-fXh" id="gtM-yr-a2f"/>
+                <outlet property="constLabBgView" destination="oKL-Ce-CdJ" id="14F-2Y-xjx"/>
+                <outlet property="contentView" destination="13f-3p-XUJ" id="4Xc-n7-gBp"/>
+                <outlet property="scrollView" destination="Lbq-lE-8hi" id="69O-BF-FO2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lbq-lE-8hi">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="NJ7-V7-Nhu"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="eJw-9k-MA8"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Lbq-lE-8hi" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="OhO-Ko-KP8"/>
+                <constraint firstItem="Lbq-lE-8hi" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Qu5-FP-1NQ"/>
+                <constraint firstItem="Lbq-lE-8hi" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="XVz-mI-eMd"/>
+                <constraint firstItem="Lbq-lE-8hi" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="u9b-QI-w8E"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="83"/>
+        </view>
+        <view contentMode="scaleToFill" id="13f-3p-XUJ" userLabel="coentntView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="631"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="万券齐发_bg" translatesAutoresizingMaskIntoConstraints="NO" id="f64-yN-fXh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="f64-yN-fXh" secondAttribute="height" multiplier="375:175" id="3WZ-BO-oY5"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKL-Ce-CdJ">
+                    <rect key="frame" x="0.0" y="129.5" width="320" height="40"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-f5-pJM">
+                            <rect key="frame" x="10" y="0.0" width="300" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="超值美券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO5-Xt-CQk">
+                                    <rect key="frame" x="10" y="10" width="70" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ZO5-Xt-CQk" firstAttribute="top" secondItem="hAa-f5-pJM" secondAttribute="top" constant="10" id="8pR-1b-hMC"/>
+                                <constraint firstItem="ZO5-Xt-CQk" firstAttribute="leading" secondItem="hAa-f5-pJM" secondAttribute="leading" constant="10" id="hNi-8U-lVP"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="C7X-qc-cG0"/>
+                        <constraint firstItem="hAa-f5-pJM" firstAttribute="top" secondItem="oKL-Ce-CdJ" secondAttribute="top" id="Or7-EU-fbE"/>
+                        <constraint firstAttribute="trailing" secondItem="hAa-f5-pJM" secondAttribute="trailing" constant="10" id="VxE-dM-ROe"/>
+                        <constraint firstAttribute="bottom" secondItem="hAa-f5-pJM" secondAttribute="bottom" id="l2c-a1-qRv"/>
+                        <constraint firstItem="hAa-f5-pJM" firstAttribute="leading" secondItem="oKL-Ce-CdJ" secondAttribute="leading" constant="10" id="ujr-Ps-zFs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="sHB-nT-mjt" firstAttribute="trailing" secondItem="oKL-Ce-CdJ" secondAttribute="trailing" id="3kB-w6-zeQ"/>
+                <constraint firstItem="f64-yN-fXh" firstAttribute="top" secondItem="sHB-nT-mjt" secondAttribute="top" id="T2U-eP-VOk"/>
+                <constraint firstItem="f64-yN-fXh" firstAttribute="leading" secondItem="sHB-nT-mjt" secondAttribute="leading" id="fuG-jU-b4g"/>
+                <constraint firstItem="f64-yN-fXh" firstAttribute="trailing" secondItem="sHB-nT-mjt" secondAttribute="trailing" id="jej-1q-f6Q"/>
+                <constraint firstItem="oKL-Ce-CdJ" firstAttribute="leading" secondItem="sHB-nT-mjt" secondAttribute="leading" id="uph-6P-J1l"/>
+                <constraint firstItem="oKL-Ce-CdJ" firstAttribute="top" secondItem="f64-yN-fXh" secondAttribute="bottom" constant="-20" id="vgv-JC-bP9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="sHB-nT-mjt"/>
+            <point key="canvasLocation" x="1016.25" y="112.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="万券齐发_bg" width="375" height="160"/>
+    </resources>
+</document>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryTypeViewController">
+            <connections>
+                <outlet property="categoryBgView" destination="BYu-po-G9s" id="38g-kJ-iBR"/>
+                <outlet property="categoryBgViewHeightCons" destination="6jf-Jl-Bq5" id="qHm-8e-Y6t"/>
+                <outlet property="headerView" destination="En0-Eo-y1S" id="THg-a7-gZZ"/>
+                <outlet property="layoutBottomLine" destination="q5W-Ot-Z6b" id="g5V-ag-7bd"/>
+                <outlet property="toolBarBgView" destination="Y8m-xe-T13" id="pBb-Wy-kZv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="113" y="40"/>
+        </view>
+        <view contentMode="scaleToFill" id="En0-Eo-y1S">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYu-po-G9s">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="170" id="6jf-Jl-Bq5"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8m-xe-T13" userLabel="toolBar Bg">
+                    <rect key="frame" x="0.0" y="170" width="320" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Zx4-tJ-V8j"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5W-Ot-Z6b" userLabel="buttomLine" customClass="LLBaseView">
+                    <rect key="frame" x="0.0" y="210" width="320" height="10"/>
+                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="k5t-FZ-eCT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="BYu-po-G9s" firstAttribute="top" secondItem="lvW-CE-Jxp" secondAttribute="top" id="07w-nV-HOp"/>
+                <constraint firstItem="q5W-Ot-Z6b" firstAttribute="top" secondItem="Y8m-xe-T13" secondAttribute="bottom" id="G8M-z9-xqW"/>
+                <constraint firstItem="Y8m-xe-T13" firstAttribute="top" secondItem="BYu-po-G9s" secondAttribute="bottom" id="ZUE-N1-ppV"/>
+                <constraint firstItem="BYu-po-G9s" firstAttribute="trailing" secondItem="lvW-CE-Jxp" secondAttribute="trailing" id="eGx-gp-qO0"/>
+                <constraint firstItem="BYu-po-G9s" firstAttribute="leading" secondItem="lvW-CE-Jxp" secondAttribute="leading" id="f7n-E6-Y6y"/>
+                <constraint firstItem="lvW-CE-Jxp" firstAttribute="trailing" secondItem="Y8m-xe-T13" secondAttribute="trailing" id="fF6-fZ-nQo"/>
+                <constraint firstItem="q5W-Ot-Z6b" firstAttribute="leading" secondItem="En0-Eo-y1S" secondAttribute="leading" id="iBG-Lf-AZY"/>
+                <constraint firstAttribute="trailing" secondItem="q5W-Ot-Z6b" secondAttribute="trailing" id="qDy-dT-Jsr"/>
+                <constraint firstItem="Y8m-xe-T13" firstAttribute="leading" secondItem="En0-Eo-y1S" secondAttribute="leading" id="xX4-hq-H5e"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="lvW-CE-Jxp"/>
+            <point key="canvasLocation" x="949" y="-148"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultListController">
+            <connections>
+                <outlet property="navBarHeightConstraint" destination="wWL-se-F27" id="aR4-oe-OgC"/>
+                <outlet property="navBarTopConstraint" destination="cDB-1d-U9G" id="HmE-Lt-Kcy"/>
+                <outlet property="searchBar" destination="eXf-wr-aGZ" id="7DK-WD-yP1"/>
+                <outlet property="toolBarBg" destination="dGf-OY-uEp" id="B1w-CT-7bP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YfB-Fx-u4p" userLabel="nav View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJm-e9-E7W">
+                            <rect key="frame" x="0.0" y="17" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="6e9-3q-iac"/>
+                                <constraint firstAttribute="height" constant="44" id="fgt-N2-u9G"/>
+                            </constraints>
+                            <state key="normal" image="nav_back_black"/>
+                            <connections>
+                                <action selector="backBtnAction:" destination="-1" eventType="touchUpInside" id="SMK-Xc-6II"/>
+                            </connections>
+                        </button>
+                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eXf-wr-aGZ">
+                            <rect key="frame" x="44" y="24" width="256" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="Xcp-90-4qO"/>
+                            </constraints>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kp5-TV-iod" userLabel="line">
+                            <rect key="frame" x="0.0" y="63" width="320" height="1"/>
+                            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="FCH-58-NcE"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="eXf-wr-aGZ" secondAttribute="bottom" constant="5" id="3dx-UJ-nmx"/>
+                        <constraint firstAttribute="bottom" secondItem="kp5-TV-iod" secondAttribute="bottom" id="3kM-5i-3Fs"/>
+                        <constraint firstAttribute="trailing" secondItem="eXf-wr-aGZ" secondAttribute="trailing" constant="20" id="8T1-la-V1X"/>
+                        <constraint firstAttribute="trailing" secondItem="kp5-TV-iod" secondAttribute="trailing" id="PNZ-dq-q59"/>
+                        <constraint firstItem="YJm-e9-E7W" firstAttribute="leading" secondItem="YfB-Fx-u4p" secondAttribute="leading" id="k7W-8q-fQx"/>
+                        <constraint firstItem="kp5-TV-iod" firstAttribute="leading" secondItem="YfB-Fx-u4p" secondAttribute="leading" id="m99-n4-YCJ"/>
+                        <constraint firstAttribute="height" constant="64" id="wWL-se-F27"/>
+                        <constraint firstAttribute="bottom" secondItem="YJm-e9-E7W" secondAttribute="bottom" constant="3" id="xZE-sS-JNx"/>
+                        <constraint firstItem="eXf-wr-aGZ" firstAttribute="leading" secondItem="YJm-e9-E7W" secondAttribute="trailing" id="yFb-pT-CIw"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGf-OY-uEp" userLabel="toolBar Bg">
+                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="dHm-kR-wSk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="YfB-Fx-u4p" secondAttribute="trailing" id="1dC-5d-9XK"/>
+                <constraint firstItem="dGf-OY-uEp" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Cqh-A0-KRQ"/>
+                <constraint firstItem="YfB-Fx-u4p" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Kls-xN-I9m"/>
+                <constraint firstItem="dGf-OY-uEp" firstAttribute="top" secondItem="YfB-Fx-u4p" secondAttribute="bottom" id="RlS-qW-JnQ"/>
+                <constraint firstItem="YfB-Fx-u4p" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="cDB-1d-U9G"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="dGf-OY-uEp" secondAttribute="trailing" id="hDl-xF-f4A"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="138.75" y="106.69014084507042"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="nav_back_black" width="16" height="16"/>
+    </resources>
+</document>

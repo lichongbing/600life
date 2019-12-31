@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoodDealViewController">
+            <connections>
+                <outlet property="bgImageView" destination="UIW-Nv-hpZ" id="RdL-CF-6AH"/>
+                <outlet property="contentView" destination="ZO2-9s-uSx" id="b1p-0O-noI"/>
+                <outlet property="scrollView" destination="FVF-Ah-mAm" id="6BG-f5-tfv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVF-Ah-mAm">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="oaH-TG-eoy"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="YBY-gI-yof"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="FVF-Ah-mAm" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="2mo-K3-EXW"/>
+                <constraint firstItem="FVF-Ah-mAm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="3qQ-Bv-oCE"/>
+                <constraint firstItem="FVF-Ah-mAm" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="Jdm-0l-GOf"/>
+                <constraint firstItem="FVF-Ah-mAm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="L5e-zy-qbU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="80"/>
+        </view>
+        <view contentMode="scaleToFill" id="ZO2-9s-uSx">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="631"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="聚划算_bg" translatesAutoresizingMaskIntoConstraints="NO" id="UIW-Nv-hpZ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PPV-br-RnY">
+                    <rect key="frame" x="0.0" y="157" width="320" height="421.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Cfg-Mi-eNH"/>
+            <point key="canvasLocation" x="1018" y="113"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="聚划算_bg" width="375" height="160"/>
+    </resources>
+</document>

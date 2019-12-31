@@ -1,0 +1,101 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - AliAuthSDK (2.0.0.3)
+  - AlibcTradeSDK (4.0.0.8)
+  - AliLinkPartnerSDK (4.0.0.24)
+  - AlipaySDK (2.0.0-bc)
+  - BCUserTrack (5.2.0.11-appkeys):
+    - UTDID
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - IQKeyboardManager (6.5.3)
+  - MJRefresh (3.2.0)
+  - mtopSDK (3.0.0.4)
+  - PGNetworkHelper (2.0.1):
+    - AFNetworking
+    - PINCache
+  - PINCache (2.3)
+  - SDWebImage (5.2.5):
+    - SDWebImage/Core (= 5.2.5)
+  - SDWebImage/Core (5.2.5)
+  - securityGuard (5.4.173)
+  - SPPageMenu (3.5.0)
+  - TZScrollViewPopGesture (1.0.6)
+  - UTDID (1.1.0.16)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
+  - AliAuthSDK (= 2.0.0.3)
+  - AlibcTradeSDK (= 4.0.0.8)
+  - AliLinkPartnerSDK (= 4.0.0.24)
+  - AlipaySDK (= 2.0.0-bc)
+  - BCUserTrack (= 5.2.0.11-appkeys)
+  - FMDB
+  - IQKeyboardManager
+  - MJRefresh
+  - mtopSDK (= 3.0.0.4)
+  - PGNetworkHelper (>= 2.0)
+  - SDWebImage
+  - securityGuard (= 5.4.173)
+  - SPPageMenu (~> 3.5.0)
+  - TZScrollViewPopGesture
+  - UTDID (= 1.1.0.16)
+
+SPEC REPOS:
+  http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git:
+    - AliAuthSDK
+    - AlibcTradeSDK
+    - AliLinkPartnerSDK
+    - AlipaySDK
+    - BCUserTrack
+    - mtopSDK
+    - securityGuard
+    - UTDID
+  trunk:
+    - AFNetworking
+    - FMDB
+    - IQKeyboardManager
+    - MJRefresh
+    - PGNetworkHelper
+    - PINCache
+    - SDWebImage
+    - SPPageMenu
+    - TZScrollViewPopGesture
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AliAuthSDK: be6caff0bb645ad663c75f311170b2a3b069780e
+  AlibcTradeSDK: 72d36e433ecfbd4c78b5199f0db4f70fd4be374b
+  AliLinkPartnerSDK: c5778cdfdcee7bfe342238d39a77766184d36a46
+  AlipaySDK: a40a4099b24328d90d7ba4fb67f6ce753d7fa2c7
+  BCUserTrack: f267dfb52a6e67603c33668f2e9384ee01b68a88
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  mtopSDK: bf447d4361b0199790e2a2829a1cc0299df71716
+  PGNetworkHelper: 829dfea7c1d4b26c4473696147201d56e0c2b136
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
+  securityGuard: 35d3a1b5877bb2de4698a78089eb8906fa3ad27b
+  SPPageMenu: da182aafcec55719d5c326103cc7716c1e48f311
+  TZScrollViewPopGesture: d36355038259e89372a1f4a2db7e9ca675de2278
+  UTDID: c28855683c5ea2e77e597cb14609328f7d470d6e
+
+PODFILE CHECKSUM: 4bf015efdae2300ac63f4103daf83033319a560b
+
+COCOAPODS: 1.8.4

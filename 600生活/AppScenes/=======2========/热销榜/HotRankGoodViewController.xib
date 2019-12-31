@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotRankGoodViewController">
+            <connections>
+                <outlet property="bgImageView" destination="RqN-CR-Ez8" id="OT3-0j-7nI"/>
+                <outlet property="contentView" destination="Ckk-bO-z1X" id="na4-Kt-n4f"/>
+                <outlet property="scrollView" destination="Ivd-V6-IFA" id="48w-w7-Eke"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ivd-V6-IFA">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Dof-Wv-g7n"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="8Xm-kp-4LU"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ivd-V6-IFA" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Beg-fU-TbE"/>
+                <constraint firstItem="Ivd-V6-IFA" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="KYl-cn-8X6"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Ivd-V6-IFA" secondAttribute="trailing" id="hoX-WB-PvJ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Ivd-V6-IFA" secondAttribute="bottom" id="jVc-kG-Fcd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-444" y="30"/>
+        </view>
+        <view contentMode="scaleToFill" id="Ckk-bO-z1X">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="631"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="热销榜_bg" translatesAutoresizingMaskIntoConstraints="NO" id="RqN-CR-Ez8">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gGJ-Jf-oC0">
+                    <rect key="frame" x="0.0" y="157" width="320" height="421.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="JKr-y2-KTu"/>
+            <point key="canvasLocation" x="463" y="63"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="热销榜_bg" width="375" height="135"/>
+    </resources>
+</document>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GaoYongViewController">
+            <connections>
+                <outlet property="bgImageView" destination="BYp-Px-Oav" id="YrY-yL-s8R"/>
+                <outlet property="contentView" destination="wDz-71-d9k" id="beJ-oY-HiX"/>
+                <outlet property="scrollView" destination="6uT-E7-PVG" id="WW3-e3-cHS"/>
+                <outlet property="toolBar" destination="jJ9-j0-CGJ" id="3TD-3H-KG8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6uT-E7-PVG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Hcm-Ig-cei"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Qpe-RT-hbX"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6uT-E7-PVG" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="MRh-9T-epn"/>
+                <constraint firstItem="6uT-E7-PVG" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="aqK-5d-PUf"/>
+                <constraint firstItem="6uT-E7-PVG" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="bZG-cd-WAM"/>
+                <constraint firstItem="6uT-E7-PVG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="wOW-hQ-dL9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="90"/>
+        </view>
+        <view contentMode="scaleToFill" id="wDz-71-d9k" userLabel="coentntView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="631"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="高佣优选_bg" translatesAutoresizingMaskIntoConstraints="NO" id="BYp-Px-Oav">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view contentMode="scaleToFill" id="jJ9-j0-CGJ" userLabel="toolBar View">
+                    <rect key="frame" x="0.0" y="149.5" width="320" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkc-R7-Zt6">
+                            <rect key="frame" x="12" y="0.0" width="296" height="40"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjh-Uw-K8y">
+                                    <rect key="frame" x="0.0" y="5" width="74" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="mPK-2z-E4Z"/>
+                                    </constraints>
+                                    <state key="normal" title="人气热销 ">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="toolBarItemAction:" destination="-1" eventType="touchUpInside" id="6EM-Px-AaH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxL-iU-Ccd">
+                                    <rect key="frame" x="74" y="5" width="74" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="Qqu-mx-juu"/>
+                                    </constraints>
+                                    <state key="normal" title="高额佣金">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="toolBarItemAction:" destination="-1" eventType="touchUpInside" id="4qf-tM-8ny"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZL-Ds-VZv">
+                                    <rect key="frame" x="148" y="5" width="74" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="fAN-N3-BkT"/>
+                                    </constraints>
+                                    <state key="normal" title="品牌推荐">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="toolBarItemAction:" destination="-1" eventType="touchUpInside" id="LoQ-Qj-OjH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3A-gd-u3J">
+                                    <rect key="frame" x="222" y="5" width="74" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="QZg-Zw-XHL"/>
+                                    </constraints>
+                                    <state key="normal" title="今日上架">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="toolBarItemAction:" destination="-1" eventType="touchUpInside" id="gDC-nH-4yr"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.98039215686274506" green="0.33333333333333331" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="lZL-Ds-VZv" firstAttribute="width" secondItem="wjh-Uw-K8y" secondAttribute="width" id="5M2-yn-T16"/>
+                                <constraint firstItem="SxL-iU-Ccd" firstAttribute="leading" secondItem="wjh-Uw-K8y" secondAttribute="trailing" id="7fM-Rt-7Gc"/>
+                                <constraint firstItem="SxL-iU-Ccd" firstAttribute="width" secondItem="wjh-Uw-K8y" secondAttribute="width" id="86y-yQ-DdR"/>
+                                <constraint firstItem="e3A-gd-u3J" firstAttribute="leading" secondItem="lZL-Ds-VZv" secondAttribute="trailing" id="BJA-HC-oCG"/>
+                                <constraint firstItem="SxL-iU-Ccd" firstAttribute="centerY" secondItem="zkc-R7-Zt6" secondAttribute="centerY" id="LUU-wf-Wgc"/>
+                                <constraint firstItem="lZL-Ds-VZv" firstAttribute="leading" secondItem="SxL-iU-Ccd" secondAttribute="trailing" id="Vft-gh-k1o"/>
+                                <constraint firstItem="wjh-Uw-K8y" firstAttribute="leading" secondItem="zkc-R7-Zt6" secondAttribute="leading" id="Vtm-h0-Epy"/>
+                                <constraint firstItem="e3A-gd-u3J" firstAttribute="width" secondItem="wjh-Uw-K8y" secondAttribute="width" id="c6D-uu-awh"/>
+                                <constraint firstItem="e3A-gd-u3J" firstAttribute="centerY" secondItem="zkc-R7-Zt6" secondAttribute="centerY" id="eaQ-CA-tJC"/>
+                                <constraint firstItem="wjh-Uw-K8y" firstAttribute="width" secondItem="zkc-R7-Zt6" secondAttribute="width" multiplier="0.25" id="krX-a6-zSy"/>
+                                <constraint firstItem="lZL-Ds-VZv" firstAttribute="leading" secondItem="SxL-iU-Ccd" secondAttribute="trailing" id="uTd-pB-hxO"/>
+                                <constraint firstItem="wjh-Uw-K8y" firstAttribute="centerY" secondItem="zkc-R7-Zt6" secondAttribute="centerY" id="vks-y8-OqF"/>
+                                <constraint firstItem="lZL-Ds-VZv" firstAttribute="centerY" secondItem="zkc-R7-Zt6" secondAttribute="centerY" id="vsq-4J-pSa"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92156862745098034" green="0.45490196078431372" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="zkc-R7-Zt6" firstAttribute="leading" secondItem="ix7-4S-ctn" secondAttribute="leading" constant="12" id="7ME-Qx-12X"/>
+                        <constraint firstAttribute="bottom" secondItem="zkc-R7-Zt6" secondAttribute="bottom" id="jpu-Av-5mt"/>
+                        <constraint firstItem="zkc-R7-Zt6" firstAttribute="top" secondItem="jJ9-j0-CGJ" secondAttribute="top" id="oan-xK-8M9"/>
+                        <constraint firstItem="ix7-4S-ctn" firstAttribute="trailing" secondItem="zkc-R7-Zt6" secondAttribute="trailing" constant="12" id="t8I-wU-WVE"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="ix7-4S-ctn"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="wLU-Mc-HKt"/>
+            <point key="canvasLocation" x="1016.25" y="112.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="高佣优选_bg" width="375" height="210"/>
+    </resources>
+</document>

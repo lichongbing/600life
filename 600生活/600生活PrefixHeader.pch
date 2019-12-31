@@ -1,0 +1,98 @@
+//
+//  600生活PrefixHeader.pch
+//  600生活
+//
+//  Created by iOS on 2019/11/4.
+//  Copyright © 2019 灿男科技. All rights reserved.
+//
+
+#ifndef _00__PrefixHeader_pch
+#define _00__PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import "LLHudHelper.h"
+#import "LLUserManager.h" //user
+#import "UIViewExt.h"     //frame
+#import "UIColor+ext.h"   //颜色
+#import "NSString+ext.h"  //字符串
+#import "UIImageView+ext.h"
+#import "NSNumber+ext.h"  //model中的number处理
+#import "GlobalConstStrMacro.h"  //常字符串
+#import "IOSDeviceMacro.h"   //设备信息
+#import "Utility.h"      //常用软件包
+
+#import "LLNetWorking.h"    //网络
+#import <UIImageView+WebCache.h> //图片缓存
+#import <UIView+WebCache.h>//调用sd_internalSetImageWithURL
+#import "UIButton+WebCache.h"
+#import "UIButton+ext.h"  //按钮gif
+#import <MJRefresh/MJRefresh.h>  //mj刷新
+#import "AppDelegate.h"   //kAppDelegate
+#import "IOSDeviceConfig.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"  //全屏左侧滑手势返回
+#import "LLRefreshGifHeader.h"      //头部刷新 动画
+#import "LLRefreshAutoGifFooter.h"   //尾部加载 动画
+#define kAppDelegate ((AppDelegate*)([UIApplication sharedApplication].delegate))
+
+//x
+#define kIsiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//x_r
+#define kIsiPhoneX_R ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//x_s   和  x 屏幕信息一致
+#define kIsiPhoneX_S kIsiPhoneX
+
+//x_max
+#define kIsiPhoneX_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//x_11 和  xr 屏幕信息一致
+#define IsiPhone11 kIsiPhoneX_R
+
+//x_11_pro
+#define IsiPhone11Pro ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//x_11_pro_max
+#define IsiPhone11ProMax ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#ifdef DEBUG
+// Debug模式 用屏幕尺寸判断是否是ipx 系列手机
+    #define kIsiPhoneX_Series (kIsiPhoneX || kIsiPhoneX_R || kIsiPhoneX_MAX || IsiPhone11 || IsiPhone11Pro || IsiPhone11ProMax)
+#else
+// Release模式 用标准的系统函数判断是否是ipx 系列手机（原因：模拟器下，系统函数无效
+    #define kIsiPhoneX_Series [IOSDeviceConfig sharedConfig].isIphoneX_Series
+#endif
+
+
+#define kAppName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+
+//导航栏高度（状态栏+导航栏高度）
+#define kNavigationBarHeight (kIsiPhoneX_Series ? 88. : 64.)
+//状态栏高度
+#define kStatusBarHeight (kIsiPhoneX_Series ? 44. : 20.)
+//tabbar高度
+#define kTabbarHeight (kIsiPhoneX_Series ? 83. : 49.)
+//ipx home区域高度 只有x系列才有这个高度
+#define kIPhoneXHomeIndicatorHeight (kIsiPhoneX_Series ? 34.0 : 0.)
+
+
+
+#define RGB(A,B,C) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
+#define RGBA(A,B,C,a) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:a]
+#define kAppBackGroundColor RGB(244, 244, 244)//app view 背景默认颜色
+#define kAppRedColor RGBA(245, 69, 86, 0.85)       //app 默认绿色
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kisMainThread printf("是否主线程:%d\n",[NSThread isMainThread])
+#define kCurrentThread NSLog(@"当前线程:%p",[NSThread currentThread])
+#define kPlaceHolderUser [UIImage imageNamed:kDefaultUserIconName]   //默认用户头像
+#define kPlaceHolderImg [UIImage imageNamed:kDefaultImgName]         //默认图片
+
+#define kImageWithName(A) [UIImage imageNamed:(A)];
+
+#define kAliBaiChuanAppKey  @"28159852"
+
+#endif /* _00__PrefixHeader_pch */

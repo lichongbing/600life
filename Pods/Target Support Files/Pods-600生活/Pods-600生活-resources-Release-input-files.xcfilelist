@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-600生活/Pods-600生活-resources.sh
+${PODS_ROOT}/AliAuthSDK/AlibabaAuthSDK.framework/AlibabaAuthSDK.bundle
+${PODS_ROOT}/AliLinkPartnerSDK/AlibcLinkPartnerSDK.framework/SmartLink.bundle
+${PODS_ROOT}/AlibcTradeSDK/AlibcTradeBiz.framework/NBResource.bundle
+${PODS_ROOT}/AlipaySDK/alipay/AlipaySDK.bundle
+${PODS_ROOT}/securityGuard/SGMiddleTier.framework/bx-cancel.png
+${PODS_ROOT}/securityGuard/SGMiddleTier.framework/bx-cancel@2x.png
+${PODS_ROOT}/securityGuard/SGMiddleTier.framework/bx-refresh.png
+${PODS_ROOT}/securityGuard/SGMiddleTier.framework/bx-refresh@2x.png

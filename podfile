@@ -1,0 +1,46 @@
+# Uncomment the next line to define a global platform for your project
+
+
+# 指定 Master 仓库和阿里云仓库
+#source 'https://github.com/CocoaPods/Specs.git'
+# source 'https://github.com/aliyun/aliyun-specs.git'
+# source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
+
+platform :ios, '11.0'
+
+target '600生活' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for 600生活
+pod 'AFNetworking', '~> 3.2.1'
+pod 'PGNetworkHelper', '>= 2.0'
+
+pod 'MJRefresh'
+
+#pod 'MJExtension'
+pod 'IQKeyboardManager'
+pod 'FMDB'
+pod 'SPPageMenu', '~> 3.5.0'
+
+pod 'SDWebImage'
+#pod 'SDWebImage/GIF'
+
+#阿里百川相关
+ # pod 'AlicloudFeedback'
+ pod 'AlibcTradeSDK','4.0.0.8'
+ pod 'AliAuthSDK','2.0.0.3'
+ pod 'mtopSDK','3.0.0.4'
+ pod 'securityGuard','5.4.173'
+ pod 'AliLinkPartnerSDK','4.0.0.24'
+ pod 'BCUserTrack','5.2.0.11-appkeys'
+ pod 'UTDID','1.1.0.16'
+ pod 'AlipaySDK',  '2.0.0-bc'
+
+#pod 'JSONModel'
+
+#TZScrollViewPopGesture使得scrollView的手势和系统的返回手势并存
+pod 'TZScrollViewPopGesture'
+
+
+end

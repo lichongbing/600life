@@ -1,0 +1,9 @@
+"PYSearchSearchPlaceholderText" = "Search content";
+"PYSearchHotSearchText" = "热门搜索"; //Popular searches
+"PYSearchSearchHistoryText" = "历史搜索";  //Search history
+"PYSearchEmptySearchHistoryText" = "清空"; //Clear the search history
+
+"PYSearchEmptyButtonText" = "清空";//Clear
+"PYSearchEmptySearchHistoryLogText" = "清空历史"; //Clear the search history
+"PYSearchCancelButtonText" = "Cancel"; 
+"PYSearchBackButtonText" = "Back";
