@@ -58,6 +58,13 @@
 //我的粉丝 spPageMenu 加载多个子vc
 #define kRunTimeFansListViewControllerShow @"kRunTimeFansListViewControllerShow"
 
+//京东Main spPageMenu 加载多个子vc
+#define kRunTimeJDMainViewControllerShow @"kRunTimeJDMainViewControllerShow"
+
+//京东特色购 spPageMenu 加载多个子vc
+#define kRunTimeJDTeSeGouMainViewControllerShow @"kRunTimeJDTeSeGouMainViewControllerShow"
+
+
 //faq 问题按钮绑定问题字符串
 #define kRunTimeFAQQuestionButtomWithData @"kRunTimeFAQQuestionButtomWithData"
 

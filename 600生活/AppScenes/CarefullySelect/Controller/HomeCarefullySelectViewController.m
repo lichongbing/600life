@@ -38,6 +38,8 @@
 #import "BackTopView.h"//返回顶部
 #import "LoginAndRigistMainVc.h"//登录
 
+#import "JDMainViewController.h"  //京东首页
+
 #define kControlSpaceTop  17.5    //上边
 #define kControlSpaceLeft 17.5   //左边
 #define kControlSpaceV   20//(kIsiPhoneX_Series ? 26 : 30)       // 竖直 距离
@@ -500,7 +502,9 @@
     } else { //无数据
         self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
         dispatch_async(dispatch_get_main_queue(), ^{
-            [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            if(wself.datasource.count > 0){
+                 [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            }
         });
     }
 }
@@ -803,6 +807,11 @@
         }else{
             [self unRushTimeBeginWithCell:cell];
         }
+        
+        //优化代码 如果是最后一个cell 优化当前抢购cell滑动的位置
+        if(i == self.homePageModel.rush_goods.time_list.count -1){
+            [self scrollRushTimeBeginCell];
+        }
     }
     
     
@@ -858,7 +867,6 @@
     cell.userInteractionEnabled = YES;
     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(rushingViewTapAction:)];
     [cell addGestureRecognizer:tap];
-    
 }
 
 -(void)unRushTimeBeginWithCell:(UIView*)cell
@@ -876,8 +884,23 @@
     }
 }
 
-//马上抢 刷新tableview数据源
+-(void)scrollRushTimeBeginCell
+{
+    for(int i = 0; i < self.homePageModel.rush_goods.time_list.count; i++) {
+         HomePageRushGoodsTimeListItem* homePageRushGoodsTimeListItem = self.homePageModel.rush_goods.time_list[i];
+        if(homePageRushGoodsTimeListItem.check.intValue == 1){
+            UIScrollView* scrollView = [self.rushBgView viewWithTag:288];
+            UIView* cell = [scrollView viewWithTag:(10+i)];
+            UILabel* timeLab = [cell viewWithTag:1];
+            if([timeLab.text isEqualToString:@"20:00"] || [timeLab.text isEqualToString:@"17:00"]){
+                CGFloat x = scrollView.contentSize.width - scrollView.width;
+                scrollView.contentOffset = CGPointMake(x, 0);
+            }
+        }
+    }
+}
 
+//马上抢 刷新tableview数据源
 #pragma mark - control action
 -(void)activityItemsBtnsAction:(UIButton*)btn
 {
@@ -953,7 +976,10 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     if(activityId == 10){//拼多多
-        [[LLHudHelper sharedInstance]tipMessage:@"600生活即将接入拼多多" delay:1.5];
+//        [[LLHudHelper sharedInstance]tipMessage:@"600生活即将接入拼多多" delay:1.5];
+        JDMainViewController* vc = [JDMainViewController new];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
 }

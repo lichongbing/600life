@@ -110,7 +110,9 @@
         self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
         __weak OrderListViewController* wself = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            if(wself.datasource.count > 0){
+                 [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            }
         });
     }
     

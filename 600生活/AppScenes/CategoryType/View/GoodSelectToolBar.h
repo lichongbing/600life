@@ -10,6 +10,17 @@
 #import "LLBaseView.h"
 NS_ASSUME_NONNULL_BEGIN
 
+
+/**
+ *GoodSelectToolBarTypeDefault 包含最新
+ *GoodSelectToolBarType1 不包含最新
+ */
+
+typedef NS_ENUM(NSUInteger, GoodSelectToolBarType) {
+    GoodSelectToolBarTypeDefault  = 0,
+    GoodSelectToolBarType1
+};
+
 @class GoodSelectToolBar;
 
 @protocol GoodSelectToolBarDelegate <NSObject>
@@ -36,6 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign)id<GoodSelectToolBarDelegate> delegate;
 
+-(id)initWithGoodSelectToolBarType:(GoodSelectToolBarType)type;
 /**
  用户切换sort 调用这个后不会再回调delegate
  */

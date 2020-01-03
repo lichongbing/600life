@@ -99,7 +99,7 @@
         //余额
         wself.ramainLab.text = [NSString stringWithFormat:@"账户余额(元):￥%@",incomeModel.balance];
         
-        //上月收益
+        //上月结算收益
         wself.lastMonthIncomeLab.text = [NSString stringWithFormat:@"%@",incomeModel.last_month_settlement];
         
         //本月收益
@@ -111,7 +111,7 @@
         //今日付款笔数
         wself.todayCountLab.text = [NSString stringWithFormat:@"%@",incomeModel.today_order_count];
         
-        //今日其他
+        //今日推广收益
         wself.todayOtherLab.text = [NSString stringWithFormat:@"￥%@",incomeModel.today_other];
         
         //本月预估
@@ -120,7 +120,7 @@
         //本月笔数
         wself.thisMonthCountLab.text = [NSString stringWithFormat:@"%@",incomeModel.month_order_count];
         
-        //本月其他
+        //本月推广收益
         wself.thisMonthOtherLab.text = [NSString stringWithFormat:@"￥%@",incomeModel.month_other];
     });
 }

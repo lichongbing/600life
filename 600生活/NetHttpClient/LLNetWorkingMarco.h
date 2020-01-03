@@ -13,8 +13,8 @@
 #define kTimeOutInterval 10.0
 
 //#define kFirstUrl @"http://192.168.3.5/"     //本地测试服
-//#define kFirstUrl @"https://test.lbshapp.com/"  //测试服
-#define kFirstUrl @"https://api.lbshapp.com/"    //正式服 
+#define kFirstUrl @"https://test.lbshapp.com/"  //测试服
+//#define kFirstUrl @"https://api.lbshapp.com/"    //正式服 
 
 #define kBaseUrl kFirstUrl
 
@@ -108,7 +108,7 @@
 #define  kProfileEarnings @"api/user/profileEarnings" //我的淘宝收益
 #define kEarningList @"api/user/earnings"  //收益明细
 
-#define kGetFansCount @"api/user/fansCount"//粉丝数
+#define kGetFansCount @"api/user/fansCount"//粉丝数 废弃api
 #define  kGetFans @"api/user/fans" //粉丝分类查询
 #define kNewTeach @"api/public/newTeach"  //新手教程
 #define  kFindOrder @"api/order/find"  //查找一个订单
@@ -127,6 +127,14 @@
 #define kShareGood @"api/goods/share"  //分享商品
 
 #define kSearchAssociate @"api/goods/associate"  //搜索时输入联想
+#define kTeamTop @"api/user/teamTop"  //用户团队收益排行
+
+
+/**********************************京东******************************************/
+#define kJDCategory @"api/goods/jdCategory" //京东分类数据
+#define  kJDHomePage  kGetActivityGoods    //京东首页数据(精选) 用的是商品中的活动商品这个接口
+#define kJDActivity @"api/goods/jdActivity"  //京东活动 (好卷商品，为你推荐，特价9.9，品牌好货)
+#define kJDGoodsSearch  @"api/goods/jdGoodsSearch"  //京东商品搜索，用在京东分类数据中了
 
 #endif /* LLNetWorkingMarco_h */
 

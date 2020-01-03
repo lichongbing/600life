@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IncomeRankModel : JSONModel
 
+@property (nonatomic,copy) NSString *username;
+@property (nonatomic,copy) NSNumber *id;
+@property (nonatomic,copy) NSString *total_earnings;
+@property (nonatomic,copy) NSString *avatar;
+
 @end
 
 NS_ASSUME_NONNULL_END

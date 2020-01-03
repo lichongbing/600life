@@ -17,7 +17,7 @@
 #import "FAQViewController.h" //常见问题
 
 #import "InviteNewUserViewController.h"  //邀请好友
-#import "MyFansMainViewController.h"  //粉丝
+#import "FansListViewController.h"  //粉丝
 
 //#import "TeachAVPlayerViewController.h" //新手教程
 #import "TeachViewController.h"//新手教程"
@@ -326,7 +326,7 @@
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (tag == 12) { //我的粉丝
-        MyFansMainViewController* vc = [MyFansMainViewController new];
+        FansListViewController* vc = [FansListViewController new];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         

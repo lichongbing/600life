@@ -21,21 +21,29 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *btn4_newLab;
 
+@property(nonatomic,assign)GoodSelectToolBarType type;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btn1WidthCons;
 
 @end
 
 @implementation GoodSelectToolBar
 
--(id)initWithFrame:(CGRect)frame
+-(id)initWithGoodSelectToolBarType:(GoodSelectToolBarType)type
 {
-    if (self = [super initWithFrame:frame]) {
+    if(self = [super init]){
         self = [[NSBundle mainBundle] loadNibNamed:@"GoodSelectToolBar" owner:self options:nil].firstObject;
-        self.frame = frame;
         self.width = kScreenWidth;
         self.height = 40;
-       }
-       return self;
+        self.type = type;
+        if(type == GoodSelectToolBarType1){
+            self.btn1WidthCons.constant = kScreenWidth * 0.3333 * 0.3333;
+            [self setNeedsLayout];
+        }
+    }
+    return self;
 }
+
 
 
 //四个按钮都在这里响应

@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftBtn;
 @property (weak, nonatomic) IBOutlet UIButton *rightBtn;
 
+//明细类型 0个人收益    1推广收益
+@property(nonatomic,assign) int showType;
+@property(nonatomic,strong) NSString* selectTimeStr;
+
 @end
 
 @implementation IncomeDetailsViewController
@@ -31,6 +35,14 @@
     self.title = @"收益明细";
     [self setNavRightItemWithImage:[UIImage imageNamed:@"Income日历"] selector:@selector(rightItemAction)];
     [self setupTableView];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM"];
+    NSString* dateStr = [formatter stringFromDate:[NSDate date]];
+    NSLog(@"%@",dateStr);
+    self.headerDateLab.text = [NSString stringWithFormat:@"日期：%@月",dateStr];
+    self.headerDesLab.text = [NSString stringWithFormat:@"%@月25日到账",dateStr];
+    
 }
 
 
@@ -43,9 +55,9 @@
     self.tableview.dataSource = (id)self;
     self.tableview.estimatedRowHeight = 100;
     self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self addMJRefresh];
     [self.tableview registerNib:[UINib nibWithNibName:@"IncomeDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"IncomeDetailTableViewCell"];
     self.tableview.backgroundColor = [UIColor whiteColor];
+    [self addMJRefresh];
 }
 
 
@@ -59,12 +71,14 @@
         param = @{
             @"page":[NSNumber numberWithInteger:pageIndex],
             @"page_size":@"10",
-            @"time":time
+            @"time":time,
+            @"is_spread" : self.showType == 0 ? @"0" : @"1"
         };
     }else{
         param = @{
             @"page":[NSNumber numberWithInteger:pageIndex],
-            @"page_size":@"10"
+            @"page_size":@"10",
+            @"is_spread" : self.showType == 0 ? @"0" : @"1"
         };
     }
      
@@ -111,14 +125,18 @@
     } else { //无数据
         self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
         dispatch_async(dispatch_get_main_queue(), ^{
-            [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            if(wself.datasource.count > 0){
+                 [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            }
         });
     }
     
     if(self.datasource.count > 0){
         [Utility dismissTipViewOn:self.tableview];
     }else{
-        [Utility showTipViewOn:self.tableview type:0 iconName:@"tipview无浏览记录" msg:@"没有收益明细哟!"];
+        [Utility dismissTipViewOn:self.tableview];
+        NSString* str = self.showType == 0 ? @"没有个人收益明细哟!" : @"没有推广收益明细哟!";
+        [Utility showTipViewOn:self.tableview type:0 iconName:@"tipview无浏览记录" msg:str];
     }
 }
 
@@ -143,25 +161,38 @@
 #pragma mark - control action
 
 - (IBAction)leftBtnAction:(id)sender {
-    if(![_leftBtn.backgroundColor isEqual:[UIColor colorWithHexString:@"F54556"]]){
-        _leftBtn.backgroundColor = [UIColor colorWithHexString:@"F54556"];
-        [_leftBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        
-        _rightBtn.backgroundColor = [UIColor colorWithHexString:@"F4F4F4"];
-        [_rightBtn setTitleColor:[UIColor colorWithHexString:@"898989"] forState:UIControlStateNormal];
-    }
+    __weak IncomeDetailsViewController* wself = self;
+    [UIView animateWithDuration:0.3 animations:^{
+       if(![wself.leftBtn.backgroundColor isEqual:[UIColor colorWithHexString:@"F54556"]]){
+            wself.leftBtn.backgroundColor = [UIColor colorWithHexString:@"F54556"];
+            [wself.leftBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            wself.rightBtn.backgroundColor = [UIColor colorWithHexString:@"F4F4F4"];
+            [wself.rightBtn setTitleColor:[UIColor colorWithHexString:@"898989"] forState:UIControlStateNormal];
+           
+           wself.showType = 0;
+           [wself requestEarningList:wself.pageIndex time:wself.selectTimeStr];
+        }
+    }];
+    
 }
 
 
 - (IBAction)rightBtnAction:(id)sender {
-    if(![_rightBtn.backgroundColor isEqual:[UIColor colorWithHexString:@"F54556"]]){
-        _rightBtn.backgroundColor = [UIColor colorWithHexString:@"F54556"];
-        [_rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        _leftBtn.backgroundColor = [UIColor colorWithHexString:@"F4F4F4"];
-        [_leftBtn setTitleColor:[UIColor colorWithHexString:@"898989"] forState:UIControlStateNormal];
-    }
+    __weak IncomeDetailsViewController* wself = self;
+    [UIView animateWithDuration:0.3 animations:^{
+        if(![wself.rightBtn.backgroundColor isEqual:[UIColor colorWithHexString:@"F54556"]]){
+              wself.rightBtn.backgroundColor = [UIColor colorWithHexString:@"F54556"];
+              [wself.rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+              
+              wself.leftBtn.backgroundColor = [UIColor colorWithHexString:@"F4F4F4"];
+              [wself.leftBtn setTitleColor:[UIColor colorWithHexString:@"898989"] forState:UIControlStateNormal];
+            
+            wself.showType = 1;
+            [wself requestEarningList:wself.pageIndex time:wself.selectTimeStr];
+          }
+    }];
+  
 }
 
 #pragma mark - helper
@@ -171,15 +202,13 @@
     __weak IncomeDetailsViewController* wself = self;
     self.tableview.mj_header = [LLRefreshGifHeader headerWithRefreshingBlock:^{
         wself.isMJHeaderRefresh = YES; //重要代码
-        //获取评论数据
         wself.pageIndex=1;
         [wself requestEarningList:wself.pageIndex time:nil];
         [wself impactLight];
     }];
     
     self.tableview.mj_footer = [LLRefreshAutoGifFooter footerWithRefreshingBlock:^{
-         wself.isMJFooterRefresh = YES;
-        //获取评论数据
+        wself.isMJFooterRefresh = YES;
         wself.pageIndex++;
         [wself requestEarningList:wself.pageIndex time:nil];
         [wself impactLight];
@@ -197,7 +226,8 @@
         [formatter setDateFormat:@"YYYY-MM"];
         NSString* timeStr = [formatter stringFromDate:date];
         wself.pageIndex = 1;
-        [wself requestEarningList:self.pageIndex time:timeStr];
+        wself.selectTimeStr = timeStr;
+        [wself requestEarningList:self.pageIndex time:wself.selectTimeStr];
     }];
 }
 @end

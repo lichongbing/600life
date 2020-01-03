@@ -91,20 +91,22 @@
 {
     __weak GuessLikeViewController* wself = self;
     if (tempArray.count > 0) { //有数据
-           if(self.pageIndex == 1){//头部刷新
-               self.datasource = [[NSMutableArray alloc]initWithArray:tempArray];
-           } else if(self.pageIndex > 1){ //尾部加载
-               [self.datasource addObjectsFromArray:tempArray];
-           }
-           dispatch_async(dispatch_get_main_queue(), ^{
-               [wself.tableview reloadData];
-           });
-       } else { //无数据
-           self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
-           dispatch_async(dispatch_get_main_queue(), ^{
-               [wself.tableview.mj_footer endRefreshingWithNoMoreData];
-           });
-       }
+        if(self.pageIndex == 1){//头部刷新
+            self.datasource = [[NSMutableArray alloc]initWithArray:tempArray];
+        } else if(self.pageIndex > 1){ //尾部加载
+            [self.datasource addObjectsFromArray:tempArray];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [wself.tableview reloadData];
+        });
+    } else { //无数据
+        self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(wself.datasource.count > 0){
+                [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            }
+        });
+    }
     
 }
 

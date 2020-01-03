@@ -155,6 +155,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="btn1" destination="WcS-1v-eAb" id="hQI-1O-sZ3"/>
+                <outlet property="btn1WidthCons" destination="eHo-Ht-AJb" id="2Ut-v9-mHq"/>
                 <outlet property="btn2" destination="ypZ-nn-kkV" id="7UV-ci-X1V"/>
                 <outlet property="btn3" destination="ofn-iR-u9O" id="9ff-qI-98k"/>
                 <outlet property="btn4" destination="N0Q-St-UGn" id="x9O-Ui-EDH"/>

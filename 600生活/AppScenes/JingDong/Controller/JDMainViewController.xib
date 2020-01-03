@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JDMainViewController">
+            <connections>
+                <outlet property="bannerImageView" destination="2Wa-Gu-Xdz" id="om8-Np-RGo"/>
+                <outlet property="contentView" destination="FC2-uJ-pAh" id="xha-yN-AVy"/>
+                <outlet property="layoutBottomLine" destination="7Jt-xS-I6f" id="qZu-ff-BGm"/>
+                <outlet property="navView" destination="EQH-Cf-NMz" id="KVC-5N-LWP"/>
+                <outlet property="redBgView" destination="xEC-hr-ks5" id="v0H-OE-GMY"/>
+                <outlet property="redView" destination="IsK-oP-BsL" id="rrG-xG-gEb"/>
+                <outlet property="scrollView" destination="ECp-6Z-JwB" id="UCN-aN-GGj"/>
+                <outlet property="scrollViewTopCons" destination="zjH-b7-nks" id="k0I-5X-oVn"/>
+                <outlet property="spBgView" destination="451-Op-LQT" id="buw-AF-NET"/>
+                <outlet property="spBgViewHeightCons" destination="9de-5h-yNK" id="mVu-um-bAx"/>
+                <outlet property="spBgViewTopCons" destination="PaX-Ty-KBx" id="yb6-4k-dyz"/>
+                <outlet property="spScrollView" destination="eRD-LS-e58" id="dVD-lA-OkA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECp-6Z-JwB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.85882352941176465" green="0.13725490196078433" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="rV9-rg-z3x"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="rMw-qC-XEw"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ECp-6Z-JwB" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="UXZ-yC-KSr"/>
+                <constraint firstItem="ECp-6Z-JwB" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="eAD-zG-awm"/>
+                <constraint firstItem="ECp-6Z-JwB" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="gKn-tx-8ae"/>
+                <constraint firstItem="ECp-6Z-JwB" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="zjH-b7-nks"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-54" y="128"/>
+        </view>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FC2-uJ-pAh" userLabel="contentView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="849"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-hr-ks5" userLabel="redBg">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="122.5"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IsK-oP-BsL" userLabel="redView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.91764705879999997" green="0.21176470589999999" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQH-Cf-NMz" userLabel="nav View">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVA-QM-9Eb">
+                                    <rect key="frame" x="5" y="18" width="44" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <state key="normal" image="nav_back_white"/>
+                                    <connections>
+                                        <action selector="backItemAction:" destination="-1" eventType="touchUpInside" id="noY-Bw-Uge"/>
+                                    </connections>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="京东icon" translatesAutoresizingMaskIntoConstraints="NO" id="XnU-5q-4ds">
+                                    <rect key="frame" x="57" y="29" width="25" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="京东" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAp-MJ-hgv">
+                                    <rect key="frame" x="87" y="27" width="35" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYC-WD-g8e" userLabel="searchView">
+                                    <rect key="frame" x="132" y="23" width="175" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomePage搜索" translatesAutoresizingMaskIntoConstraints="NO" id="t8Z-cN-VCm">
+                                            <rect key="frame" x="12" y="9" width="12" height="12"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="复制标题 搜京东优惠券" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vW1-3Z-XMo">
+                                            <rect key="frame" x="29" y="8" width="126" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HG2-Mi-SvB">
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <connections>
+                                                <action selector="searchBtnAction:" destination="-1" eventType="touchUpInside" id="9L4-u8-VA4"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <real key="value" value="4.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="8" trailing="0.0"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="xEC-hr-ks5" secondAttribute="height" multiplier="375:143.5" id="UMW-b5-zGS"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jd_banner" translatesAutoresizingMaskIntoConstraints="NO" id="2Wa-Gu-Xdz">
+                    <rect key="frame" x="10" y="61" width="300" height="123"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="451-Op-LQT">
+                    <rect key="frame" x="0.0" y="183.5" width="320" height="568"/>
+                    <subviews>
+                        <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-LS-e58">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="568" id="9de-5h-yNK"/>
+                        <constraint firstItem="eRD-LS-e58" firstAttribute="top" secondItem="451-Op-LQT" secondAttribute="top" id="GKj-4Q-ldJ"/>
+                        <constraint firstItem="eRD-LS-e58" firstAttribute="leading" secondItem="451-Op-LQT" secondAttribute="leading" id="jmb-sj-Tn3"/>
+                        <constraint firstItem="eRD-LS-e58" firstAttribute="centerY" secondItem="451-Op-LQT" secondAttribute="centerY" id="nlO-Qx-jwf"/>
+                        <constraint firstItem="eRD-LS-e58" firstAttribute="centerX" secondItem="451-Op-LQT" secondAttribute="centerX" id="pe6-R6-EVJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jt-xS-I6f" userLabel="layoutBottomLine" customClass="LLBaseView">
+                    <rect key="frame" x="20" y="751.5" width="280" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="35e-AC-nIy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="451-Op-LQT" secondAttribute="trailing" id="IEI-Wh-F15"/>
+                <constraint firstItem="7Jt-xS-I6f" firstAttribute="leading" secondItem="FC2-uJ-pAh" secondAttribute="leading" constant="20" symbolic="YES" id="Iha-lI-vna"/>
+                <constraint firstItem="xEC-hr-ks5" firstAttribute="top" secondItem="FC2-uJ-pAh" secondAttribute="top" id="JRQ-8H-j9Y"/>
+                <constraint firstItem="xEC-hr-ks5" firstAttribute="trailing" secondItem="FC2-uJ-pAh" secondAttribute="trailing" id="KT6-El-dft"/>
+                <constraint firstItem="451-Op-LQT" firstAttribute="top" secondItem="xEC-hr-ks5" secondAttribute="bottom" constant="61" id="PaX-Ty-KBx"/>
+                <constraint firstItem="7Jt-xS-I6f" firstAttribute="top" secondItem="451-Op-LQT" secondAttribute="bottom" id="adh-hv-rFt"/>
+                <constraint firstAttribute="trailing" secondItem="7Jt-xS-I6f" secondAttribute="trailing" constant="20" symbolic="YES" id="wiN-UQ-vgV"/>
+                <constraint firstItem="xEC-hr-ks5" firstAttribute="leading" secondItem="FC2-uJ-pAh" secondAttribute="leading" id="wul-pP-5zk"/>
+                <constraint firstItem="451-Op-LQT" firstAttribute="leading" secondItem="FC2-uJ-pAh" secondAttribute="leading" id="xVj-Rg-ezc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="654.375" y="276.23239436619718"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="HomePage搜索" width="12" height="12"/>
+        <image name="jd_banner" width="356.5" height="145.5"/>
+        <image name="nav_back_white" width="12" height="18"/>
+        <image name="京东icon" width="25" height="19"/>
+    </resources>
+</document>

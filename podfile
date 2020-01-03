@@ -1,8 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 
 
-# 指定 Master 仓库和阿里云仓库
-#source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
 # source 'https://github.com/aliyun/aliyun-specs.git'
 # source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
 
@@ -41,6 +40,7 @@ pod 'SDWebImage'
 
 #TZScrollViewPopGesture使得scrollView的手势和系统的返回手势并存
 pod 'TZScrollViewPopGesture'
+pod 'PYSearch'
 
 
 end

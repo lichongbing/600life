@@ -59,7 +59,7 @@
     
     //工具栏
     self.toolBarBg.width = kScreenWidth;
-    GoodSelectToolBar* goodSelectToolBar = [[GoodSelectToolBar alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+    GoodSelectToolBar* goodSelectToolBar = [[GoodSelectToolBar alloc]initWithGoodSelectToolBarType:GoodSelectToolBarTypeDefault];
     [self.toolBarBg addSubview:goodSelectToolBar];
     goodSelectToolBar.delegate = (id)self;
     goodSelectToolBar.tag = 288;
@@ -198,7 +198,9 @@
     } else { //无数据
         self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
         dispatch_async(dispatch_get_main_queue(), ^{
-            [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            if(wself.datasource.count > 0){
+                 [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            }
         });
     }
     

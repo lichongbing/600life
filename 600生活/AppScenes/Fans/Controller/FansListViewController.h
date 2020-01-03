@@ -12,10 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FansListViewController : LLViewController
 
-//粉丝类型：1全部 2直接粉丝 3间接
--(id)initWithType:(NSString*)type;
-
--(void)loadDatasWhenUserDone;  //外部调用 当用户操作时，载入数据
 
 @end
 

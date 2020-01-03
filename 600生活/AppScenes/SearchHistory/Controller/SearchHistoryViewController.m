@@ -59,9 +59,9 @@
     }
     searchTextField.font = [UIFont systemFontOfSize:15];
     _searchBar.delegate = (id)self;
+    self.pyVC.view.frame = CGRectMake(0, searchTitleViewHeight + 5, kScreenWidth, pvViewHeight);
     [self addChildViewController:self.pyVC];
     [self.view addSubview:self.pyVC.view];
-    self.pyVC.view.frame = CGRectMake(0, searchTitleViewHeight + 5, kScreenWidth, pvViewHeight);
 }
 
 -(void)viewWillAppear:(BOOL)animated

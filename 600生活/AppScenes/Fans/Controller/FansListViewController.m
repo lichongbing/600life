@@ -32,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"我的粉丝";
     [self setupTableview];
 }
 
@@ -39,7 +40,7 @@
 
 -(void)setupTableview
 {
-    self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight - 40;
+    self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight;
     self.tableview.top = 0;
     self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableview.delegate = (id)self;
@@ -48,17 +49,10 @@
     [self addMJRefresh];
 }
 
--(void)loadDatasWhenUserDone
-{
-    __weak FansListViewController* wself = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [wself addMJRefresh];
-    });
-}
 
 #pragma mark - 网络请求
 //用最后一个粉丝的id分页 如果希望获取pid的下一级粉丝 就需要传递pid
--(void)requestFansWithLastFanId:(NSString*)fanId pid:(NSString*)pid
+-(void)requestFansWithLastFanId:(NSString*)fanId
 {
     NSMutableDictionary* param = [NSMutableDictionary new];
     if(fanId){
@@ -66,28 +60,25 @@
     }else{
         [param setValue:@"" forKey:@"k"];
     }
-    if(pid){
-        [param setValue:pid forKey:@"pid"];
-    }
     [param setValue:@"20" forKey:@"page_size"];
-    [param setValue:self.type forKey:@"type"];
     
     
     [self GetWithUrlStr:kFullUrl(kGetFans) param:param showHud:YES resCache:nil success:^(id  _Nullable res) {
         if(kSuccessRes){
-            [self handleFans:res[@"data"] fanId:fanId pid:pid];
+            [self handleFans:res[@"data"] fanId:fanId];
         }
     } falsed:^(NSError * _Nullable error) {
         NSLog(@"%@,%@,%@",self.type,param,kFullUrl(kGetFans));
     }];
 }
 
--(void)handleFans:(NSArray*)datas fanId:(NSString*)fanId pid:(NSString*)pid
+-(void)handleFans:(NSArray*)datas fanId:(NSString*)fanId
 {
     NSArray* list = datas;
     NSMutableArray* mutArr = [NSMutableArray new];
     for(int i = 0; i < list.count; i++){
         NSError* err = nil;
+        [Utility printModelWithDictionary:list[0] modelName:@"A"];
         FansModel* fansModel = [[FansModel alloc]initWithDictionary:list[i] error:&err];
         if(fansModel){
             [mutArr addObject:fansModel];
@@ -95,10 +86,10 @@
             NSLog(@"粉丝模型创建失败");
         }
     }
-    [self configDataSource:mutArr fanId:fanId pid:pid];
+    [self configDataSource:mutArr fanId:fanId];
 }
 
--(void)configDataSource:(NSArray*)tempArray fanId:(NSString*)fanId pid:(NSString*)pid
+-(void)configDataSource:(NSArray*)tempArray fanId:(NSString*)fanId
 {
     
     __weak FansListViewController* wself = self;
@@ -114,7 +105,9 @@
     } else { //无数据
 //        self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
         dispatch_async(dispatch_get_main_queue(), ^{
-            [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            if(wself.datasource.count > 0){
+                 [wself.tableview.mj_footer endRefreshingWithNoMoreData];
+            }
         });
     }
     
@@ -165,22 +158,20 @@
     __weak FansListViewController* wself = self;
     self.tableview.mj_header = [LLRefreshGifHeader headerWithRefreshingBlock:^{
         wself.isMJHeaderRefresh = YES; //重要代码
-        //获取评论数据
 //        wself.pageIndex=1;
         wself.lastFanId = nil;
-        [wself requestFansWithLastFanId:wself.lastFanId pid:nil];
+        [wself requestFansWithLastFanId:wself.lastFanId];
         [wself impactLight];
     }];
     
     self.tableview.mj_footer = [LLRefreshAutoGifFooter footerWithRefreshingBlock:^{
          wself.isMJFooterRefresh = YES;
-        //获取评论数据
 //         wself.pageIndex++;
         if(wself.datasource.count > 0){
             FansModel* fansModel = wself.datasource.lastObject;
             if(fansModel.id.toString){
                 wself.lastFanId = fansModel.id.toString;
-                [wself requestFansWithLastFanId:wself.lastFanId pid:nil];
+                [wself requestFansWithLastFanId:wself.lastFanId];
                 [wself impactLight];
             }
         }

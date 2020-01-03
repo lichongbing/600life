@@ -12,13 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FansModel : JSONModel
 
-@property (nonatomic,copy) NSString *mobile;
-@property (nonatomic,copy) NSString *avatar;
 @property (nonatomic,copy) NSNumber *id;
+@property (nonatomic,copy) NSString *mobile;
 @property (nonatomic,copy) NSString *user_nickname;
-@property (nonatomic,copy) NSNumber *level;
-@property (nonatomic,copy) NSNumber *count;
-@property (nonatomic,copy) NSString *create_time;
+@property (nonatomic,copy) NSNumber *create_time;
+@property (nonatomic,copy) NSString *avatar;
 
 @end
 

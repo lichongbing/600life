@@ -29,6 +29,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -43,6 +44,11 @@
     
     [self setupIcon1WithIndexPath:indexPath];
     [self setuprankLabWithIndexPath:indexPath];
+    
+    //
+    self.nameLab.text = incomeRankModel.username;
+    [self.userIcon sd_setImageWithURL:[NSURL URLWithString:incomeRankModel.avatar] placeholderImage:kPlaceHolderUser];
+    self.incomeLab.text = [NSString stringWithFormat:@"%@元",incomeRankModel.total_earnings];
 }
 
 -(void)setupIcon1WithIndexPath:(NSIndexPath*)indexPath
