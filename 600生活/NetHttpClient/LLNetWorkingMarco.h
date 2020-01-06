@@ -14,7 +14,7 @@
 
 //#define kFirstUrl @"http://192.168.3.5/"     //本地测试服
 #define kFirstUrl @"https://test.lbshapp.com/"  //测试服
-//#define kFirstUrl @"https://api.lbshapp.com/"    //正式服 
+//#define kFirstUrl @"https://api.lbshapp.com/"    //正式服
 
 #define kBaseUrl kFirstUrl
 
@@ -135,7 +135,7 @@
 #define  kJDHomePage  kGetActivityGoods    //京东首页数据(精选) 用的是商品中的活动商品这个接口
 #define kJDActivity @"api/goods/jdActivity"  //京东活动 (好卷商品，为你推荐，特价9.9，品牌好货)
 #define kJDGoodsSearch  @"api/goods/jdGoodsSearch"  //京东商品搜索，用在京东分类数据中了
-
+#define kJDGoodDetail @"api/goods/jdGoodsDetail"   //京东商品详情
 #endif /* LLNetWorkingMarco_h */
 
 

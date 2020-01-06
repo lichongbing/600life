@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IncomeDetailsViewController : LLViewController
+@interface IncomeDetailsMainViewController : LLViewController
 
 @end
 

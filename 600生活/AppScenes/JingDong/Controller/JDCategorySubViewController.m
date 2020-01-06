@@ -38,10 +38,11 @@
     self.tableview.dataSource = (id)self;
     [self.tableview registerNib:[UINib nibWithNibName:@"JDTwoItemGoodTableViewCell" bundle:nil] forCellReuseIdentifier:@"JDTwoItemGoodTableViewCell"];
 
-    self.tableview.top = 0;
+    self.tableview.top = 40;
     self.tableview.left = 0;
     self.tableview.width = kScreenWidth;
-    self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight - 40;
+    self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight - _superVCViewBannerImageViewHeight;
+
     [self addMJRefresh];
 }
 
@@ -74,7 +75,6 @@
 
 -(void)handleSearchJDGoodsWithPageIndex:(NSInteger)pageIndex datas:(NSArray*)datas
 {
-    return;
     NSArray* list = datas;
     NSMutableArray* mutArr = [NSMutableArray new];
     for(int i = 0; i < list.count; i++){

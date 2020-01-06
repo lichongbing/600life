@@ -28,35 +28,30 @@
     
     self.title = @"收益排行";
     
-    //获取上一个月
-    NSDate *currentDate = [NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy.MM"];
-    
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *lastMonthComps = [[NSDateComponents alloc] init];
-    [lastMonthComps setMonth:-1];
-    NSDate *newdate = [calendar dateByAddingComponents:lastMonthComps toDate:currentDate options:0];
-    NSString *newDateStr = [formatter stringFromDate:newdate];
-    self.timeLab.text = newDateStr;
-    
  
     self.tableHeaderView.width = kScreenWidth - 15 * 2;
-//    self.tableHeaderView.top = self.scrollView.height * 0.4;
-//    self.tableHeaderView.left = 15;
     
     [self.tableview removeFromSuperview];
     [self.contentView addSubview:self.tableview];
     self.tableview.tableHeaderView = self.tableHeaderView;
     self.tableview.showsVerticalScrollIndicator = NO;
     self.tableview.backgroundColor = [UIColor clearColor];
-    self.tableview.layer.cornerRadius = 5;
-    self.tableview.clipsToBounds = YES;
     self.tableview.width = kScreenWidth - 15 * 2;
     self.tableview.left = 15;
     self.tableview.top = self.scrollView.height * 0.4 + self.tableHeaderView.height - 5;
     self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight - self.tableview.top - 15;
-    self.tableview.tableFooterView = [UIView new];
+    
+    UIView* footer = [UIView new];
+    footer.width = self.tableview.width;
+    footer.height = 10;
+    footer.backgroundColor = [UIColor whiteColor];
+    footer.layer.cornerRadius = 5;
+    footer.layer.maskedCorners = kCALayerMinXMaxYCorner | kCALayerMaxXMaxYCorner;
+    footer.clipsToBounds = YES;
+    self.tableview.tableFooterView = footer;
+    
+    self.tableview.layer.cornerRadius = 5;
+    self.tableview.clipsToBounds = YES;
     
     self.contentView.width = kScreenWidth;
     self.contentView.left = self.contentView.top = 0;
@@ -97,12 +92,21 @@
       }];
 }
 
--(void)handleIncomeRankList:(NSArray*)datas
+-(void)handleIncomeRankList:(NSDictionary*)data
 {
+    NSString* timeStr = data[@"time"];
+    
+    __weak IncomeRankViewController* wself = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+       wself.timeLab.text = timeStr;
+    });
+    
+    
     NSMutableArray* mutArr = [NSMutableArray new];
-    for(int i = 0; i < datas.count; i++){
+    NSArray* list = data[@"data"];
+    for(int i = 0; i < list.count; i++){
         NSError* err = nil;
-        IncomeRankModel* incomeRankModel = [[IncomeRankModel alloc]initWithDictionary:datas[i] error:&err];
+        IncomeRankModel* incomeRankModel = [[IncomeRankModel alloc]initWithDictionary:list[i] error:&err];
         if(incomeRankModel){
             [mutArr addObject:incomeRankModel];
         }

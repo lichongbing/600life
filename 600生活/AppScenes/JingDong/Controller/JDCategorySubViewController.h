@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(id)initWithJDCategoryModel:(JDCategoryModel*)jdCategoryModel;
 
+//父vc的视图中bannerImageView高度（计算self的table的高度）
+@property(nonatomic,assign)CGFloat superVCViewBannerImageViewHeight;
+
 @end
 
 NS_ASSUME_NONNULL_END

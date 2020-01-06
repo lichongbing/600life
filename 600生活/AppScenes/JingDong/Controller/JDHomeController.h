@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JDHomeController : SPMenuSubViewController
 
-@property(nonatomic,strong)UIScrollView* superVCScrollView;
-
 @property(nonatomic,strong) BackTopView* backTopView; //返回顶部 要在父vc中去执行
 
 @end

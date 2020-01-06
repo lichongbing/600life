@@ -9,8 +9,6 @@
 #import "JDTeSeMainViewController.h"
 #import "SPPageMenu.h"
 #import "JDOneGoodListViewController.h"
-#import "GoodSelectToolBar.h"
-#import "ZhongHeView.h"
 
 @interface JDTeSeMainViewController ()
 
@@ -18,18 +16,11 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *spPageMenuBgView;
-@property (weak, nonatomic) IBOutlet UIView *toolBarBg;
-@property(nonatomic,strong)ZhongHeView* zhongHeView;
+
 
 @property(nonatomic,strong)NSArray* titleNames;
 @property (strong, nonatomic)  SPPageMenu *spPageMenu;
 @property(nonatomic,strong)NSArray* childViewControllers;  //子视图控制器
-
-@end
-
-@interface JDTeSeMainViewController()
-
-@property(nonatomic,assign)int sort;
 
 @end
 
@@ -50,7 +41,6 @@
     
     self.titleNames = @[@"     好券商品     ",@"     9.9包邮     ",@"     品牌好货     "];
     [self setupPageMenusAndChildVcs];
-    [self setupToolBar];
 }
 
 #pragma mark - UI
@@ -60,7 +50,15 @@
    NSMutableArray* childViewControllers = [NSMutableArray new];
     
     for(int i = 0; i < self.titleNames.count; i++){
-        JDOneGoodListViewController* vc = [[JDOneGoodListViewController alloc]init];
+        NSString* cid = nil;
+        if(i == 0){ //好券商品
+            cid = @"1";
+        } else if (i == 1){//9.9包邮
+            cid = @"3";
+        } else if (i == 2){//品牌好货
+            cid = @"4";
+        }
+        JDOneGoodListViewController* vc = [[JDOneGoodListViewController alloc]initWithCid:cid];
         [childViewControllers addObject:vc];
     }
     
@@ -74,16 +72,6 @@
     
     self.spPageMenu = pageMenu;
     self.childViewControllers = childViewControllers;
-}
-
--(void)setupToolBar
-{
-    GoodSelectToolBar* goodSelectToolBar = [[GoodSelectToolBar alloc]initWithGoodSelectToolBarType:GoodSelectToolBarType1];
-    [self.toolBarBg addSubview:goodSelectToolBar];
-    goodSelectToolBar.delegate = (id)self;
-    goodSelectToolBar.tag = 288;
-    goodSelectToolBar.top = goodSelectToolBar.left = 0;
-    goodSelectToolBar.width = kScreenWidth;
 }
 
 
@@ -111,15 +99,6 @@
     }
 }
 
-#pragma mark getter
-- (ZhongHeView *)zhongHeView
-{
-    if(!_zhongHeView){
-        GoodSelectToolBar* goodSelectToolBar = [self.toolBarBg viewWithTag:288];
-        _zhongHeView = [[ZhongHeView alloc]initWithToolBar:goodSelectToolBar];
-    }
-    return _zhongHeView;
-}
 
 #pragma mark - SPPageMenu的代理方法
 
@@ -163,22 +142,4 @@
     [self.scrollView addSubview:targetViewController.view];
 }
 
-#pragma mark - GoodSelectToolBarDelegate
-
-- (void)goodSelectToolBarDidSelecedWithSort:(int)sort goodSelectToolBar:(GoodSelectToolBar*)goodSelectToolBar
-{
-    self.sort = sort;
-    [self.zhongHeView dismiss];
-    
-    if (sort == -1){  //-1 关闭综合view
-        //donothing
-    } else if(sort == 0){  //0 打开综合view
-        //展示综合
-        CGFloat top = self.toolBarBg.bottom;
-        [self.zhongHeView showOnSupperView:self.view frame:CGRectMake(0, top, kScreenWidth, self.view.height - top)];
-    }  else {   //大于0的情况
-        self.pageIndex = 1;
-//        [self requestSearchGoodsWithKeyWords:nil sort:sort PageIndex:self.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N"];
-    }
-}
 @end

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 //传入两个model
 -(void)fullDataWithLeftModel:(JDGood*)jdHomeRecommendGood1 rightModel:(JDGood*)jdHomeRecommendGood2;
 
-@property (nonatomic,strong) void (^jdHomeRecommendGoodClickedCallback)(JDGood* jdHomeRecommendGood);
+@property (nonatomic,strong) void (^jdTwoItemOneGoodClickedCallback)(JDGood* jdGood);
 
 @end
 

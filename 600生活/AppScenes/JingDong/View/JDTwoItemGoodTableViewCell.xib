@@ -300,17 +300,37 @@
                             <constraint firstItem="uxl-cc-NI6" firstAttribute="leading" secondItem="u09-LC-Miv" secondAttribute="leading" constant="8" id="zXi-OV-Au0"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXB-1C-0vV">
+                        <rect key="frame" x="166.5" y="0.0" width="141.5" height="272"/>
+                        <connections>
+                            <action selector="goodBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G4v-pJ-nej"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b73-mZ-098">
+                        <rect key="frame" x="12" y="0.0" width="141.5" height="272"/>
+                        <connections>
+                            <action selector="goodBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7au-LZ-q5W"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
+                    <constraint firstItem="b73-mZ-098" firstAttribute="top" secondItem="pvU-Ry-ULr" secondAttribute="top" id="68a-D3-4Ew"/>
                     <constraint firstAttribute="bottom" secondItem="pvU-Ry-ULr" secondAttribute="bottom" constant="12" id="BGC-gq-Vfn"/>
+                    <constraint firstItem="b73-mZ-098" firstAttribute="trailing" secondItem="pvU-Ry-ULr" secondAttribute="trailing" id="Bkt-e1-kJL"/>
                     <constraint firstItem="pvU-Ry-ULr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Dt3-jf-gc6"/>
+                    <constraint firstItem="LXB-1C-0vV" firstAttribute="bottom" secondItem="u09-LC-Miv" secondAttribute="bottom" id="ECl-Gx-I5F"/>
                     <constraint firstItem="pvU-Ry-ULr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FfN-cJ-oLH"/>
+                    <constraint firstItem="LXB-1C-0vV" firstAttribute="leading" secondItem="u09-LC-Miv" secondAttribute="leading" id="JPo-9E-RPR"/>
+                    <constraint firstItem="b73-mZ-098" firstAttribute="bottom" secondItem="pvU-Ry-ULr" secondAttribute="bottom" id="KT8-0A-Ldf"/>
+                    <constraint firstItem="LXB-1C-0vV" firstAttribute="trailing" secondItem="u09-LC-Miv" secondAttribute="trailing" id="LpA-Cc-4Rg"/>
                     <constraint firstItem="u09-LC-Miv" firstAttribute="top" secondItem="pvU-Ry-ULr" secondAttribute="top" id="OYn-xM-FQN"/>
                     <constraint firstItem="0BV-MV-MJX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VTy-34-ILy"/>
                     <constraint firstItem="0BV-MV-MJX" firstAttribute="leading" secondItem="pvU-Ry-ULr" secondAttribute="trailing" constant="6" id="VuO-Nm-PZi"/>
+                    <constraint firstItem="LXB-1C-0vV" firstAttribute="top" secondItem="u09-LC-Miv" secondAttribute="top" id="aqV-8e-gcL"/>
                     <constraint firstAttribute="bottom" secondItem="0BV-MV-MJX" secondAttribute="bottom" id="fZS-cH-hau"/>
                     <constraint firstItem="u09-LC-Miv" firstAttribute="leading" secondItem="0BV-MV-MJX" secondAttribute="trailing" constant="6" id="pRw-gX-leh"/>
+                    <constraint firstItem="b73-mZ-098" firstAttribute="leading" secondItem="pvU-Ry-ULr" secondAttribute="leading" id="qTd-eE-Hnz"/>
                     <constraint firstItem="0BV-MV-MJX" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wqb-0R-a3L"/>
                     <constraint firstAttribute="bottom" secondItem="u09-LC-Miv" secondAttribute="bottom" constant="12" id="xkS-eD-AXx"/>
                     <constraint firstAttribute="trailing" secondItem="u09-LC-Miv" secondAttribute="trailing" constant="12" id="yeH-e1-gbk"/>

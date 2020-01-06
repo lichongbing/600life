@@ -219,7 +219,7 @@
                 <constraint firstItem="6lP-W4-X29" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="xvW-Hv-pW5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="-90" y="106.69014084507042"/>
+            <point key="canvasLocation" x="-521" y="20"/>
         </view>
         <view contentMode="scaleToFill" id="SL3-rU-7cq" userLabel="contentView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="1023"/>

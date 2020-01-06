@@ -8,13 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IncomeDetailsViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IncomeDetailsMainViewController">
             <connections>
                 <outlet property="headerDateLab" destination="E6X-Hk-unI" id="fCg-vD-mpH"/>
                 <outlet property="headerDesLab" destination="RJ3-PF-oE9" id="msN-j9-LlW"/>
                 <outlet property="headerView" destination="y9j-E5-a0M" id="mpu-HB-gET"/>
                 <outlet property="leftBtn" destination="dqQ-PO-WmB" id="hBD-Fr-8ym"/>
                 <outlet property="rightBtn" destination="AuS-dX-4EN" id="zee-iO-6g6"/>
+                <outlet property="scrollView" destination="tUO-Cj-nve" id="S1W-XK-Ug7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -70,27 +71,46 @@
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11月25日到账" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ3-PF-oE9">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11月25日到账" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ3-PF-oE9">
                             <rect key="frame" x="215" y="13" width="93" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6G-Hh-8WF" userLabel="line">
+                            <rect key="frame" x="20" y="39" width="280" height="1"/>
+                            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Bfu-X0-iQ6"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="X6G-Hh-8WF" firstAttribute="leading" secondItem="y9j-E5-a0M" secondAttribute="leading" constant="20" symbolic="YES" id="6DZ-AM-aA9"/>
+                        <constraint firstItem="X6G-Hh-8WF" firstAttribute="top" secondItem="E6X-Hk-unI" secondAttribute="bottom" constant="8" symbolic="YES" id="9k6-zN-ZX0"/>
+                        <constraint firstAttribute="trailing" secondItem="X6G-Hh-8WF" secondAttribute="trailing" constant="20" symbolic="YES" id="DWu-lk-JNG"/>
                         <constraint firstAttribute="trailing" secondItem="RJ3-PF-oE9" secondAttribute="trailing" constant="12" id="Nlp-np-q4O"/>
                         <constraint firstItem="E6X-Hk-unI" firstAttribute="centerY" secondItem="y9j-E5-a0M" secondAttribute="centerY" id="ipB-nw-ka4"/>
                         <constraint firstItem="RJ3-PF-oE9" firstAttribute="centerY" secondItem="y9j-E5-a0M" secondAttribute="centerY" id="lPh-vh-20J"/>
                         <constraint firstItem="E6X-Hk-unI" firstAttribute="leading" secondItem="y9j-E5-a0M" secondAttribute="leading" constant="12" id="qW2-Fr-bxi"/>
                     </constraints>
                 </view>
+                <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUO-Cj-nve">
+                    <rect key="frame" x="0.0" y="88" width="320" height="480"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="kV6-yv-Kl7"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Dbd-5v-Gmh"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="tUO-Cj-nve" firstAttribute="top" secondItem="y9j-E5-a0M" secondAttribute="bottom" constant="8" symbolic="YES" id="0XO-0a-wp3"/>
+                <constraint firstItem="tUO-Cj-nve" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="YAS-ld-KUA"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Kxa-DD-S0E" secondAttribute="trailing" id="eYa-5L-fcz"/>
                 <constraint firstItem="Kxa-DD-S0E" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="eqD-fD-GQL"/>
                 <constraint firstItem="Kxa-DD-S0E" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="jt8-zQ-SVi"/>
+                <constraint firstItem="tUO-Cj-nve" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="qBT-tS-3Wk"/>
+                <constraint firstItem="tUO-Cj-nve" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="y4f-aF-kDZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="52.5" y="94.014084507042256"/>

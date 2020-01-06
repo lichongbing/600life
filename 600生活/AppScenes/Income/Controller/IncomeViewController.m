@@ -7,7 +7,7 @@
 //
 
 #import "IncomeViewController.h"
-#import "IncomeDetailsViewController.h" //收益明细
+#import "IncomeDetailsMainViewController.h" //收益明细
 #import "LLBaseView.h"
 #import "IncomeModel.h"  //收益模型
 
@@ -129,7 +129,7 @@
 
 -(void)rightItemAction
 {
-    IncomeDetailsViewController* vc = [IncomeDetailsViewController new];
+    IncomeDetailsMainViewController* vc = [IncomeDetailsMainViewController new];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

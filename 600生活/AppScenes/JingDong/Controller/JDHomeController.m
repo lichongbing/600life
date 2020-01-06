@@ -10,6 +10,8 @@
 #import "JDHomeModel.h"
 #import "JDTwoItemGoodTableViewCell.h"
 #import "JDTeSeMainViewController.h"  //特色购
+#import "LoginAndRigistMainVc.h"
+#import "JDGoodDetailViewController.h"  //商品详情
 
 @interface JDHomeController ()<UIScrollViewDelegate>
 
@@ -238,8 +240,29 @@
     NSArray* item = mutArr[indexPath.row];
     
     [cell fullDataWithLeftModel:item.firstObject rightModel:item.lastObject];
+    
+    __weak JDHomeController* wself = self;
+      cell.jdTwoItemOneGoodClickedCallback = ^(JDGood * _Nonnull jdGood) {
+          if(jdGood.item_id){
+              
+              if([LLUserManager shareManager].currentUser == nil){
+                  __strong JDHomeController* sself = wself;
+                  [Utility ShowAlert:@"尚未登录" message:@"\n是否登录" buttonName:@[@"好的,去登录",@"不用了,谢谢"] sureAction:^{
+                      LoginAndRigistMainVc* vc = [LoginAndRigistMainVc new];
+                      vc.hidesBottomBarWhenPushed = YES;
+                      [sself.navigationController pushViewController:vc animated:YES];
+                  } cancleAction:nil];
+                  return;
+              }
+              
+              JDGoodDetailViewController* vc = [[JDGoodDetailViewController alloc]init];
+              vc.hidesBottomBarWhenPushed = YES;
+              [wself.navigationController pushViewController:vc animated:YES];
+          }
+      };
     return cell;
 }
+
 
 #pragma mark - uiscrollview delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

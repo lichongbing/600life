@@ -66,8 +66,9 @@
     #define kIsiPhoneX_Series [IOSDeviceConfig sharedConfig].isIphoneX_Series
 #endif
 
-
 #define kAppName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+#define kAppBuildVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
+#define kAppStoreLink @"itms-apps://itunes.apple.com/cn/app/id1491526847?mt=8";
 
 //导航栏高度（状态栏+导航栏高度）
 #define kNavigationBarHeight (kIsiPhoneX_Series ? 88. : 64.)

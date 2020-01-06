@@ -87,4 +87,18 @@
     self.earning2.text = [NSString stringWithFormat:@" 预计收益￥%@ ",jdHomeRecommendGood2.earnings];
 }
 
+//商品被点击
+- (IBAction)goodBtnAction:(UIButton*)sender {
+    NSInteger index = sender.tag - 10;
+    if(index == 0){
+        if(self.jdTwoItemOneGoodClickedCallback){
+            self.jdTwoItemOneGoodClickedCallback(self.leftModel);
+        }
+    }
+    if(index == 1){
+        if(self.jdTwoItemOneGoodClickedCallback){
+            self.jdTwoItemOneGoodClickedCallback(self.rightModel);
+        }
+    }
+}
 @end

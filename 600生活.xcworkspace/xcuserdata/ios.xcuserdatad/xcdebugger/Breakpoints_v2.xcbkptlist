@@ -34,16 +34,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4E3BBBDA-EFA5-4226-A624-77BB48270521"
+            uuid = "EF0D2566-6FC7-4449-A193-366D39A52555"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "600&#x751f;&#x6d3b;/AppScenes/GoodDetail/Controller/GoodDetailViewController.m"
+            filePath = "600&#x751f;&#x6d3b;/AppScenes/JingDong/Controller/JDGoodDetailViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
-            landmarkName = "-resetupUI"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-handleJDGoodDetail:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2F6CFB2-F8CB-4624-AEDD-8D27CF2F5B98"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "600&#x751f;&#x6d3b;/AppScenes/IncomeDetails/Controller/IncomeDetailSubViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-requestEarningList:time:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

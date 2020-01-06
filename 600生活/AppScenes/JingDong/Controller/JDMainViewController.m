@@ -34,7 +34,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *spBgViewHeightCons;
 @property (weak, nonatomic) IBOutlet UIScrollView *spScrollView;
 
-
 @property (weak, nonatomic) IBOutlet LLBaseView *layoutBottomLine;
 
 @property(nonatomic,strong)UIView* noNetTipBgView;   //无网络提示背景view
@@ -149,7 +148,6 @@
             JDHomeController* vc = [[JDHomeController alloc]init];
             self.subVcScrollView = (UIScrollView*)vc.tableview;
             self.subVcScrollView.delegate = self;
-            vc.superVCScrollView = self.scrollView;
             vc.tableview.scrollEnabled = NO;//初始状态下让tableview不能滑动
             [childViewControllers addObject:vc];
         } else {//京东其它

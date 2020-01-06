@@ -18,6 +18,10 @@
 		8107B1D4239770640092D556 /* StoreDetailGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107B1D2239770640092D556 /* StoreDetailGoodCell.m */; };
 		8107B1D5239770640092D556 /* StoreDetailGoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8107B1D3239770640092D556 /* StoreDetailGoodCell.xib */; };
 		8107B1D9239776E50092D556 /* StroeDetailGoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107B1D8239776E50092D556 /* StroeDetailGoodModel.m */; };
+		8109AF0A23C312E90042ABD8 /* JDGoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8109AF0823C312E90042ABD8 /* JDGoodDetailViewController.m */; };
+		8109AF0B23C312E90042ABD8 /* JDGoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8109AF0923C312E90042ABD8 /* JDGoodDetailViewController.xib */; };
+		8109AF0F23C3340C0042ABD8 /* IncomeDetailSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8109AF0D23C3340C0042ABD8 /* IncomeDetailSubViewController.m */; };
+		8109AF1023C3340C0042ABD8 /* IncomeDetailSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8109AF0E23C3340C0042ABD8 /* IncomeDetailSubViewController.xib */; };
 		810BBC9223B45F9600034F95 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BBC9123B45F9600034F95 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		810BBC9A23B478AB00034F95 /* IncomeRankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BBC9823B478AB00034F95 /* IncomeRankViewController.m */; };
 		810BBC9B23B478AB00034F95 /* IncomeRankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810BBC9923B478AB00034F95 /* IncomeRankViewController.xib */; };
@@ -253,8 +257,8 @@
 		819B6A93238FD969008244C7 /* FootMarkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68DA238FD969008244C7 /* FootMarkTableViewCell.m */; };
 		819B6A94238FD969008244C7 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68DC238FD969008244C7 /* AboutUsViewController.m */; };
 		819B6A95238FD969008244C7 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819B68DD238FD969008244C7 /* AboutUsViewController.xib */; };
-		819B6A96238FD969008244C7 /* IncomeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68E1238FD969008244C7 /* IncomeDetailsViewController.m */; };
-		819B6A97238FD969008244C7 /* IncomeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819B68E3238FD969008244C7 /* IncomeDetailsViewController.xib */; };
+		819B6A96238FD969008244C7 /* IncomeDetailsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68E1238FD969008244C7 /* IncomeDetailsMainViewController.m */; };
+		819B6A97238FD969008244C7 /* IncomeDetailsMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819B68E3238FD969008244C7 /* IncomeDetailsMainViewController.xib */; };
 		819B6A98238FD969008244C7 /* IncomeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68E5238FD969008244C7 /* IncomeDetailTableViewCell.m */; };
 		819B6A99238FD969008244C7 /* IncomeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819B68E6238FD969008244C7 /* IncomeDetailTableViewCell.xib */; };
 		819B6A9A238FD969008244C7 /* FootMarkSimilarGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68EB238FD969008244C7 /* FootMarkSimilarGoodsViewController.m */; };
@@ -440,6 +444,12 @@
 		8107B1D3239770640092D556 /* StoreDetailGoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDetailGoodCell.xib; sourceTree = "<group>"; };
 		8107B1D7239776E50092D556 /* StroeDetailGoodModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StroeDetailGoodModel.h; sourceTree = "<group>"; };
 		8107B1D8239776E50092D556 /* StroeDetailGoodModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StroeDetailGoodModel.m; sourceTree = "<group>"; };
+		8109AF0723C312E90042ABD8 /* JDGoodDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDGoodDetailViewController.h; sourceTree = "<group>"; };
+		8109AF0823C312E90042ABD8 /* JDGoodDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGoodDetailViewController.m; sourceTree = "<group>"; };
+		8109AF0923C312E90042ABD8 /* JDGoodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JDGoodDetailViewController.xib; sourceTree = "<group>"; };
+		8109AF0C23C3340C0042ABD8 /* IncomeDetailSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeDetailSubViewController.h; sourceTree = "<group>"; };
+		8109AF0D23C3340C0042ABD8 /* IncomeDetailSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeDetailSubViewController.m; sourceTree = "<group>"; };
+		8109AF0E23C3340C0042ABD8 /* IncomeDetailSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeDetailSubViewController.xib; sourceTree = "<group>"; };
 		810BBC9023B45F9600034F95 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		810BBC9123B45F9600034F95 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		810BBC9723B478AB00034F95 /* IncomeRankViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeRankViewController.h; sourceTree = "<group>"; };
@@ -873,9 +883,9 @@
 		819B68DC238FD969008244C7 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		819B68DD238FD969008244C7 /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
 		819B68DE238FD969008244C7 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
-		819B68E1238FD969008244C7 /* IncomeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeDetailsViewController.m; sourceTree = "<group>"; };
-		819B68E2238FD969008244C7 /* IncomeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeDetailsViewController.h; sourceTree = "<group>"; };
-		819B68E3238FD969008244C7 /* IncomeDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeDetailsViewController.xib; sourceTree = "<group>"; };
+		819B68E1238FD969008244C7 /* IncomeDetailsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeDetailsMainViewController.m; sourceTree = "<group>"; };
+		819B68E2238FD969008244C7 /* IncomeDetailsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeDetailsMainViewController.h; sourceTree = "<group>"; };
+		819B68E3238FD969008244C7 /* IncomeDetailsMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeDetailsMainViewController.xib; sourceTree = "<group>"; };
 		819B68E5238FD969008244C7 /* IncomeDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeDetailTableViewCell.m; sourceTree = "<group>"; };
 		819B68E6238FD969008244C7 /* IncomeDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeDetailTableViewCell.xib; sourceTree = "<group>"; };
 		819B68E7238FD969008244C7 /* IncomeDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeDetailTableViewCell.h; sourceTree = "<group>"; };
@@ -1551,6 +1561,9 @@
 				81F5392823BDC338006A602E /* JDCategorySubViewController.h */,
 				81F5392923BDC338006A602E /* JDCategorySubViewController.m */,
 				81F5392A23BDC338006A602E /* JDCategorySubViewController.xib */,
+				8109AF0723C312E90042ABD8 /* JDGoodDetailViewController.h */,
+				8109AF0823C312E90042ABD8 /* JDGoodDetailViewController.m */,
+				8109AF0923C312E90042ABD8 /* JDGoodDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2493,9 +2506,12 @@
 		819B68E0238FD969008244C7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				819B68E2238FD969008244C7 /* IncomeDetailsViewController.h */,
-				819B68E1238FD969008244C7 /* IncomeDetailsViewController.m */,
-				819B68E3238FD969008244C7 /* IncomeDetailsViewController.xib */,
+				819B68E2238FD969008244C7 /* IncomeDetailsMainViewController.h */,
+				819B68E1238FD969008244C7 /* IncomeDetailsMainViewController.m */,
+				819B68E3238FD969008244C7 /* IncomeDetailsMainViewController.xib */,
+				8109AF0C23C3340C0042ABD8 /* IncomeDetailSubViewController.h */,
+				8109AF0D23C3340C0042ABD8 /* IncomeDetailSubViewController.m */,
+				8109AF0E23C3340C0042ABD8 /* IncomeDetailSubViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3657,7 +3673,7 @@
 				819B669B238FD58B008244C7 /* Assets.xcassets in Resources */,
 				81404272239DE50B003D05E1 /* GoodDealTableViewCell.xib in Resources */,
 				819B6A9C238FD969008244C7 /* FootMarkSimilarGoodTableViewCell.xib in Resources */,
-				819B6A97238FD969008244C7 /* IncomeDetailsViewController.xib in Resources */,
+				819B6A97238FD969008244C7 /* IncomeDetailsMainViewController.xib in Resources */,
 				81F7CB0523BF33B40012E8F0 /* JDTeSeMainViewController.xib in Resources */,
 				819B68BB238FD8E8008244C7 /* LCActionSheet.bundle in Resources */,
 				81404273239DE50B003D05E1 /* GoodDealViewController.xib in Resources */,
@@ -3697,6 +3713,7 @@
 				81F7CB0F23BF39FA0012E8F0 /* JDOneGoodListViewController.xib in Resources */,
 				8140428F239DE5A2003D05E1 /* HotRankTableViewCell.xib in Resources */,
 				819B6A92238FD969008244C7 /* FootMarkTableViewCell.xib in Resources */,
+				8109AF0B23C312E90042ABD8 /* JDGoodDetailViewController.xib in Resources */,
 				8179BE6523BB30FF002D3714 /* JDMainViewController.xib in Resources */,
 				819B6A99238FD969008244C7 /* IncomeDetailTableViewCell.xib in Resources */,
 				814042A8239DE677003D05E1 /* HotRecommendViewController.xib in Resources */,
@@ -3714,6 +3731,7 @@
 				819B6ABF238FD969008244C7 /* ChangePhone2ViewController.xib in Resources */,
 				819B6AF9238FD969008244C7 /* CollectedGoodTableViewCell.xib in Resources */,
 				81404288239DE587003D05E1 /* HotRankGoodViewController.xib in Resources */,
+				8109AF1023C3340C0042ABD8 /* IncomeDetailSubViewController.xib in Resources */,
 				810489E92397551900B2C087 /* GoodStoreItem2Cell.xib in Resources */,
 				81F5392C23BDC338006A602E /* JDCategorySubViewController.xib in Resources */,
 				81A25BB423A0C3A500DFE598 /* CategoryGoodListViewController.xib in Resources */,
@@ -3875,6 +3893,7 @@
 				819B6ADB238FD969008244C7 /* SearchResultListController.m in Sources */,
 				819B673B238FD8AA008244C7 /* GuidenceViewController.m in Sources */,
 				819B6736238FD8AA008244C7 /* TeachAVPlayerViewController.m in Sources */,
+				8109AF0A23C312E90042ABD8 /* JDGoodDetailViewController.m in Sources */,
 				814042BC239DE709003D05E1 /* TreasureGoodTableViewCell.m in Sources */,
 				81404266239DE50B003D05E1 /* GaoYongTableViewCell.m in Sources */,
 				819B68BC238FD8E8008244C7 /* LCActionSheet.m in Sources */,
@@ -3992,7 +4011,7 @@
 				819B6890238FD8E8008244C7 /* FSCalendarDelegationProxy.m in Sources */,
 				819B6693238FD58A008244C7 /* SceneDelegate.m in Sources */,
 				81F5393523BDD741006A602E /* JDGood.m in Sources */,
-				819B6A96238FD969008244C7 /* IncomeDetailsViewController.m in Sources */,
+				819B6A96238FD969008244C7 /* IncomeDetailsMainViewController.m in Sources */,
 				819B6740238FD8AA008244C7 /* MD5Utils.m in Sources */,
 				819B6873238FD8E8008244C7 /* JTCalendarWeekDayView.m in Sources */,
 				819B6704238FD84E008244C7 /* LLTabBarController.m in Sources */,
@@ -4047,6 +4066,7 @@
 				819B6884238FD8E8008244C7 /* NSCalendar+STPicker.m in Sources */,
 				819B6A94238FD969008244C7 /* AboutUsViewController.m in Sources */,
 				819B687F238FD8E8008244C7 /* STPickerView.m in Sources */,
+				8109AF0F23C3340C0042ABD8 /* IncomeDetailSubViewController.m in Sources */,
 				819B6881238FD8E8008244C7 /* STPickerViewUI.m in Sources */,
 				81404270239DE50B003D05E1 /* GoodDealViewController.m in Sources */,
 				819B6B47238FD969008244C7 /* MyOrdersMainViewController.m in Sources */,

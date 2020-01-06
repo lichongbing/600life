@@ -16,6 +16,9 @@
 
 @property(nonatomic,strong)NSString* lastFanId;//保存最后一个粉丝的id
 
+@property(nonatomic,assign)NSInteger fansCount; //粉丝数
+@property(nonatomic,strong)UILabel* showFansCountLab; //展示粉丝数
+
 @end
 
 @implementation FansListViewController
@@ -34,13 +37,15 @@
     // Do any additional setup after loading the view.
     self.title = @"我的粉丝";
     [self setupTableview];
+    [self setupBottomView];
+    [self requestAllFansCount]; //请求全部粉丝数
 }
 
 #pragma mark - UI
 
 -(void)setupTableview
 {
-    self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight;
+    self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight - 50;
     self.tableview.top = 0;
     self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableview.delegate = (id)self;
@@ -49,8 +54,52 @@
     [self addMJRefresh];
 }
 
+-(void)setupBottomView
+{
+    _showFansCountLab = [UILabel new];
+    [self.view addSubview:_showFansCountLab];
+    _showFansCountLab.frame = CGRectMake(0, 0, kScreenWidth - 20, 50);
+    _showFansCountLab.left = 10;
+    _showFansCountLab.top = self.tableview.bottom;
+    _showFansCountLab.backgroundColor = [UIColor redColor];
+    _showFansCountLab.textColor = [UIColor whiteColor];
+    _showFansCountLab.font = [UIFont systemFontOfSize:15];
+    _showFansCountLab.textAlignment = NSTextAlignmentCenter;
+    _showFansCountLab.hidden = NO;
+}
+
+#pragma mark setter
+-(void)setFansCount:(NSInteger)fansCount
+{
+    _fansCount = fansCount;
+    __weak FansListViewController* wself = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(fansCount > 0){
+              wself.showFansCountLab.hidden = NO;
+            wself.showFansCountLab.text = [NSString stringWithFormat:@"粉丝数:%lu位",fansCount];
+          }else{
+              wself.showFansCountLab.hidden = YES;
+          }
+    });
+}
 
 #pragma mark - 网络请求
+
+//获取全部粉丝数
+-(void)requestAllFansCount
+{
+    __weak FansListViewController* wself = self;
+    [self GetWithUrlStr:kFullUrl(kGetFansCount) param:nil showHud:YES resCache:nil success:^(id  _Nullable res) {
+        if(kSuccessRes){
+            NSInteger fansCount = [res[@"data"] integerValue];
+            wself.fansCount = fansCount;
+        }
+    } falsed:^(NSError * _Nullable error) {
+        
+    }];
+
+}
+
 //用最后一个粉丝的id分页 如果希望获取pid的下一级粉丝 就需要传递pid
 -(void)requestFansWithLastFanId:(NSString*)fanId
 {
@@ -103,7 +152,7 @@
             [wself.tableview reloadData];
         });
     } else { //无数据
-//        self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
+        self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
         dispatch_async(dispatch_get_main_queue(), ^{
             if(wself.datasource.count > 0){
                  [wself.tableview.mj_footer endRefreshingWithNoMoreData];
@@ -113,16 +162,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if(wself.datasource.count == 0){
-            NSString* typeStr = @"";
-            if([wself.type isEqualToString:@"1"]){
-                typeStr = @"粉丝";
-            }else if([wself.type isEqualToString:@"2"]){
-                typeStr = @"直接粉丝";
-            }else if([wself.type isEqualToString:@"3"]){
-                typeStr = @"间接粉丝";
-            }
-            NSString* msg = [NSString stringWithFormat:@"暂无%@粉丝哟!",typeStr];
-            [Utility showTipViewOn:wself.tableview type:0 iconName:@"tipview无收藏" msg:msg];
+            [Utility showTipViewOn:wself.tableview type:0 iconName:@"tipview无收藏" msg:@"暂无粉丝"];
         }else{
             [Utility dismissTipViewOn:wself.tableview];
         }
