@@ -12,7 +12,7 @@
 #import "SPPageMenu.h"
 
 #import "MsgViewController.h"  //消息
-#import "LLWindowTipView.h"    //专属客服
+#import "LLWindowTipView.h"    //专属客服  发现新版本
 #import <Photos/Photos.h>  //保存图片到相册
 #import "HomeCarefullySelectViewController.h"   //精选
 #import "GuessLikeViewController.h"       //猜你喜欢
@@ -26,6 +26,7 @@
 
 #import "SearchedGoodModel.h"  //搜索出的商品模型
 #import "GoodDetailViewController.h"
+
 
 @interface ViewController1 ()<SPPageMenuDelegate>
 
@@ -63,36 +64,44 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
  
+    self.fd_prefersNavigationBarHidden = YES;
+    
     BOOL flag = kIsiPhoneX_Series;
     
     _navViewHeightConstraint.constant = kNavigationBarHeight;
     _navViewTopConstraint.constant = -kStatusBarHeight;
     
-    NSLog(@"%d,%f,%f",flag,kNavigationBarHeight,kStatusBarHeight);
-    
+    [self requestCheckVersion];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self hiddenNavigationBarWithAnimation:animated];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack]; //黑色状态栏
     
     if(self.homePageMenuList == nil){
          [self requestHomePageMenuDatas];
     }
     
+    //如果没有用户数据 提示用户登录注册
+    if([LLUserManager shareManager].currentUser == nil){
+        LLWindowTipView* view = [[LLWindowTipView alloc]initWithType:WindowTipViewTypeGoSigin];
+        __weak ViewController1* wself = self;
+        view.goSiginBtnAction = ^{
+            LoginAndRigistMainVc* vc = [LoginAndRigistMainVc new];
+            vc.hidesBottomBarWhenPushed = YES;
+            [wself.navigationController pushViewController:vc animated:YES];
+        };
+        [view show];
+    }
+    
+    //如果有用户数据 且已登录 获取消息
     if([LLUserManager shareManager].currentUser.isLogin){
         [self requestAllMessages];
     }
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self showNavigationBarWithAnimation:animated];
-}
 
 //设置状态栏颜色
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -220,6 +229,8 @@
     }];
 }
 
+
+
 #pragma mark - 此处有回调
 -(void)handleClientQRCode:(NSDictionary*)data
 {
@@ -240,6 +251,82 @@
         };
     });
 }
+
+-(void)requestCheckVersion
+{
+    NSDictionary* param = @{
+        @"current_version" : @"1.0"
+    };
+
+    [[LLNetWorking sharedWorking]helper];
+    __weak ViewController1* wself = self;
+    [self GetWithUrlStr:kFullUrl(kCHeckVersion) param:param showHud:NO resCache:nil success:^(id  _Nullable res) {
+        if(kSuccessRes){
+            [wself handleCheckVersion:res[@"data"]];
+        }
+    } falsed:^(NSError * _Nullable error) {
+        
+    }];
+}
+
+-(void)handleCheckVersion:(NSDictionary*)data
+{
+    NSString* maxVersion = data[@"version"];
+    NSString* currentVersion = kAppBuildVersion;
+    [self checkWithMaxVersion:maxVersion currentVersion:currentVersion];
+}
+
+-(void)checkWithMaxVersion:(NSString*)maxVersion currentVersion:(NSString*)currentVersion
+{
+    NSArray* maxVersionArr = [maxVersion componentsSeparatedByString:@"."];
+    NSArray* currentVersionArr = [currentVersion componentsSeparatedByString:@"."];
+    
+    NSString* item0Max = maxVersionArr.firstObject;
+    NSString* item0 = currentVersionArr.firstObject;
+    
+    if(item0Max.intValue > item0.intValue){
+        //需要更新
+        [self updateVersion];
+    }else{
+        NSString* item1Max = maxVersionArr[1];
+        NSString* item1 = currentVersionArr[1];
+        if(item1Max.intValue > item1.intValue){
+            //需要更新
+            [self updateVersion];
+        }else{
+            NSString* item2Max = maxVersionArr[2];
+            NSString* item2 = currentVersionArr[2];
+            if(item2Max.intValue > item2.intValue){
+                //需要更新
+                [self updateVersion];
+            }else{
+                NSString* item3Max = maxVersionArr[3];
+                NSString* item3 = currentVersionArr[3];
+                if(item3Max.intValue > item3.intValue){
+                    //需要更新
+                    [self updateVersion];
+                } else {
+                    NSLog(@"全部通过");
+                }
+            }
+        }
+    }
+}
+
+-(void)updateVersion
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        LLWindowTipView* view = [[LLWindowTipView alloc]initWithType:WindowTipViewTypeNewVersion];
+        __weak LLWindowTipView* wview = view;
+        view.findNewVersionBtnAction = ^{
+            NSURL* url = [NSURL URLWithString:kAppStoreLink];
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+            [wview dismiss];
+        };
+        [view show];
+    });
+}
+
 
 
 #pragma mark - UI
@@ -374,6 +461,7 @@
     [self requestClientQRCode];
 }
 
+//
 - (IBAction)searchBtnAction:(id)sender {
     
     if([LLUserManager shareManager].currentUser == nil){

@@ -77,30 +77,29 @@
         imageV.contentMode = UIViewContentModeScaleAspectFit;
         [imageV sd_setImageWithURL:[NSURL URLWithString:imageUrls[i]] placeholderImage:kPlaceHolderImg];
         [mutArr addObject:imageV];
-        
-        //二维码
-        UIImageView* qrImageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-        qrImageV.tag = 10+i;
-        qrImageV.hidden = YES;
-        [imageV addSubview:qrImageV];
-        qrImageV.centerX = imageV.width * 0.5;
-        qrImageV.centerY = imageV.height * 0.75;
-        
-        //生成二维码
-        MKQRCode *mkCode = [[MKQRCode alloc] init];
-        [mkCode setInfo:data[@"downUrl"] withSize:qrImageV.width];
-        qrImageV.image = [mkCode generateImage];
-        
-        //口令
-        UILabel* lab = [UILabel new];
-        [imageV addSubview:lab];
-        lab.width = 150;
-        lab.height = 35;
-        lab.centerX = imageV.width * 0.5;
-        lab.top = qrImageV.bottom + 15;
-        lab.backgroundColor = [UIColor whiteColor];
-        lab.text = [NSString stringWithFormat:@"邀请码%@",[LLUserManager shareManager].currentUser.invite_code];
-        lab.textAlignment = NSTextAlignmentCenter;
+//        //二维码
+//        UIImageView* qrImageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+//        qrImageV.tag = 10+i;
+//        [imageV addSubview:qrImageV];
+//        qrImageV.hidden = YES;
+//        qrImageV.centerX = imageV.width * 0.5;
+//        qrImageV.centerY = imageV.height * 0.75;
+//
+//        //生成二维码
+//        MKQRCode *mkCode = [[MKQRCode alloc] init];
+//        [mkCode setInfo:data[@"downUrl"] withSize:qrImageV.width];
+//        qrImageV.image = [mkCode generateImage];
+//
+//        //口令
+//        UILabel* lab = [UILabel new];
+//        [imageV addSubview:lab];
+//        lab.width = 150;
+//        lab.height = 35;
+//        lab.centerX = imageV.width * 0.5;
+//        lab.top = qrImageV.bottom + 15;
+//        lab.backgroundColor = [UIColor whiteColor];
+//        lab.text = [NSString stringWithFormat:@"邀请码%@",[LLUserManager shareManager].currentUser.invite_code];
+//        lab.textAlignment = NSTextAlignmentCenter;
     }
     
     if(mutArr.count > 0){
@@ -223,4 +222,15 @@
     NSLog(@"%@",reqonReq);
 }
 
+- (void)onResp:(BaseResp*)resp
+{
+    if([resp isKindOfClass:[SendMessageToWXResp class]])
+      {
+          NSString *strTitle = [NSString stringWithFormat:@"发送媒体消息结果"];
+          NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
+          
+          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+          [alert show];
+      }
+}
 @end

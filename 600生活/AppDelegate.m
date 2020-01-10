@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 
 #import <AlibcTradeSDK/AlibcTradeSDK.h>//阿里百川
-#import "JPUSHService.h"
+#import "WXApi.h"//微信分享
+#import "JPUSHService.h" //激光推送
 
 //初始化数据
 #import "DelegateConfig.h"
@@ -18,12 +19,46 @@
 //引导页
 #import "GuidenceViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate,JPUSHRegisterDelegate>
 
 @end
 
 @implementation AppDelegate
 
+//配置激光推送
+-(void)configJPushWithLaunchOptions:(NSDictionary *)launchOptions
+{
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    
+    if(!kIsIOS12beBelow){//高于ios12
+        entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound|JPAuthorizationOptionProvidesAppNotificationSettings;
+    }else{
+        entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
+    }
+    
+    id pDelegate = kAppDelegate;
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    
+    NSString* appKey = @"f7f8e5d63d78ea332d88f83e";
+    NSString* channel = @"Publish channel";
+    BOOL isProduction = NO;
+    [JPUSHService setupWithOption:launchOptions appKey:appKey
+                          channel:channel
+                 apsForProduction:isProduction
+            advertisingIdentifier:nil];
+    
+    [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
+        if(resCode == 0){
+            NSLog(@"激光推送registrationID获取成功：%@",registrationID);
+        }
+        else{
+            NSLog(@"激光推送registrationID获取失败，code：%d",resCode);
+        }
+    }];
+    
+    // 检测通知授权情况。可选项，不一定要放在此处，可以运行一定时间后再调用
+    [self performSelector:@selector(checkNotificationAuthorization) withObject:nil afterDelay:5];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -47,24 +82,8 @@
        }
     
     //初始化数据
-    [[DelegateConfig sharedConfig]configAppDatas];
-    
-    // 注册微信api 必须以 /结尾
-     BOOL flag = [WXApi registerApp:@"wxb2efb7a9872c79fd" universalLink:@"https://www.lbshapp.com/app/"];
-    NSLog(@"微信sdk注册%@",flag ? @"成功" : @"失败");
-    
-    
-    //
-    NSString* appKey = @"";
-    NSString* channel = @"ad hoc";
-    BOOL isProduction = NO;
-    [JPUSHService setupWithOption:launchOptions appKey:appKey
-                  channel:channel
-         apsForProduction:isProduction
-    advertisingIdentifier:nil];
-    
-    
-    
+    [[DelegateConfig sharedConfig]configAppDatasWithLaunchOptions:launchOptions];
+
     return YES;
 }
 
@@ -170,8 +189,6 @@
        }
 }
 
-
-
 /*! @brief 发送一个sendReq后，收到微信的回应
  *
  * 收到一个来自微信的处理结果。调用一次sendReq后会收到onResp。
@@ -191,6 +208,8 @@
 }
 
 #pragma mark - 推送相关--------------------
+
+//注册推送token
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
@@ -198,9 +217,19 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   [JPUSHService registerDeviceToken:deviceToken];
 }
 
+//注册推送失败
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
   //Optional
   NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+}
+
+// iOS 12 Support
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification{
+  if (notification && [notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+    //从通知界面直接进入应用
+  }else{
+    //从通知设置界面进入应用
+  }
 }
 
 // iOS 10 Support
@@ -212,6 +241,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   }
   completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有 Badge、Sound、Alert 三种类型可以选择设置
 }
+
 
 // iOS 10 Support
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {

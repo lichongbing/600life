@@ -43,6 +43,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.fd_prefersNavigationBarHidden = YES;
+    
     self.navBarTopCons.constant = kStatusBarHeight;
     self.taobaoBtn.layer.borderWidth = 1;
     self.taobaoBtn.layer.borderColor = [UIColor colorWithHexString:@"#F54556"].CGColor;
@@ -53,22 +55,6 @@
     [self requestBrandDetail];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self hiddenNavigationBarWithAnimation:animated];
-    self.fd_prefersNavigationBarHidden = YES;
-}
-
-
-//kBrandDetail
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear: animated];
-    [self showNavigationBarWithAnimation:animated];
-    
-}
 
 -(void)setupTableview
 {

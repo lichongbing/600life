@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,6 +17,7 @@
                 <outlet property="navViewHeightCons" destination="OMO-eT-42c" id="laD-uE-zsQ"/>
                 <outlet property="pwdBgView" destination="6wX-Jp-bhL" id="9qt-vk-PMu"/>
                 <outlet property="pwdTf" destination="Tw6-XT-COT" id="DyF-Zy-9M9"/>
+                <outlet property="readInfoBtn" destination="pBI-Tw-2hD" id="Xfp-c5-MT1"/>
                 <outlet property="telBgView" destination="EAE-Ul-63Z" id="wBv-eV-ekt"/>
                 <outlet property="telTf" destination="cYF-kc-aEN" id="ogR-ry-kGu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -119,7 +120,7 @@
                     <color key="textColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAE-Ul-63Z">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAE-Ul-63Z">
                     <rect key="frame" x="32.5" y="247" width="255" height="40"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginMainTel" translatesAutoresizingMaskIntoConstraints="NO" id="5Eg-FV-Oac">
@@ -149,8 +150,13 @@
                         <constraint firstItem="5Eg-FV-Oac" firstAttribute="leading" secondItem="EAE-Ul-63Z" secondAttribute="leading" constant="14" id="djK-j5-4n3"/>
                         <constraint firstAttribute="bottom" secondItem="cYF-kc-aEN" secondAttribute="bottom" constant="3" id="ees-Qm-2wE"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="18.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wX-Jp-bhL">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wX-Jp-bhL">
                     <rect key="frame" x="32.5" y="294" width="145" height="40"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginMain_code" translatesAutoresizingMaskIntoConstraints="NO" id="nKr-TL-hvn">
@@ -179,14 +185,19 @@
                         <constraint firstAttribute="bottom" secondItem="Tw6-XT-COT" secondAttribute="bottom" constant="3" id="wfN-2F-IIL"/>
                         <constraint firstItem="nKr-TL-hvn" firstAttribute="leading" secondItem="6wX-Jp-bhL" secondAttribute="leading" constant="14" id="yzZ-nV-xW6"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="18.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBI-Tw-2hD">
                     <rect key="frame" x="32.5" y="354" width="255" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="pZc-uF-ovg"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <state key="normal" title="       注册/登录600生活并同意《用户协议》以及《隐私政策》">
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="10"/>
+                    <state key="normal" title="注册/登录600生活并同意《用户协议》以及《隐私政策》">
                         <color key="titleColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>

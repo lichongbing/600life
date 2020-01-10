@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="aiSearch" destination="1BJ-w7-IQr" id="c1S-YH-xNS"/>
                 <outlet property="customerService" destination="sZn-iT-dm1" id="ltH-4X-C7e"/>
+                <outlet property="findNewVersion" destination="wML-iA-dS8" id="SWY-9X-FIr"/>
                 <outlet property="goSigin" destination="4nf-hK-bwF" id="3ee-1L-2T6"/>
                 <outlet property="gotoTaoBao" destination="sxD-3b-N6y" id="NjC-uN-lNd"/>
                 <outlet property="share" destination="h4y-lS-Ybq" id="UIr-He-VSi"/>
@@ -599,6 +600,77 @@
             <viewLayoutGuide key="safeArea" id="pVx-TD-Pet"/>
             <point key="canvasLocation" x="3009.375" y="762.67605633802816"/>
         </view>
+        <view contentMode="scaleToFill" id="wML-iA-dS8" userLabel="新版本">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-zN-azt">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <connections>
+                        <action selector="bgBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="4kH-tB-k3Z"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JU-QE-dF8">
+                    <rect key="frame" x="37" y="150" width="246" height="240"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="新版本" translatesAutoresizingMaskIntoConstraints="NO" id="hmK-Fa-Msn">
+                            <rect key="frame" x="0.0" y="0.0" width="246" height="153.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="hmK-Fa-Msn" secondAttribute="height" multiplier="256:160" id="HDO-fd-M9L"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zI-fg-bRF">
+                            <rect key="frame" x="10" y="175" width="226" height="45.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7zI-fg-bRF" secondAttribute="height" multiplier="188:38" id="39C-Ah-zZT"/>
+                            </constraints>
+                            <state key="normal" title="立即升级" backgroundImage="橘色按钮背景">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="fineNewVersionBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="JFD-Dn-bu3"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="hmK-Fa-Msn" firstAttribute="top" secondItem="7JU-QE-dF8" secondAttribute="top" id="02H-Eu-1oE"/>
+                        <constraint firstItem="7zI-fg-bRF" firstAttribute="leading" secondItem="7JU-QE-dF8" secondAttribute="leading" constant="10" id="7Yc-VJ-MvK"/>
+                        <constraint firstAttribute="trailing" secondItem="7zI-fg-bRF" secondAttribute="trailing" constant="10" id="D9M-Bc-rjT"/>
+                        <constraint firstItem="7zI-fg-bRF" firstAttribute="centerY" secondItem="7JU-QE-dF8" secondAttribute="centerY" multiplier="1.65" id="fGO-Lo-uD6"/>
+                        <constraint firstAttribute="width" secondItem="7JU-QE-dF8" secondAttribute="height" multiplier="123:120" id="g1b-wj-cfj"/>
+                        <constraint firstAttribute="trailing" secondItem="hmK-Fa-Msn" secondAttribute="trailing" id="kwd-Q8-0Cm"/>
+                        <constraint firstItem="hmK-Fa-Msn" firstAttribute="leading" secondItem="7JU-QE-dF8" secondAttribute="leading" id="ppO-o1-K09"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="白色圈关闭按钮" translatesAutoresizingMaskIntoConstraints="NO" id="hdy-b3-wxf">
+                    <rect key="frame" x="145" y="400" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="RJv-Tr-ewM"/>
+                        <constraint firstAttribute="height" constant="30" id="pKl-U0-qub"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hdy-b3-wxf" firstAttribute="top" secondItem="7JU-QE-dF8" secondAttribute="bottom" constant="10" id="03l-WX-cbc"/>
+                <constraint firstItem="7JU-QE-dF8" firstAttribute="centerY" secondItem="wML-iA-dS8" secondAttribute="centerY" multiplier="0.95" id="2iR-Op-IG0"/>
+                <constraint firstItem="7JU-QE-dF8" firstAttribute="leading" secondItem="Jc3-9Z-u3T" secondAttribute="leading" constant="37" id="IHe-67-5FH"/>
+                <constraint firstItem="Jc3-9Z-u3T" firstAttribute="trailing" secondItem="W5z-zN-azt" secondAttribute="trailing" id="SKU-g3-DSw"/>
+                <constraint firstItem="Jc3-9Z-u3T" firstAttribute="bottom" secondItem="W5z-zN-azt" secondAttribute="bottom" id="X8S-bA-78C"/>
+                <constraint firstItem="hdy-b3-wxf" firstAttribute="centerX" secondItem="wML-iA-dS8" secondAttribute="centerX" id="ZUt-pt-d49"/>
+                <constraint firstItem="Jc3-9Z-u3T" firstAttribute="trailing" secondItem="7JU-QE-dF8" secondAttribute="trailing" constant="37" id="iy7-hb-BIl"/>
+                <constraint firstItem="W5z-zN-azt" firstAttribute="leading" secondItem="Jc3-9Z-u3T" secondAttribute="leading" id="j9L-wR-uaW"/>
+                <constraint firstItem="W5z-zN-azt" firstAttribute="top" secondItem="Jc3-9Z-u3T" secondAttribute="top" id="kU3-f9-cfK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Jc3-9Z-u3T"/>
+            <point key="canvasLocation" x="3699" y="763"/>
+        </view>
     </objects>
     <resources>
         <image name="cha" width="13" height="13"/>
@@ -608,7 +680,9 @@
         <image name="分享到微信" width="50" height="50"/>
         <image name="分享到朋友圈" width="50" height="50"/>
         <image name="提现虚线" width="67" height="6"/>
+        <image name="新版本" width="256" height="160"/>
         <image name="智能搜索view" width="210" height="108"/>
+        <image name="橘色按钮背景" width="188" height="38"/>
         <image name="白色圈关闭按钮" width="24" height="24"/>
         <image name="立即注册" width="130" height="35"/>
         <image name="跳转淘宝icon1" width="64" height="64"/>

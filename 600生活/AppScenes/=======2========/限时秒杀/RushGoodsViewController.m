@@ -33,22 +33,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.fd_prefersNavigationBarHidden = YES;
     [self setupTableview];
     [self requestTimeList];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self hiddenNavigationBarWithAnimation:animated];
-    self.fd_prefersNavigationBarHidden = YES;
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear: animated];
-    [self showNavigationBarWithAnimation:animated];
-}
 
 //设置状态栏颜色
 - (UIStatusBarStyle)preferredStatusBarStyle {

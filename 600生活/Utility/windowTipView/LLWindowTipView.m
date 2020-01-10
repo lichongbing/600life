@@ -30,6 +30,9 @@
 //上一级用户
 @property (weak, nonatomic) IBOutlet UIView *superiorUser;
 
+//发现新版本
+@property (weak, nonatomic) IBOutlet UIView *findNewVersion;
+
 
 @end
 
@@ -68,6 +71,7 @@
     [self dismiss];
 }
 
+
 - (IBAction)customerServiceRightBtnAction:(id)sender {
     if(self.customerServiceRightBtnAction){
         UIImageView* icon = [self.customerService viewWithTag:1];
@@ -83,6 +87,10 @@
 *WindowTipViewTypeGoSigin  提醒注册
 */
 - (IBAction)GoSiginBtnAction:(id)sender {
+    if(self.goSiginBtnAction){
+        self.goSiginBtnAction();
+    }
+    [self dismiss];
 }
 
 
@@ -122,12 +130,25 @@
     }
 }
 
+/**
+发现新版本
+*/
+- (IBAction)fineNewVersionBtnAction:(id)sender {
+    if(self.findNewVersionBtnAction){
+        self.findNewVersionBtnAction();
+    }
+}
+
+
+
 
 #pragma mark - helper
 -(void)show
 {
     if( [[UIApplication sharedApplication].keyWindow viewWithTag:kWindowTipViewTag]) {
-        return;
+        UIView* p = [[UIApplication sharedApplication].keyWindow viewWithTag:kWindowTipViewTag];
+        [p removeFromSuperview];
+        p = nil;
     }
     
     self.tag = kWindowTipViewTag;
@@ -178,6 +199,9 @@
     } else if (type == WindowTipViewTypeSuperiorUser){
         self.superiorUser.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
         [self addSubview:self.superiorUser];
+    } else if (type == WindowTipViewTypeNewVersion){
+        self.findNewVersion.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+        [self addSubview:self.findNewVersion];
     }
 }
 

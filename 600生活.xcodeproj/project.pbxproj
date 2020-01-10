@@ -18,8 +18,6 @@
 		8107B1D4239770640092D556 /* StoreDetailGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107B1D2239770640092D556 /* StoreDetailGoodCell.m */; };
 		8107B1D5239770640092D556 /* StoreDetailGoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8107B1D3239770640092D556 /* StoreDetailGoodCell.xib */; };
 		8107B1D9239776E50092D556 /* StroeDetailGoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107B1D8239776E50092D556 /* StroeDetailGoodModel.m */; };
-		8109AF0A23C312E90042ABD8 /* JDGoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8109AF0823C312E90042ABD8 /* JDGoodDetailViewController.m */; };
-		8109AF0B23C312E90042ABD8 /* JDGoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8109AF0923C312E90042ABD8 /* JDGoodDetailViewController.xib */; };
 		8109AF0F23C3340C0042ABD8 /* IncomeDetailSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8109AF0D23C3340C0042ABD8 /* IncomeDetailSubViewController.m */; };
 		8109AF1023C3340C0042ABD8 /* IncomeDetailSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8109AF0E23C3340C0042ABD8 /* IncomeDetailSubViewController.xib */; };
 		810BBC9223B45F9600034F95 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BBC9123B45F9600034F95 /* UINavigationController+FDFullscreenPopGesture.m */; };
@@ -28,7 +26,11 @@
 		810BBCA323B47AAD00034F95 /* IncomeRankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BBCA223B47AAD00034F95 /* IncomeRankModel.m */; };
 		810BBCA723B481F700034F95 /* IncomeRankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BBCA523B481F700034F95 /* IncomeRankTableViewCell.m */; };
 		810BBCA823B481F700034F95 /* IncomeRankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810BBCA623B481F700034F95 /* IncomeRankTableViewCell.xib */; };
-		812FCB1E23B0A2AC00AD0217 /* jcore-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 812FCB1423B0A2AC00AD0217 /* jcore-ios-2.1.8.a */; };
+		8119A86123C41AF100B7FE8F /* GoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8119A85E23C41AF000B7FE8F /* GoodDetailViewController.m */; };
+		8119A86223C41AF100B7FE8F /* GoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8119A85F23C41AF000B7FE8F /* GoodDetailViewController.xib */; };
+		8119A86623C41B7C00B7FE8F /* JDGoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8119A86423C41B7C00B7FE8F /* JDGoodDetailViewController.m */; };
+		8119A86723C41B7C00B7FE8F /* JDGoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8119A86523C41B7C00B7FE8F /* JDGoodDetailViewController.xib */; };
+		8119A86A23C42E2200B7FE8F /* JDGoodDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8119A86923C42E2200B7FE8F /* JDGoodDetailModel.m */; };
 		812FCB2423B0A3D000AD0217 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812FCB2323B0A3D000AD0217 /* CFNetwork.framework */; };
 		812FCB2623B0A3D700AD0217 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812FCB2523B0A3D700AD0217 /* CoreFoundation.framework */; };
 		812FCB2823B0A3EB00AD0217 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812FCB2723B0A3EB00AD0217 /* SystemConfiguration.framework */; };
@@ -100,6 +102,14 @@
 		814042C1239E1448003D05E1 /* ZhongHeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 814042C0239E1448003D05E1 /* ZhongHeView.m */; };
 		814042C3239E1455003D05E1 /* ZhongHeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814042C2239E1455003D05E1 /* ZhongHeView.xib */; };
 		8145299A239641BF007F380C /* FindOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81452999239641BF007F380C /* FindOrderModel.m */; };
+		81498F7923C59CDA004F33F1 /* QFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81498F6423C59CDA004F33F1 /* QFDatePickerView.m */; };
+		81498F7A23C59CDA004F33F1 /* QFTimerPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 81498F6923C59CDA004F33F1 /* QFTimerPicker.m */; };
+		81498F7B23C59CDA004F33F1 /* QFTimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81498F6B23C59CDA004F33F1 /* QFTimerUtil.m */; };
+		81498F7C23C59CDA004F33F1 /* QFTimerDataSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81498F7223C59CDA004F33F1 /* QFTimerDataSourceModel.m */; };
+		81498F7D23C59CDA004F33F1 /* QFMinuteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81498F7323C59CDA004F33F1 /* QFMinuteModel.m */; };
+		81498F7E23C59CDA004F33F1 /* QFHourModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81498F7423C59CDA004F33F1 /* QFHourModel.m */; };
+		81498F7F23C59CDA004F33F1 /* QFDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81498F7523C59CDA004F33F1 /* QFDateModel.m */; };
+		81498F8023C59CDA004F33F1 /* QFTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81498F7723C59CDA004F33F1 /* QFTimePickerView.m */; };
 		8150BFA32390AAFC0053CDBC /* DelegateConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8150BFA22390AAFC0053CDBC /* DelegateConfig.m */; };
 		8150BFA52390B1040053CDBC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8150BFA42390B1040053CDBC /* libz.tbd */; };
 		8150BFA72390B10F0053CDBC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8150BFA62390B10F0053CDBC /* libsqlite3.tbd */; };
@@ -114,8 +124,16 @@
 		815288B4239CAFC900195DBA /* UIButton+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 815288B3239CAFC900195DBA /* UIButton+ext.m */; };
 		8179BE6423BB30FF002D3714 /* JDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179BE6223BB30FF002D3714 /* JDMainViewController.m */; };
 		8179BE6523BB30FF002D3714 /* JDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8179BE6323BB30FF002D3714 /* JDMainViewController.xib */; };
-		817D413023B0AA26002E72A1 /* jpush-ios-3.2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817D412F23B0AA26002E72A1 /* jpush-ios-3.2.8.a */; };
 		818F44EA239A3CA900A5C22B /* CollectedGoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F44E9239A3CA900A5C22B /* CollectedGoodModel.m */; };
+		81918D3723C6C4D40032F185 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D2A23C6C4D40032F185 /* UIColor+PYSearchExtension.m */; };
+		81918D3823C6C4D40032F185 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D2B23C6C4D40032F185 /* PYSearchViewController.m */; };
+		81918D3923C6C4D40032F185 /* PYSearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D2C23C6C4D40032F185 /* PYSearchSuggestionViewController.m */; };
+		81918D3A23C6C4D40032F185 /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D2E23C6C4D40032F185 /* PYSearchConst.m */; };
+		81918D3B23C6C4D40032F185 /* PYSearch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 81918D2F23C6C4D40032F185 /* PYSearch.bundle */; };
+		81918D3C23C6C4D40032F185 /* NSBundle+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D3023C6C4D40032F185 /* NSBundle+PYSearchExtension.m */; };
+		81918D3D23C6C4D40032F185 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D3623C6C4D40032F185 /* UIView+PYSearchExtension.m */; };
+		81918D3F23C6D43B0032F185 /* libjpush-ios-3.2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81918D3E23C6D43B0032F185 /* libjpush-ios-3.2.8.a */; };
+		81918D4223C714440032F185 /* JDJiaDianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D4123C714440032F185 /* JDJiaDianViewController.m */; };
 		819724CB2398FB40006EEC85 /* MsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 819724CA2398FB40006EEC85 /* MsgModel.m */; };
 		819724CF23991494006EEC85 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 819724CE23991494006EEC85 /* EventManager.m */; };
 		819724D3239918F3006EEC85 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819724D1239918F3006EEC85 /* CreateEventViewController.m */; };
@@ -160,13 +178,6 @@
 		819B6757238FD8CC008244C7 /* UIColor+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B674D238FD8CC008244C7 /* UIColor+ext.m */; };
 		819B6758238FD8CC008244C7 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6750238FD8CC008244C7 /* UIViewExt.m */; };
 		819B6759238FD8CC008244C7 /* NSString+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6753238FD8CC008244C7 /* NSString+ext.m */; };
-		819B6865238FD8E8008244C7 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6763238FD8E8008244C7 /* UIColor+PYSearchExtension.m */; };
-		819B6866238FD8E8008244C7 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6764238FD8E8008244C7 /* PYSearchViewController.m */; };
-		819B6867238FD8E8008244C7 /* PYSearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6765238FD8E8008244C7 /* PYSearchSuggestionViewController.m */; };
-		819B6868238FD8E8008244C7 /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6767238FD8E8008244C7 /* PYSearchConst.m */; };
-		819B6869238FD8E8008244C7 /* PYSearch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 819B6768238FD8E8008244C7 /* PYSearch.bundle */; };
-		819B686A238FD8E8008244C7 /* NSBundle+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6769238FD8E8008244C7 /* NSBundle+PYSearchExtension.m */; };
-		819B686B238FD8E8008244C7 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B676F238FD8E8008244C7 /* UIView+PYSearchExtension.m */; };
 		819B686C238FD8E8008244C7 /* KHAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6772238FD8E8008244C7 /* KHAdView.m */; };
 		819B686D238FD8E8008244C7 /* JTCalendarSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6774238FD8E8008244C7 /* JTCalendarSettings.m */; };
 		819B686E238FD8E8008244C7 /* JTDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6775238FD8E8008244C7 /* JTDateHelper.m */; };
@@ -267,8 +278,6 @@
 		819B6A9D238FD969008244C7 /* FootMarkSimilarGoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68F2238FD969008244C7 /* FootMarkSimilarGoodTableViewCell.m */; };
 		819B6A9E238FD969008244C7 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68F4238FD969008244C7 /* MsgViewController.m */; };
 		819B6A9F238FD969008244C7 /* MsgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819B68F5238FD969008244C7 /* MsgViewController.xib */; };
-		819B6AA0238FD969008244C7 /* GoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B68F9238FD969008244C7 /* GoodDetailViewController.m */; };
-		819B6AA1238FD969008244C7 /* GoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819B68FA238FD969008244C7 /* GoodDetailViewController.xib */; };
 		819B6AA2238FD969008244C7 /* SmilarGoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6900238FD969008244C7 /* SmilarGoodModel.m */; };
 		819B6AA3238FD969008244C7 /* TodayHotGoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6901238FD969008244C7 /* TodayHotGoodModel.m */; };
 		819B6AA4238FD969008244C7 /* GoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B6902238FD969008244C7 /* GoodModel.m */; };
@@ -444,9 +453,6 @@
 		8107B1D3239770640092D556 /* StoreDetailGoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDetailGoodCell.xib; sourceTree = "<group>"; };
 		8107B1D7239776E50092D556 /* StroeDetailGoodModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StroeDetailGoodModel.h; sourceTree = "<group>"; };
 		8107B1D8239776E50092D556 /* StroeDetailGoodModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StroeDetailGoodModel.m; sourceTree = "<group>"; };
-		8109AF0723C312E90042ABD8 /* JDGoodDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDGoodDetailViewController.h; sourceTree = "<group>"; };
-		8109AF0823C312E90042ABD8 /* JDGoodDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGoodDetailViewController.m; sourceTree = "<group>"; };
-		8109AF0923C312E90042ABD8 /* JDGoodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JDGoodDetailViewController.xib; sourceTree = "<group>"; };
 		8109AF0C23C3340C0042ABD8 /* IncomeDetailSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeDetailSubViewController.h; sourceTree = "<group>"; };
 		8109AF0D23C3340C0042ABD8 /* IncomeDetailSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeDetailSubViewController.m; sourceTree = "<group>"; };
 		8109AF0E23C3340C0042ABD8 /* IncomeDetailSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeDetailSubViewController.xib; sourceTree = "<group>"; };
@@ -460,7 +466,14 @@
 		810BBCA423B481F700034F95 /* IncomeRankTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeRankTableViewCell.h; sourceTree = "<group>"; };
 		810BBCA523B481F700034F95 /* IncomeRankTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeRankTableViewCell.m; sourceTree = "<group>"; };
 		810BBCA623B481F700034F95 /* IncomeRankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeRankTableViewCell.xib; sourceTree = "<group>"; };
-		812FCB1423B0A2AC00AD0217 /* jcore-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-2.1.8.a"; sourceTree = "<group>"; };
+		8119A85E23C41AF000B7FE8F /* GoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodDetailViewController.m; sourceTree = "<group>"; };
+		8119A85F23C41AF000B7FE8F /* GoodDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodDetailViewController.xib; sourceTree = "<group>"; };
+		8119A86023C41AF000B7FE8F /* GoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodDetailViewController.h; sourceTree = "<group>"; };
+		8119A86323C41B7C00B7FE8F /* JDGoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDGoodDetailViewController.h; sourceTree = "<group>"; };
+		8119A86423C41B7C00B7FE8F /* JDGoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDGoodDetailViewController.m; sourceTree = "<group>"; };
+		8119A86523C41B7C00B7FE8F /* JDGoodDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JDGoodDetailViewController.xib; sourceTree = "<group>"; };
+		8119A86823C42E2200B7FE8F /* JDGoodDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDGoodDetailModel.h; sourceTree = "<group>"; };
+		8119A86923C42E2200B7FE8F /* JDGoodDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDGoodDetailModel.m; sourceTree = "<group>"; };
 		812FCB2323B0A3D000AD0217 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		812FCB2523B0A3D700AD0217 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		812FCB2723B0A3EB00AD0217 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -571,6 +584,22 @@
 		814042C2239E1455003D05E1 /* ZhongHeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZhongHeView.xib; sourceTree = "<group>"; };
 		81452998239641BF007F380C /* FindOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindOrderModel.h; sourceTree = "<group>"; };
 		81452999239641BF007F380C /* FindOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindOrderModel.m; sourceTree = "<group>"; };
+		81498F6423C59CDA004F33F1 /* QFDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFDatePickerView.m; sourceTree = "<group>"; };
+		81498F6523C59CDA004F33F1 /* QFDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFDatePickerView.h; sourceTree = "<group>"; };
+		81498F6823C59CDA004F33F1 /* QFTimerPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTimerPicker.h; sourceTree = "<group>"; };
+		81498F6923C59CDA004F33F1 /* QFTimerPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTimerPicker.m; sourceTree = "<group>"; };
+		81498F6B23C59CDA004F33F1 /* QFTimerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTimerUtil.m; sourceTree = "<group>"; };
+		81498F6C23C59CDA004F33F1 /* QFTimerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTimerUtil.h; sourceTree = "<group>"; };
+		81498F6E23C59CDA004F33F1 /* QFTimerDataSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTimerDataSourceModel.h; sourceTree = "<group>"; };
+		81498F6F23C59CDA004F33F1 /* QFDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFDateModel.h; sourceTree = "<group>"; };
+		81498F7023C59CDA004F33F1 /* QFHourModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFHourModel.h; sourceTree = "<group>"; };
+		81498F7123C59CDA004F33F1 /* QFMinuteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFMinuteModel.h; sourceTree = "<group>"; };
+		81498F7223C59CDA004F33F1 /* QFTimerDataSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTimerDataSourceModel.m; sourceTree = "<group>"; };
+		81498F7323C59CDA004F33F1 /* QFMinuteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFMinuteModel.m; sourceTree = "<group>"; };
+		81498F7423C59CDA004F33F1 /* QFHourModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFHourModel.m; sourceTree = "<group>"; };
+		81498F7523C59CDA004F33F1 /* QFDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFDateModel.m; sourceTree = "<group>"; };
+		81498F7723C59CDA004F33F1 /* QFTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTimePickerView.m; sourceTree = "<group>"; };
+		81498F7823C59CDA004F33F1 /* QFTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTimePickerView.h; sourceTree = "<group>"; };
 		8150BFA12390AAFC0053CDBC /* DelegateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelegateConfig.h; sourceTree = "<group>"; };
 		8150BFA22390AAFC0053CDBC /* DelegateConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelegateConfig.m; sourceTree = "<group>"; };
 		8150BFA42390B1040053CDBC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -590,10 +619,25 @@
 		8179BE6123BB30FF002D3714 /* JDMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDMainViewController.h; sourceTree = "<group>"; };
 		8179BE6223BB30FF002D3714 /* JDMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDMainViewController.m; sourceTree = "<group>"; };
 		8179BE6323BB30FF002D3714 /* JDMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JDMainViewController.xib; sourceTree = "<group>"; };
-		817D412E23B0A9F5002E72A1 /* JPUSHService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
-		817D412F23B0AA26002E72A1 /* jpush-ios-3.2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.2.8.a"; sourceTree = "<group>"; };
 		818F44E8239A3CA900A5C22B /* CollectedGoodModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectedGoodModel.h; sourceTree = "<group>"; };
 		818F44E9239A3CA900A5C22B /* CollectedGoodModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectedGoodModel.m; sourceTree = "<group>"; };
+		81918D2923C6C4D40032F185 /* NSBundle+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PYSearchExtension.h"; sourceTree = "<group>"; };
+		81918D2A23C6C4D40032F185 /* UIColor+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYSearchExtension.m"; sourceTree = "<group>"; };
+		81918D2B23C6C4D40032F185 /* PYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchViewController.m; sourceTree = "<group>"; };
+		81918D2C23C6C4D40032F185 /* PYSearchSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchSuggestionViewController.m; sourceTree = "<group>"; };
+		81918D2D23C6C4D40032F185 /* UIView+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYSearchExtension.h"; sourceTree = "<group>"; };
+		81918D2E23C6C4D40032F185 /* PYSearchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchConst.m; sourceTree = "<group>"; };
+		81918D2F23C6C4D40032F185 /* PYSearch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PYSearch.bundle; sourceTree = "<group>"; };
+		81918D3023C6C4D40032F185 /* NSBundle+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PYSearchExtension.m"; sourceTree = "<group>"; };
+		81918D3123C6C4D40032F185 /* PYSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearch.h; sourceTree = "<group>"; };
+		81918D3223C6C4D40032F185 /* PYSearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchSuggestionViewController.h; sourceTree = "<group>"; };
+		81918D3323C6C4D40032F185 /* PYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchViewController.h; sourceTree = "<group>"; };
+		81918D3423C6C4D40032F185 /* UIColor+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYSearchExtension.h"; sourceTree = "<group>"; };
+		81918D3523C6C4D40032F185 /* PYSearchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchConst.h; sourceTree = "<group>"; };
+		81918D3623C6C4D40032F185 /* UIView+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYSearchExtension.m"; sourceTree = "<group>"; };
+		81918D3E23C6D43B0032F185 /* libjpush-ios-3.2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjpush-ios-3.2.8.a"; path = "Pods/JPush/libjpush-ios-3.2.8.a"; sourceTree = "<group>"; };
+		81918D4023C714440032F185 /* JDJiaDianViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDJiaDianViewController.h; sourceTree = "<group>"; };
+		81918D4123C714440032F185 /* JDJiaDianViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDJiaDianViewController.m; sourceTree = "<group>"; };
 		819375FF23AB2A3B005580F5 /* 600生活.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "600生活.entitlements"; sourceTree = "<group>"; };
 		819724C92398FB40006EEC85 /* MsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgModel.h; sourceTree = "<group>"; };
 		819724CA2398FB40006EEC85 /* MsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgModel.m; sourceTree = "<group>"; };
@@ -679,20 +723,6 @@
 		819B6754238FD8CC008244C7 /* NSString+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ext.h"; sourceTree = "<group>"; };
 		819B675C238FD8E8008244C7 /* ARCCompile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCCompile.h; sourceTree = "<group>"; };
 		819B675D238FD8E8008244C7 /* DebugMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugMarco.h; sourceTree = "<group>"; };
-		819B6762238FD8E8008244C7 /* NSBundle+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PYSearchExtension.h"; sourceTree = "<group>"; };
-		819B6763238FD8E8008244C7 /* UIColor+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYSearchExtension.m"; sourceTree = "<group>"; };
-		819B6764238FD8E8008244C7 /* PYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchViewController.m; sourceTree = "<group>"; };
-		819B6765238FD8E8008244C7 /* PYSearchSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchSuggestionViewController.m; sourceTree = "<group>"; };
-		819B6766238FD8E8008244C7 /* UIView+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYSearchExtension.h"; sourceTree = "<group>"; };
-		819B6767238FD8E8008244C7 /* PYSearchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchConst.m; sourceTree = "<group>"; };
-		819B6768238FD8E8008244C7 /* PYSearch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PYSearch.bundle; sourceTree = "<group>"; };
-		819B6769238FD8E8008244C7 /* NSBundle+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PYSearchExtension.m"; sourceTree = "<group>"; };
-		819B676A238FD8E8008244C7 /* PYSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearch.h; sourceTree = "<group>"; };
-		819B676B238FD8E8008244C7 /* PYSearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchSuggestionViewController.h; sourceTree = "<group>"; };
-		819B676C238FD8E8008244C7 /* PYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchViewController.h; sourceTree = "<group>"; };
-		819B676D238FD8E8008244C7 /* UIColor+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYSearchExtension.h"; sourceTree = "<group>"; };
-		819B676E238FD8E8008244C7 /* PYSearchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchConst.h; sourceTree = "<group>"; };
-		819B676F238FD8E8008244C7 /* UIView+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYSearchExtension.m"; sourceTree = "<group>"; };
 		819B6771238FD8E8008244C7 /* KHAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHAdView.h; sourceTree = "<group>"; };
 		819B6772238FD8E8008244C7 /* KHAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHAdView.m; sourceTree = "<group>"; };
 		819B6774238FD8E8008244C7 /* JTCalendarSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarSettings.m; sourceTree = "<group>"; };
@@ -767,7 +797,6 @@
 		819B67C6238FD8E8008244C7 /* CZCroppingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZCroppingScrollView.h; sourceTree = "<group>"; };
 		819B67C7238FD8E8008244C7 /* CZPhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPhotoPreviewViewController.m; sourceTree = "<group>"; };
 		819B67C8238FD8E8008244C7 /* CZPhotoPickerController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CZPhotoPickerController-Prefix.pch"; sourceTree = "<group>"; };
-		819B67C9238FD8E8008244C7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		819B67CA238FD8E8008244C7 /* CZPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPhotoPickerController.h; sourceTree = "<group>"; };
 		819B67CB238FD8E8008244C7 /* CZCropPreviewOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZCropPreviewOverlayView.h; sourceTree = "<group>"; };
 		819B67CD238FD8E8008244C7 /* LunarFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarFormatter.m; sourceTree = "<group>"; };
@@ -899,9 +928,6 @@
 		819B68F4238FD969008244C7 /* MsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgViewController.m; sourceTree = "<group>"; };
 		819B68F5238FD969008244C7 /* MsgViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MsgViewController.xib; sourceTree = "<group>"; };
 		819B68F6238FD969008244C7 /* MsgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgViewController.h; sourceTree = "<group>"; };
-		819B68F9238FD969008244C7 /* GoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodDetailViewController.m; sourceTree = "<group>"; };
-		819B68FA238FD969008244C7 /* GoodDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodDetailViewController.xib; sourceTree = "<group>"; };
-		819B68FB238FD969008244C7 /* GoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodDetailViewController.h; sourceTree = "<group>"; };
 		819B68FD238FD969008244C7 /* TodayHotGoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayHotGoodModel.h; sourceTree = "<group>"; };
 		819B68FE238FD969008244C7 /* SmilarGoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmilarGoodModel.h; sourceTree = "<group>"; };
 		819B68FF238FD969008244C7 /* GoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodModel.h; sourceTree = "<group>"; };
@@ -1165,14 +1191,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				812FCB3223B0A43700AD0217 /* libresolv.tbd in Frameworks */,
 				812FCB3023B0A42D00AD0217 /* UserNotifications.framework in Frameworks */,
+				812FCB3223B0A43700AD0217 /* libresolv.tbd in Frameworks */,
 				812FCB2E23B0A42600AD0217 /* AdSupport.framework in Frameworks */,
 				8150BFA52390B1040053CDBC /* libz.tbd in Frameworks */,
 				81E04EA523A1CE0A00D2D6AD /* Security.framework in Frameworks */,
-				817D413023B0AA26002E72A1 /* jpush-ios-3.2.8.a in Frameworks */,
 				812FCB2C23B0A40400AD0217 /* UIKit.framework in Frameworks */,
 				812FCB2A23B0A3FA00AD0217 /* Foundation.framework in Frameworks */,
+				81918D3F23C6D43B0032F185 /* libjpush-ios-3.2.8.a in Frameworks */,
 				81E04EA723A1CE1300D2D6AD /* CoreGraphics.framework in Frameworks */,
 				812FCB2823B0A3EB00AD0217 /* SystemConfiguration.framework in Frameworks */,
 				8150BFAB2390B1220053CDBC /* CoreTelephony.framework in Frameworks */,
@@ -1181,7 +1207,6 @@
 				81E04EA923A1CE1A00D2D6AD /* WebKit.framework in Frameworks */,
 				8107855D23ACB77700C911A1 /* libWeChatSDK.a in Frameworks */,
 				8150BFAD2390B12C0053CDBC /* CoreMotion.framework in Frameworks */,
-				812FCB1E23B0A2AC00AD0217 /* jcore-ios-2.1.8.a in Frameworks */,
 				8150BFA92390B1160053CDBC /* libc++.tbd in Frameworks */,
 				8150BFA72390B10F0053CDBC /* libsqlite3.tbd in Frameworks */,
 			);
@@ -1201,6 +1226,7 @@
 				812FCB2723B0A3EB00AD0217 /* SystemConfiguration.framework */,
 				812FCB2523B0A3D700AD0217 /* CoreFoundation.framework */,
 				812FCB2323B0A3D000AD0217 /* CFNetwork.framework */,
+				81918D3E23C6D43B0032F185 /* libjpush-ios-3.2.8.a */,
 				81E04EA823A1CE1A00D2D6AD /* WebKit.framework */,
 				81E04EA623A1CE1300D2D6AD /* CoreGraphics.framework */,
 				81E04EA423A1CE0A00D2D6AD /* Security.framework */,
@@ -1288,24 +1314,6 @@
 				810BBCA223B47AAD00034F95 /* IncomeRankModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		812FCB0E23B0A2AC00AD0217 /* jpush-ios-3.2.8-release */ = {
-			isa = PBXGroup;
-			children = (
-				812FCB0F23B0A2AC00AD0217 /* Lib */,
-			);
-			path = "jpush-ios-3.2.8-release";
-			sourceTree = "<group>";
-		};
-		812FCB0F23B0A2AC00AD0217 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				817D412F23B0AA26002E72A1 /* jpush-ios-3.2.8.a */,
-				817D412E23B0A9F5002E72A1 /* JPUSHService.h */,
-				812FCB1423B0A2AC00AD0217 /* jcore-ios-2.1.8.a */,
-			);
-			path = Lib;
 			sourceTree = "<group>";
 		};
 		81369F70239BED18007271EA /* UIViewController */ = {
@@ -1512,6 +1520,67 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		81498F6323C59CDA004F33F1 /* QFDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				81498F6423C59CDA004F33F1 /* QFDatePickerView.m */,
+				81498F6523C59CDA004F33F1 /* QFDatePickerView.h */,
+			);
+			path = QFDatePickerView;
+			sourceTree = "<group>";
+		};
+		81498F6623C59CDA004F33F1 /* QFTimerPicker */ = {
+			isa = PBXGroup;
+			children = (
+				81498F6723C59CDA004F33F1 /* QFTimerPicker */,
+				81498F6A23C59CDA004F33F1 /* Uitils */,
+				81498F6D23C59CDA004F33F1 /* Model */,
+			);
+			path = QFTimerPicker;
+			sourceTree = "<group>";
+		};
+		81498F6723C59CDA004F33F1 /* QFTimerPicker */ = {
+			isa = PBXGroup;
+			children = (
+				81498F6823C59CDA004F33F1 /* QFTimerPicker.h */,
+				81498F6923C59CDA004F33F1 /* QFTimerPicker.m */,
+			);
+			path = QFTimerPicker;
+			sourceTree = "<group>";
+		};
+		81498F6A23C59CDA004F33F1 /* Uitils */ = {
+			isa = PBXGroup;
+			children = (
+				81498F6B23C59CDA004F33F1 /* QFTimerUtil.m */,
+				81498F6C23C59CDA004F33F1 /* QFTimerUtil.h */,
+			);
+			path = Uitils;
+			sourceTree = "<group>";
+		};
+		81498F6D23C59CDA004F33F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81498F6E23C59CDA004F33F1 /* QFTimerDataSourceModel.h */,
+				81498F6F23C59CDA004F33F1 /* QFDateModel.h */,
+				81498F7023C59CDA004F33F1 /* QFHourModel.h */,
+				81498F7123C59CDA004F33F1 /* QFMinuteModel.h */,
+				81498F7223C59CDA004F33F1 /* QFTimerDataSourceModel.m */,
+				81498F7323C59CDA004F33F1 /* QFMinuteModel.m */,
+				81498F7423C59CDA004F33F1 /* QFHourModel.m */,
+				81498F7523C59CDA004F33F1 /* QFDateModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81498F7623C59CDA004F33F1 /* QFTimePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				81498F7723C59CDA004F33F1 /* QFTimePickerView.m */,
+				81498F7823C59CDA004F33F1 /* QFTimePickerView.h */,
+			);
+			path = QFTimePickerView;
+			sourceTree = "<group>";
+		};
 		8150BFB62390B36E0053CDBC /* NSNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -1561,9 +1630,11 @@
 				81F5392823BDC338006A602E /* JDCategorySubViewController.h */,
 				81F5392923BDC338006A602E /* JDCategorySubViewController.m */,
 				81F5392A23BDC338006A602E /* JDCategorySubViewController.xib */,
-				8109AF0723C312E90042ABD8 /* JDGoodDetailViewController.h */,
-				8109AF0823C312E90042ABD8 /* JDGoodDetailViewController.m */,
-				8109AF0923C312E90042ABD8 /* JDGoodDetailViewController.xib */,
+				81918D4023C714440032F185 /* JDJiaDianViewController.h */,
+				81918D4123C714440032F185 /* JDJiaDianViewController.m */,
+				8119A86323C41B7C00B7FE8F /* JDGoodDetailViewController.h */,
+				8119A86423C41B7C00B7FE8F /* JDGoodDetailViewController.m */,
+				8119A86523C41B7C00B7FE8F /* JDGoodDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1592,8 +1663,31 @@
 				81F5392E23BDC568006A602E /* JDCategoryChild.m */,
 				81F5393323BDD741006A602E /* JDGood.h */,
 				81F5393423BDD741006A602E /* JDGood.m */,
+				8119A86823C42E2200B7FE8F /* JDGoodDetailModel.h */,
+				8119A86923C42E2200B7FE8F /* JDGoodDetailModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		81918D2823C6C4D40032F185 /* PYSearch */ = {
+			isa = PBXGroup;
+			children = (
+				81918D2923C6C4D40032F185 /* NSBundle+PYSearchExtension.h */,
+				81918D2A23C6C4D40032F185 /* UIColor+PYSearchExtension.m */,
+				81918D2B23C6C4D40032F185 /* PYSearchViewController.m */,
+				81918D2C23C6C4D40032F185 /* PYSearchSuggestionViewController.m */,
+				81918D2D23C6C4D40032F185 /* UIView+PYSearchExtension.h */,
+				81918D2E23C6C4D40032F185 /* PYSearchConst.m */,
+				81918D2F23C6C4D40032F185 /* PYSearch.bundle */,
+				81918D3023C6C4D40032F185 /* NSBundle+PYSearchExtension.m */,
+				81918D3123C6C4D40032F185 /* PYSearch.h */,
+				81918D3223C6C4D40032F185 /* PYSearchSuggestionViewController.h */,
+				81918D3323C6C4D40032F185 /* PYSearchViewController.h */,
+				81918D3423C6C4D40032F185 /* UIColor+PYSearchExtension.h */,
+				81918D3523C6C4D40032F185 /* PYSearchConst.h */,
+				81918D3623C6C4D40032F185 /* UIView+PYSearchExtension.m */,
+			);
+			path = PYSearch;
 			sourceTree = "<group>";
 		};
 		819724CC23991482006EEC85 /* EventManager */ = {
@@ -1905,12 +1999,14 @@
 		819B675A238FD8E8008244C7 /* ThirdParts */ = {
 			isa = PBXGroup;
 			children = (
+				81918D2823C6C4D40032F185 /* PYSearch */,
+				81498F6323C59CDA004F33F1 /* QFDatePickerView */,
+				81498F7623C59CDA004F33F1 /* QFTimePickerView */,
+				81498F6623C59CDA004F33F1 /* QFTimerPicker */,
 				810BBC8F23B45F9600034F95 /* FDFullscreenPopGesture */,
-				812FCB0E23B0A2AC00AD0217 /* jpush-ios-3.2.8-release */,
 				81E04E9C23A1CD3F00D2D6AD /* WeChatSDK1.8.6.1 */,
 				819B675B238FD8E8008244C7 /* DebugMacro */,
 				819B675E238FD8E8008244C7 /* MJRefresh */,
-				819B6761238FD8E8008244C7 /* PYSearch */,
 				819B6770238FD8E8008244C7 /* KHAdView */,
 				819B6773238FD8E8008244C7 /* JTCalendar */,
 				819B6797238FD8E8008244C7 /* SPButton */,
@@ -1944,27 +2040,6 @@
 			children = (
 			);
 			path = MJRefresh;
-			sourceTree = "<group>";
-		};
-		819B6761238FD8E8008244C7 /* PYSearch */ = {
-			isa = PBXGroup;
-			children = (
-				819B6762238FD8E8008244C7 /* NSBundle+PYSearchExtension.h */,
-				819B6763238FD8E8008244C7 /* UIColor+PYSearchExtension.m */,
-				819B6764238FD8E8008244C7 /* PYSearchViewController.m */,
-				819B6765238FD8E8008244C7 /* PYSearchSuggestionViewController.m */,
-				819B6766238FD8E8008244C7 /* UIView+PYSearchExtension.h */,
-				819B6767238FD8E8008244C7 /* PYSearchConst.m */,
-				819B6768238FD8E8008244C7 /* PYSearch.bundle */,
-				819B6769238FD8E8008244C7 /* NSBundle+PYSearchExtension.m */,
-				819B676A238FD8E8008244C7 /* PYSearch.h */,
-				819B676B238FD8E8008244C7 /* PYSearchSuggestionViewController.h */,
-				819B676C238FD8E8008244C7 /* PYSearchViewController.h */,
-				819B676D238FD8E8008244C7 /* UIColor+PYSearchExtension.h */,
-				819B676E238FD8E8008244C7 /* PYSearchConst.h */,
-				819B676F238FD8E8008244C7 /* UIView+PYSearchExtension.m */,
-			);
-			path = PYSearch;
 			sourceTree = "<group>";
 		};
 		819B6770238FD8E8008244C7 /* KHAdView */ = {
@@ -2591,9 +2666,9 @@
 		819B68F8238FD969008244C7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				819B68FB238FD969008244C7 /* GoodDetailViewController.h */,
-				819B68F9238FD969008244C7 /* GoodDetailViewController.m */,
-				819B68FA238FD969008244C7 /* GoodDetailViewController.xib */,
+				8119A86023C41AF000B7FE8F /* GoodDetailViewController.h */,
+				8119A85E23C41AF000B7FE8F /* GoodDetailViewController.m */,
+				8119A85F23C41AF000B7FE8F /* GoodDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3604,7 +3679,6 @@
 			knownRegions = (
 				en,
 				Base,
-				fr,
 			);
 			mainGroup = 819B6682238FD58A008244C7;
 			productRefGroup = 819B668C238FD58A008244C7 /* Products */;
@@ -3624,7 +3698,6 @@
 				819B6A8C238FD969008244C7 /* WebViewViewController.xib in Resources */,
 				819B6B49238FD969008244C7 /* MyOrderTableViewCell.xib in Resources */,
 				81F7CB0A23BF38B60012E8F0 /* JDGoodTableViewCell.xib in Resources */,
-				819B6AA1238FD969008244C7 /* GoodDetailViewController.xib in Resources */,
 				8140425E239DE50B003D05E1 /* NinePointNineSubViewController.xib in Resources */,
 				819B6AEC238FD969008244C7 /* CenterSettingViewController.xib in Resources */,
 				81B6A5BB23A1190F00F486FA /* BackTopView.xib in Resources */,
@@ -3640,6 +3713,7 @@
 				8107B1D5239770640092D556 /* StoreDetailGoodCell.xib in Resources */,
 				8140427B239DE50B003D05E1 /* ExcluseveTableViewCell.xib in Resources */,
 				819B6AFE238FD969008244C7 /* GoodStoresSubViewController.xib in Resources */,
+				81918D3B23C6C4D40032F185 /* PYSearch.bundle in Resources */,
 				819B6888238FD8E8008244C7 /* CZPhotoPreviewViewController.xib in Resources */,
 				8107855E23ACB77700C911A1 /* README.txt in Resources */,
 				81404282239DE50B003D05E1 /* WanJuanTableViewCell.xib in Resources */,
@@ -3652,6 +3726,7 @@
 				819B6AB4238FD969008244C7 /* CheckOrderViewController.xib in Resources */,
 				81F5393A23BDDDCE006A602E /* JDTwoItemGoodTableViewCell.xib in Resources */,
 				81404276239DE50B003D05E1 /* RushGoodTableViewCell.xib in Resources */,
+				8119A86723C41B7C00B7FE8F /* JDGoodDetailViewController.xib in Resources */,
 				814042B5239DE6F6003D05E1 /* TreasureGoodViewController.xib in Resources */,
 				814042C3239E1455003D05E1 /* ZhongHeView.xib in Resources */,
 				819B6ADE238FD969008244C7 /* SearchedGoodTableViewCell.xib in Resources */,
@@ -3679,7 +3754,6 @@
 				81404273239DE50B003D05E1 /* GoodDealViewController.xib in Resources */,
 				8150BFB42390B18A0053CDBC /* mtopsdk_configuration.plist in Resources */,
 				819B6A95238FD969008244C7 /* AboutUsViewController.xib in Resources */,
-				819B6869238FD8E8008244C7 /* PYSearch.bundle in Resources */,
 				8140426B239DE50B003D05E1 /* SuperGoodTableViewCell.xib in Resources */,
 				819B6AB0238FD969008244C7 /* ViewController4.xib in Resources */,
 				81404265239DE50B003D05E1 /* GaoYongTableViewCell.xib in Resources */,
@@ -3713,8 +3787,8 @@
 				81F7CB0F23BF39FA0012E8F0 /* JDOneGoodListViewController.xib in Resources */,
 				8140428F239DE5A2003D05E1 /* HotRankTableViewCell.xib in Resources */,
 				819B6A92238FD969008244C7 /* FootMarkTableViewCell.xib in Resources */,
-				8109AF0B23C312E90042ABD8 /* JDGoodDetailViewController.xib in Resources */,
 				8179BE6523BB30FF002D3714 /* JDMainViewController.xib in Resources */,
+				8119A86223C41AF100B7FE8F /* GoodDetailViewController.xib in Resources */,
 				819B6A99238FD969008244C7 /* IncomeDetailTableViewCell.xib in Resources */,
 				814042A8239DE677003D05E1 /* HotRecommendViewController.xib in Resources */,
 				81B717AE23953C0C000B1408 /* TeachViewController.xib in Resources */,
@@ -3820,7 +3894,6 @@
 				819B6ADD238FD969008244C7 /* SearchedGoodModel.m in Sources */,
 				819B68AE238FD8E8008244C7 /* LCActionSheetCell.m in Sources */,
 				819B6AD1238FD969008244C7 /* HomePageRushGoodsModel.m in Sources */,
-				819B6868238FD8E8008244C7 /* PYSearchConst.m in Sources */,
 				819B6AD4238FD969008244C7 /* HomePageModel.m in Sources */,
 				819B68B5238FD8E8008244C7 /* NSArray+MASAdditions.m in Sources */,
 				819B68A2238FD8E8008244C7 /* MKQRCode.m in Sources */,
@@ -3828,6 +3901,7 @@
 				819724D3239918F3006EEC85 /* CreateEventViewController.m in Sources */,
 				819724CB2398FB40006EEC85 /* MsgModel.m in Sources */,
 				819B6B43238FD969008244C7 /* StoreDetailViewController.m in Sources */,
+				8119A86A23C42E2200B7FE8F /* JDGoodDetailModel.m in Sources */,
 				819B6899238FD8E8008244C7 /* FSCalendarConstants.m in Sources */,
 				819B6B45238FD969008244C7 /* OrderListViewController.m in Sources */,
 				819B68B6238FD8E8008244C7 /* View+MASAdditions.m in Sources */,
@@ -3835,15 +3909,17 @@
 				819B6B48238FD969008244C7 /* MyOrderModel.m in Sources */,
 				819FEBAB239943EF005D1651 /* FAQModel.m in Sources */,
 				81F5392623BDC31A006A602E /* JDHomeController.m in Sources */,
+				81498F8023C59CDA004F33F1 /* QFTimePickerView.m in Sources */,
 				819B6702238FD84E008244C7 /* LLTableViewController.m in Sources */,
 				819B6A8A238FD969008244C7 /* BindAlipayViewController.m in Sources */,
+				81498F7A23C59CDA004F33F1 /* QFTimerPicker.m in Sources */,
 				81FCE1B423B5E71C003C3D69 /* MBProgressHUD+ext.m in Sources */,
 				819B68AC238FD8E8008244C7 /* JSONAPI.m in Sources */,
 				81D652CB2394DEE9006C4D22 /* CashoutModel.m in Sources */,
 				8107B1D9239776E50092D556 /* StroeDetailGoodModel.m in Sources */,
+				81498F7C23C59CDA004F33F1 /* QFTimerDataSourceModel.m in Sources */,
 				819B6AE6238FD969008244C7 /* GoodSelectToolBar.m in Sources */,
 				81FCE1B323B5E71C003C3D69 /* HudCustomImageView.m in Sources */,
-				819B6867238FD8E8008244C7 /* PYSearchSuggestionViewController.m in Sources */,
 				819B6AAD238FD969008244C7 /* FAQViewController.m in Sources */,
 				819B68A4238FD8E8008244C7 /* UncaughtExceptionHandler.m in Sources */,
 				819B688C238FD8E8008244C7 /* CZCropPreviewOverlayView.m in Sources */,
@@ -3877,6 +3953,7 @@
 				819B673C238FD8AA008244C7 /* LLWindowTipView.m in Sources */,
 				819B687E238FD8E8008244C7 /* STPickerArea.m in Sources */,
 				819B6AC7238FD969008244C7 /* HomePageBestGoodModel.m in Sources */,
+				81498F7F23C59CDA004F33F1 /* QFDateModel.m in Sources */,
 				819B6A9A238FD969008244C7 /* FootMarkSimilarGoodsViewController.m in Sources */,
 				81AAB0352396300A0062BEEA /* UserPrivccyViewController.m in Sources */,
 				819B6AD3238FD969008244C7 /* HomePageRushGoodsListItem.m in Sources */,
@@ -3893,8 +3970,9 @@
 				819B6ADB238FD969008244C7 /* SearchResultListController.m in Sources */,
 				819B673B238FD8AA008244C7 /* GuidenceViewController.m in Sources */,
 				819B6736238FD8AA008244C7 /* TeachAVPlayerViewController.m in Sources */,
-				8109AF0A23C312E90042ABD8 /* JDGoodDetailViewController.m in Sources */,
+				8119A86123C41AF100B7FE8F /* GoodDetailViewController.m in Sources */,
 				814042BC239DE709003D05E1 /* TreasureGoodTableViewCell.m in Sources */,
+				8119A86623C41B7C00B7FE8F /* JDGoodDetailViewController.m in Sources */,
 				81404266239DE50B003D05E1 /* GaoYongTableViewCell.m in Sources */,
 				819B68BC238FD8E8008244C7 /* LCActionSheet.m in Sources */,
 				819B6738238FD8AA008244C7 /* Utility.m in Sources */,
@@ -3906,10 +3984,8 @@
 				819B6AED238FD969008244C7 /* FansListViewController.m in Sources */,
 				819B6879238FD8E8008244C7 /* SPButton.m in Sources */,
 				819B6AE1238FD969008244C7 /* CategoryTypeViewController.m in Sources */,
-				819B6AA0238FD969008244C7 /* GoodDetailViewController.m in Sources */,
 				819B6AA7238FD969008244C7 /* GoodDetailHotGoodCell.m in Sources */,
 				819B6A9B238FD969008244C7 /* SimilarGoodModel.m in Sources */,
-				819B6865238FD8E8008244C7 /* UIColor+PYSearchExtension.m in Sources */,
 				8140426F239DE50B003D05E1 /* GoodDealTableViewCell.m in Sources */,
 				819B68A8238FD8E8008244C7 /* JSONModel.m in Sources */,
 				819AD14C23960594002BBDB9 /* ScanQRCodeViewController.m in Sources */,
@@ -3932,7 +4008,10 @@
 				819B6706238FD84E008244C7 /* LLBaseView.m in Sources */,
 				819B6A9D238FD969008244C7 /* FootMarkSimilarGoodTableViewCell.m in Sources */,
 				819B6889238FD8E8008244C7 /* CZCroppingScrollView.m in Sources */,
+				81918D3A23C6C4D40032F185 /* PYSearchConst.m in Sources */,
+				81498F7B23C59CDA004F33F1 /* QFTimerUtil.m in Sources */,
 				819B6AC2238FD969008244C7 /* ChangePhone1ViewController.m in Sources */,
+				81918D4223C714440032F185 /* JDJiaDianViewController.m in Sources */,
 				819B6AAC238FD969008244C7 /* FAQCellHeightHeler.m in Sources */,
 				81404299239DE62A003D05E1 /* BestSelectMainViewController.m in Sources */,
 				819724CF23991494006EEC85 /* EventManager.m in Sources */,
@@ -3948,6 +4027,7 @@
 				81404290239DE5A2003D05E1 /* HotRankTableViewCell.m in Sources */,
 				81FCE1B823B5EAA4003C3D69 /* LLRefreshGifHeader.m in Sources */,
 				819B6AEF238FD969008244C7 /* FanTableViewCell.m in Sources */,
+				81918D3C23C6C4D40032F185 /* NSBundle+PYSearchExtension.m in Sources */,
 				819B6886238FD8E8008244C7 /* YBPopupMenuPath.m in Sources */,
 				819B6705238FD84E008244C7 /* LLViewController.m in Sources */,
 				819B689D238FD8E8008244C7 /* FSCalendarAppearance.m in Sources */,
@@ -3959,12 +4039,12 @@
 				81404279239DE50B003D05E1 /* ExcluseveTableViewCell.m in Sources */,
 				81404277239DE50B003D05E1 /* RushGoodModel.m in Sources */,
 				819B6AE8238FD969008244C7 /* CHangeNameViewController.m in Sources */,
-				819B686A238FD8E8008244C7 /* NSBundle+PYSearchExtension.m in Sources */,
 				81EE887823A723DE002CE26F /* SuperiorUserInfo.m in Sources */,
 				819B688E238FD8E8008244C7 /* LunarFormatter.m in Sources */,
 				819B689F238FD8E8008244C7 /* MBProgressHUD.m in Sources */,
 				815288B0239CA84800195DBA /* UIImageView+ext.m in Sources */,
 				819B688D238FD8E8008244C7 /* CZPhotoPreviewViewController.m in Sources */,
+				81498F7923C59CDA004F33F1 /* QFDatePickerView.m in Sources */,
 				819B68B3238FD8E8008244C7 /* MASConstraintMaker.m in Sources */,
 				819B6876238FD8E8008244C7 /* JTCalendarDayView.m in Sources */,
 				81F5392B23BDC338006A602E /* JDCategorySubViewController.m in Sources */,
@@ -3972,9 +4052,7 @@
 				819B687D238FD8E8008244C7 /* STPickerDate.m in Sources */,
 				8179BE6423BB30FF002D3714 /* JDMainViewController.m in Sources */,
 				819B6B55238FDACF008244C7 /* LLUser.m in Sources */,
-				819B6866238FD8E8008244C7 /* PYSearchViewController.m in Sources */,
 				81A25BB323A0C3A500DFE598 /* CategoryGoodListViewController.m in Sources */,
-				819B686B238FD8E8008244C7 /* UIView+PYSearchExtension.m in Sources */,
 				8140427C239DE50B003D05E1 /* WelFareGoodModel.m in Sources */,
 				819B6AFF238FD969008244C7 /* GoodStoresSubViewController.m in Sources */,
 				819B6AC1238FD969008244C7 /* ChangePhone2ViewController.m in Sources */,
@@ -4014,6 +4092,7 @@
 				819B6A96238FD969008244C7 /* IncomeDetailsMainViewController.m in Sources */,
 				819B6740238FD8AA008244C7 /* MD5Utils.m in Sources */,
 				819B6873238FD8E8008244C7 /* JTCalendarWeekDayView.m in Sources */,
+				81498F7D23C59CDA004F33F1 /* QFMinuteModel.m in Sources */,
 				819B6704238FD84E008244C7 /* LLTabBarController.m in Sources */,
 				819724D92399388E006EEC85 /* FeedBackViewController.m in Sources */,
 				819B68B7238FD8E8008244C7 /* MASConstraint.m in Sources */,
@@ -4040,6 +4119,7 @@
 				819B68B2238FD8E8008244C7 /* MASCompositeConstraint.m in Sources */,
 				81D652CF239515B4006C4D22 /* IncomeModel.m in Sources */,
 				819B6758238FD8CC008244C7 /* UIViewExt.m in Sources */,
+				81918D3723C6C4D40032F185 /* UIColor+PYSearchExtension.m in Sources */,
 				819B68A6238FD8E8008244C7 /* JSONValueTransformer.m in Sources */,
 				819B6AB2238FD969008244C7 /* IncomeViewController.m in Sources */,
 				81D652D323951C5C006C4D22 /* IncomeItemModel.m in Sources */,
@@ -4049,6 +4129,7 @@
 				819B686D238FD8E8008244C7 /* JTCalendarSettings.m in Sources */,
 				819B6AC5238FD969008244C7 /* ViewController1.m in Sources */,
 				819B6AB6238FD969008244C7 /* WithDrawHistoryViewController.m in Sources */,
+				81918D3923C6C4D40032F185 /* PYSearchSuggestionViewController.m in Sources */,
 				819B6ACA238FD969008244C7 /* HomePageRushGoods2ItemModel.m in Sources */,
 				819B6895238FD8E8008244C7 /* FSCalendarCollectionViewLayout.m in Sources */,
 				819B6AE2238FD969008244C7 /* SelectedGoodModel.m in Sources */,
@@ -4058,6 +4139,7 @@
 				819B6B04238FD969008244C7 /* GoodStoreItem3Cell.m in Sources */,
 				819B6AD7238FD969008244C7 /* HomePageRushGoodTableViewCell.m in Sources */,
 				818F44EA239A3CA900A5C22B /* CollectedGoodModel.m in Sources */,
+				81918D3D23C6C4D40032F185 /* UIView+PYSearchExtension.m in Sources */,
 				819FEBAE23994443005D1651 /* QuestionModel.m in Sources */,
 				819B6756238FD8CC008244C7 /* UILabel+ext.m in Sources */,
 				810489E3239751EB00B2C087 /* GoodStoreItem1Cell.m in Sources */,
@@ -4073,6 +4155,7 @@
 				819B6AF7238FD969008244C7 /* MyCollectionsViewController.m in Sources */,
 				81F5392F23BDC568006A602E /* JDCategoryChild.m in Sources */,
 				819B68B1238FD8E8008244C7 /* ViewController+MASAdditions.m in Sources */,
+				81918D3823C6C4D40032F185 /* PYSearchViewController.m in Sources */,
 				8140426C239DE50B003D05E1 /* SuperGood.m in Sources */,
 				819B6AB1238FD969008244C7 /* ViewController4.m in Sources */,
 				819B688B238FD8E8008244C7 /* CZPhotoPickerController.m in Sources */,
@@ -4083,6 +4166,7 @@
 				819B6B07238FD969008244C7 /* InviteNewUserViewController.m in Sources */,
 				819B6887238FD8E8008244C7 /* YBPopupMenu.m in Sources */,
 				819B686C238FD8E8008244C7 /* KHAdView.m in Sources */,
+				81498F7E23C59CDA004F33F1 /* QFHourModel.m in Sources */,
 				819B6755238FD8CC008244C7 /* UIImage+ext.m in Sources */,
 				819B6892238FD8E8008244C7 /* FSCalendarCell.m in Sources */,
 				819B6891238FD8E8008244C7 /* FSCalendarDelegationFactory.m in Sources */,
@@ -4104,7 +4188,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				819B67C2238FD8E8008244C7 /* en */,
-				819B67C9238FD8E8008244C7 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -4232,7 +4315,7 @@
 				CODE_SIGN_ENTITLEMENTS = "600生活/600生活.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.2.7;
+				CURRENT_PROJECT_VERSION = 1.0.2.12;
 				DEVELOPMENT_TEAM = 247M82J5AW;
 				GCC_PREFIX_HEADER = "/Users/ios/Documents/600生活/600生活/600生活PrefixHeader.pch";
 				INFOPLIST_FILE = "600生活/Info.plist";
@@ -4245,7 +4328,9 @@
 					"$(PROJECT_DIR)/600生活/AppFrame/ThirdParts/BlocksKit",
 					"$(PROJECT_DIR)/600生活/ThirdParts/WeChatSDK1.8.6.1",
 					"$(PROJECT_DIR)/600生活/ThirdParts/jpush-ios-3.2.8-release/Lib",
+					"$(PROJECT_DIR)/Pods/JPush",
 				);
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -4349,7 +4434,7 @@
 				CODE_SIGN_ENTITLEMENTS = "600生活/600生活.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.2.7;
+				CURRENT_PROJECT_VERSION = 1.0.2.12;
 				DEVELOPMENT_TEAM = 247M82J5AW;
 				GCC_PREFIX_HEADER = "/Users/ios/Documents/600生活/600生活/600生活PrefixHeader.pch";
 				INFOPLIST_FILE = "600生活/Info.plist";
@@ -4362,7 +4447,9 @@
 					"$(PROJECT_DIR)/600生活/AppFrame/ThirdParts/BlocksKit",
 					"$(PROJECT_DIR)/600生活/ThirdParts/WeChatSDK1.8.6.1",
 					"$(PROJECT_DIR)/600生活/ThirdParts/jpush-ios-3.2.8-release/Lib",
+					"$(PROJECT_DIR)/Pods/JPush",
 				);
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

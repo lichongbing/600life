@@ -34,6 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.fd_prefersNavigationBarHidden = YES;
+    
     _navBarHeightConstraint.constant = kNavigationBarHeight;
     _navBarTopConstraint.constant = -kStatusBarHeight;
     
@@ -42,15 +44,18 @@
     NSArray *hotSeaches = @[@"家居", @"潮流", @"彩妆",@"饮料",@"酒水",@"食品", @"女装", @"母婴",@"儿童玩具", @"护理", @"手机",@"户外", @"配饰",@"数码家电"];
     
     self.pyVC = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"请输入优惠券" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
-       
     }];
-    
-    CGFloat searchTitleViewHeight = 103+ kNavigationBarHeight;
+    CGFloat searchTitleViewHeight = 103+ kNavigationBarHeight;//navbar和三步总高度
     CGFloat pvViewHeight = kScreenHeight - searchTitleViewHeight;
+    self.pyVC.view.frame = CGRectMake(0, searchTitleViewHeight + 5, kScreenWidth, pvViewHeight);
+    self.pyVC.view.width = self.view.width; //必须加上这一句 pyVC.view.width 才会正常 原因未知
+    [self addChildViewController:self.pyVC];
+    [self.view addSubview:self.pyVC.view];
    
     self.pyVC.delegate = (id)self;
     self.pyVC.searchHistoryStyle = PYSearchHistoryStyleNormalTag;
     [self.pyVC setSearchBar:_searchBar];
+     _searchBar.delegate = (id)self;
     UITextField *searchTextField = nil;
     if(kIsIOS13()){
         searchTextField = _searchBar.searchTextField;
@@ -58,31 +63,8 @@
         searchTextField = [_searchBar valueForKey:@"_searchField"];
     }
     searchTextField.font = [UIFont systemFontOfSize:15];
-    _searchBar.delegate = (id)self;
-    self.pyVC.view.frame = CGRectMake(0, searchTitleViewHeight + 5, kScreenWidth, pvViewHeight);
-    [self addChildViewController:self.pyVC];
-    [self.view addSubview:self.pyVC.view];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear: animated];
-    [self hiddenNavigationBarWithAnimation:animated];
-    self.fd_prefersNavigationBarHidden = YES;
-}
-
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self showNavigationBarWithAnimation:animated];
-}
-
--(void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-
-}
 
 -(UIStatusBarStyle)preferredStatusBarStyle {
     if(kIsIOS13()){

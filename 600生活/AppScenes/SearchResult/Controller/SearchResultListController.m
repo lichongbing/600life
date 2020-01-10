@@ -45,6 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.fd_prefersNavigationBarHidden = YES;
     
     self.view.width = kScreenWidth;
     
@@ -65,8 +66,7 @@
     goodSelectToolBar.tag = 288;
     goodSelectToolBar.top = goodSelectToolBar.left = 0;
     goodSelectToolBar.width = kScreenWidth;
-//    
-//    self.tableview.estimatedRowHeight = 140;
+
     self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableview.delegate = (id)self;
     self.tableview.dataSource = (id)self;
@@ -86,14 +86,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self hiddenNavigationBarWithAnimation:animated];
-    self.fd_prefersNavigationBarHidden = YES;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self showNavigationBarWithAnimation:animated];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle {

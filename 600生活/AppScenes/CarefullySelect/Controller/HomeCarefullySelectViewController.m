@@ -121,17 +121,6 @@
 {
     if(self = [super init]){
         self.homePageModel = [[HomePageModel alloc]init];
-        
-//        //测试
-//        NSString* urlStr = @"https://www.lbshapp.com/app/";//通用链接
-//        NSURL* url = [NSURL URLWithString:urlStr];
-//        [[UIApplication sharedApplication]openURL:url options:@{} completionHandler:^(BOOL success) {
-//            if(success){
-//                NSLog(@"通用链接成功");
-//            }else{
-//                 NSLog(@"通用链接失败");
-//            }
-//        }];
     }
     return self;
 }
@@ -390,6 +379,7 @@
     if(!self.homePageModel.rush_goods) {
         NSLog(@"HomePageRushGoodsModel转换失败");
     }
+    
     if(self.homePageModel.rush_goods){
         //添加list
         NSArray* list = rush_goods[@"list"];
@@ -720,6 +710,12 @@
             [wself deInitGlobalQueueTimer];
             [wself initTimer];
         });
+    }else{
+        __weak HomeCarefullySelectViewController* wself = self;
+        //当前线程为主线程，timer操作放到子线程中去
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [wself deInitGlobalQueueTimer];
+        });
     }
     
 
@@ -733,6 +729,7 @@
     }
     
     UIScrollView* scrollView = [UIScrollView new];
+    scrollView.showsHorizontalScrollIndicator = NO;
     [self.rushBgView addSubview:scrollView];
     scrollView.tag = 288;
     scrollView.backgroundColor = self.rushBgView.backgroundColor;
@@ -975,7 +972,7 @@
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
-    if(activityId == 10){//拼多多
+    if(activityId == 12){//京东
 //        [[LLHudHelper sharedInstance]tipMessage:@"600生活即将接入拼多多" delay:1.5];
         JDMainViewController* vc = [JDMainViewController new];
         vc.hidesBottomBarWhenPushed = YES;
@@ -1338,6 +1335,7 @@
 {
     //action在子线程中
     if (self.timerCounter > 0) {
+        self.timerCounter--;
         __weak HomeCarefullySelectViewController* wself = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDate* endDate = [NSDate dateWithTimeIntervalSince1970:wself.homePageModel.rush_goods.end_time.doubleValue];

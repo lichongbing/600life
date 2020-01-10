@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,14 +35,8 @@
                         <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创建日 03-05 14:48" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb5-VI-wxl">
-                        <rect key="frame" x="12" y="74" width="94.5" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结算日 03-05 14:48" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Se-CG-I3I">
-                        <rect key="frame" x="116.5" y="74" width="94.5" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结算日 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb5-VI-wxl">
+                        <rect key="frame" x="12" y="74" width="34" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -83,15 +77,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="31i-TE-b5f" firstAttribute="centerX" secondItem="eF4-F4-Fx5" secondAttribute="centerX" id="1Tt-CH-haU"/>
-                    <constraint firstItem="3Se-CG-I3I" firstAttribute="leading" secondItem="bb5-VI-wxl" secondAttribute="trailing" constant="10" id="5Wh-ft-DWx"/>
                     <constraint firstItem="gnF-Gj-5gk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="5xd-Zm-ezo"/>
                     <constraint firstItem="aZf-3X-xiQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="73A-US-n88"/>
                     <constraint firstAttribute="trailing" secondItem="NdQ-7v-MvT" secondAttribute="trailing" id="BFV-dJ-ITq"/>
                     <constraint firstItem="gnF-Gj-5gk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aZf-3X-xiQ" secondAttribute="trailing" constant="10" id="K42-2q-c9Y"/>
                     <constraint firstItem="NdQ-7v-MvT" firstAttribute="top" secondItem="bb5-VI-wxl" secondAttribute="bottom" constant="13" id="KUx-hH-fUg"/>
-                    <constraint firstItem="3Se-CG-I3I" firstAttribute="centerY" secondItem="bb5-VI-wxl" secondAttribute="centerY" id="KWz-5Z-jgQ"/>
                     <constraint firstItem="med-bn-Alk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="O36-vX-blE"/>
                     <constraint firstItem="eF4-F4-Fx5" firstAttribute="centerY" secondItem="med-bn-Alk" secondAttribute="centerY" id="PVW-Yt-CIF"/>
+                    <constraint firstItem="Mj7-Lr-zdu" firstAttribute="centerY" secondItem="bb5-VI-wxl" secondAttribute="centerY" id="SKn-hh-pWn"/>
                     <constraint firstAttribute="trailing" secondItem="gnF-Gj-5gk" secondAttribute="trailing" constant="12" id="W5A-4T-GmD"/>
                     <constraint firstItem="eF4-F4-Fx5" firstAttribute="leading" secondItem="med-bn-Alk" secondAttribute="trailing" constant="10" id="XXi-rV-QCG"/>
                     <constraint firstItem="bb5-VI-wxl" firstAttribute="top" secondItem="med-bn-Alk" secondAttribute="bottom" constant="15" id="ZsN-Qo-jEf"/>
@@ -101,7 +94,6 @@
                     <constraint firstAttribute="bottom" secondItem="NdQ-7v-MvT" secondAttribute="bottom" id="hvs-NO-fMY"/>
                     <constraint firstAttribute="trailing" secondItem="Mj7-Lr-zdu" secondAttribute="trailing" constant="12" id="iZL-PZ-ssQ"/>
                     <constraint firstItem="31i-TE-b5f" firstAttribute="centerY" secondItem="eF4-F4-Fx5" secondAttribute="centerY" id="qEj-4m-K58"/>
-                    <constraint firstItem="Mj7-Lr-zdu" firstAttribute="centerY" secondItem="3Se-CG-I3I" secondAttribute="centerY" id="uMQ-Ez-9bn"/>
                     <constraint firstItem="bb5-VI-wxl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="x5y-pb-nJq"/>
                 </constraints>
             </tableViewCellContentView>
@@ -111,7 +103,6 @@
                 <outlet property="moneyLab" destination="gnF-Gj-5gk" id="CHT-j5-Tqe"/>
                 <outlet property="orderNoLab" destination="med-bn-Alk" id="mCj-KL-ICH"/>
                 <outlet property="showCopyLab" destination="eF4-F4-Fx5" id="OCd-9Y-TO4"/>
-                <outlet property="successTimeLab" destination="3Se-CG-I3I" id="rhi-mR-Ehc"/>
                 <outlet property="titleLab" destination="aZf-3X-xiQ" id="ooC-0H-UJc"/>
                 <outlet property="userMoneyLab" destination="Mj7-Lr-zdu" id="khF-tQ-MRk"/>
             </connections>

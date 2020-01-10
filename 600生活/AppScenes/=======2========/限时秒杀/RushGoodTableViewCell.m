@@ -28,6 +28,7 @@
     [super awakeFromNib];
     // Initialization code
     self.incomeLab.backgroundColor = [UIColor colorWithHexString:@"#F54556"];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

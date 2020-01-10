@@ -19,7 +19,7 @@
 #define kDefaultImgName @"kDefaultImgName"            //默认图片名
 #define kMasterRushedOrderId  @"kMasterRushedOrderId"  //导师抢到了订单
 #define kIsTodaySenderMakeFreeOrder @"kIsTodaySenderMakeFreeOrder" //今天是否下过了免费单
-
+#define kFirstNoticeNotifacation   @"kFirstNoticeNotifacation"    //是否提醒开启通知
 
 #pragma mark - ViewTag
 

@@ -6,15 +6,14 @@
 //  Copyright © 2019 com.luohaifang. All rights reserved.
 //
 
-
 #ifndef LLNetWorkingMarco_h
 #define LLNetWorkingMarco_h
 
 #define kTimeOutInterval 10.0
 
 //#define kFirstUrl @"http://192.168.3.5/"     //本地测试服
-#define kFirstUrl @"https://test.lbshapp.com/"  //测试服
-//#define kFirstUrl @"https://api.lbshapp.com/"    //正式服
+//#define kFirstUrl @"https://test.lbshapp.com/"  //测试服
+#define kFirstUrl @"https://api.lbshapp.com/"    //正式服
 
 #define kBaseUrl kFirstUrl
 
@@ -44,6 +43,9 @@
 
 //退出登录
 //#define kLogOut @"/sso/userLogout"
+
+
+#define kCHeckVersion @"api/public/version"
 
 
 /**********************************主页******************************************/
@@ -140,7 +142,7 @@
 
 
 /**
- http头加上 " XX-Device-Type"  字段和 "XX-Token"字段  其中XX-Token 为下面参数
+ http头加上 "XX-Device-Type"  字段和 "XX-Token"字段  其中XX-Token 为下面参数
  mobile
  android
  iphone

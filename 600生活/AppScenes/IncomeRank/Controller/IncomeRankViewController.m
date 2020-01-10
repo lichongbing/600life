@@ -38,7 +38,7 @@
     self.tableview.backgroundColor = [UIColor clearColor];
     self.tableview.width = kScreenWidth - 15 * 2;
     self.tableview.left = 15;
-    self.tableview.top = self.scrollView.height * 0.4 + self.tableHeaderView.height - 5;
+    self.tableview.top = self.timeLab.bottom + 40;
     self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight - self.tableview.top - 15;
     
     UIView* footer = [UIView new];

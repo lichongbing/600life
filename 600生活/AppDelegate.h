@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WXApi.h"//微信分享
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property(nonatomic,strong)UIWindow* window;
 

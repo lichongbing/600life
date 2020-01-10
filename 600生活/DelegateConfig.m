@@ -13,13 +13,16 @@
 #import "WXApi.h"
 
 
+@interface DelegateConfig()<JPUSHRegisterDelegate>
+
+@end
+
 @implementation DelegateConfig
 
 +(DelegateConfig*_Nonnull)sharedConfig
 {
     static DelegateConfig* config = nil;
-    
-    
+
     static dispatch_once_t once;
     dispatch_once(&once, ^{
         config = [[DelegateConfig alloc]init];
@@ -27,7 +30,7 @@
     return config;
 }
 
--(void)configAppDatas
+-(void)configAppDatasWithLaunchOptions:(NSDictionary *)launchOptions
 {
     //监控网络
     [self monitoringNetwork];
@@ -39,9 +42,8 @@
     [self configAliBaiChuan];
     //配置微信sdk
     [self configWeChatSDK];
-    
     //激光推送
-    [self configJPush];
+    [self configJPushWithLaunchOptions:launchOptions];
 }
 
 //监控网络
@@ -107,24 +109,48 @@
 //配置微信sdk
 -(void)configWeChatSDK
 {
-//    //必须以 /结尾
-//     BOOL flag = [WXApi registerApp:@"wxb2efb7a9872c79fd" universalLink:@"https://www.lbshapp.com/app/"];
-//    NSLog(@"微信sdk注册%@",flag ? @"成功" : @"失败");
+    //必须以 /结尾
+    
+    //  @"https://www.lbshapp.com/app/"    以前可用的
+     BOOL flag = [WXApi registerApp:@"wxb2efb7a9872c79fd" universalLink:@"https://www.lbshapp.com/"];
+    NSLog(@"微信sdk注册%@",flag ? @"成功" : @"失败");
 }
-
 
 
 //配置激光推送
--(void)configJPush
+-(void)configJPushWithLaunchOptions:(NSDictionary *)launchOptions
 {
-    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
-    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound|JPAuthorizationOptionProvidesAppNotificationSettings;
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-      // 可以添加自定义 categories
-      // NSSet<UNNotificationCategory *> *categories for iOS10 or later
-      // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
+   JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    
+    if(!kIsIOS12beBelow){//高于ios12
+        entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound|JPAuthorizationOptionProvidesAppNotificationSettings;
+    }else{
+        entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     }
-    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    
+    id pDelegate = kAppDelegate;
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:pDelegate];
+    
+    NSString* appKey = @"f7f8e5d63d78ea332d88f83e";
+    NSString* channel = @"Publish channel";
+    BOOL isProduction = NO;
+    [JPUSHService setupWithOption:launchOptions appKey:appKey
+                          channel:channel
+                 apsForProduction:isProduction
+            advertisingIdentifier:nil];
+    
+    [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
+        if(resCode == 0){
+            NSLog(@"激光推送registrationID获取成功：%@",registrationID);
+        }
+        else{
+            NSLog(@"激光推送registrationID获取失败，code：%d",resCode);
+        }
+    }];
 }
+
+#pragma mark - 通知权限引导
+
+
 
 @end

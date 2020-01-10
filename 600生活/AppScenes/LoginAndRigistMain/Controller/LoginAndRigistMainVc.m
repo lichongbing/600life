@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *getCodeBtn; //获取验证码按钮
 
 @property (weak, nonatomic) IBOutlet UIButton *agreenBtn; //同意按钮
+@property (weak, nonatomic) IBOutlet UIButton *readInfoBtn; //阅读信息按钮
 
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn; //登陆按钮
 @property (weak, nonatomic) IBOutlet UIView *infoBgView;
@@ -76,23 +77,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.fd_prefersNavigationBarHidden = YES;
+    
+    //backItem设置
     if(self.ifHiddenBackBtn){
         self.backBtn.hidden = YES;
     }
+    
+    //无论是否有backitem全部禁止返回手势
+    [self enablePopGesture];
     [self setupUI];
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void)enablePopGesture
 {
-    [super viewWillAppear:animated];
-    [self hiddenNavigationBarWithAnimation:animated];
-    self.fd_prefersNavigationBarHidden = YES;
+    UIPanGestureRecognizer* pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureAction)];
+    [self.view addGestureRecognizer:pan];
 }
 
--(void)viewWillDisappear:(BOOL)animated
+-(void)panGestureAction
 {
-    [super viewWillDisappear:animated];
-    [self showNavigationBarWithAnimation:animated];
+    
 }
 
 -(void)setupUI
@@ -108,6 +113,19 @@
     self.getCodeBtn.layer.borderWidth = 1;
     self.getCodeBtn.layer.borderColor = kAppRedColor.CGColor;
     self.getCodeBtn.layer.cornerRadius = 18;
+    
+    NSString* fullStr = self.readInfoBtn.titleLabel.text;
+    NSString* sub1Str = @"《用户协议》";
+    NSString* sub2Str = @"《隐私政策》";
+    NSRange rangeAll = NSMakeRange(0, fullStr.length);
+    NSRange range1 = [fullStr rangeOfString:sub1Str];
+    NSRange range2 = [fullStr rangeOfString:sub2Str];
+    NSMutableAttributedString* mutAttrStr = [[NSMutableAttributedString alloc]initWithString:fullStr];
+    UIColor* normalTextColor = [UIColor colorWithHexString:@"292929"];
+    [mutAttrStr addAttribute:NSForegroundColorAttributeName value:normalTextColor range:rangeAll];
+    [mutAttrStr addAttribute:NSForegroundColorAttributeName value:RGB(38, 90, 247) range:range1];
+    [mutAttrStr addAttribute:NSForegroundColorAttributeName value:RGB(38, 90, 247) range:range2];
+    [self.readInfoBtn setAttributedTitle:mutAttrStr forState:UIControlStateNormal];
     
     self.loginBtn.layer.borderWidth = 1;
     self.loginBtn.layer.borderColor = kAppBackGroundColor.CGColor;
@@ -335,6 +353,8 @@
             wself.getCodeBtn.enabled = NO;
             [wself.getCodeBtn setTitle:[NSString stringWithFormat:@"%d秒",s_timerCounter] forState:UIControlStateNormal];
             wself.getCodeBtn.backgroundColor = [UIColor lightGrayColor];
+            [wself.getCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            wself.getCodeBtn.layer.borderColor = [UIColor clearColor].CGColor;
             s_timerCounter--;
         });
     } else if (s_timerCounter == 0) {
@@ -345,6 +365,8 @@
             wself.getCodeBtn.enabled = YES;
             [wself.getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
             wself.getCodeBtn.backgroundColor = [UIColor whiteColor];
+            [wself.getCodeBtn setTitleColor:kAppRedColor forState:UIControlStateNormal];
+            wself.getCodeBtn.layer.borderColor = kAppRedColor.CGColor;
         });
     }
 }

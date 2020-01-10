@@ -12,14 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IncomeItemModel : JSONModel
 
-@property (nonatomic,copy) NSNumber *tk_paid_time;  //支付时间
-@property (nonatomic,copy) NSNumber *id;
-@property (nonatomic,copy) NSString *trade_id;
-@property (nonatomic,copy) NSNumber *tk_create_time;  //创建时间
 @property (nonatomic,copy) NSString *pay_price;
+@property (nonatomic,copy) NSNumber *id;
 @property (nonatomic,copy) NSString *earnings;
 @property (nonatomic,copy) NSString *item_title;
-@property (nonatomic,copy) NSNumber *tk_receipt_time;
+@property (nonatomic,copy) NSString *trade_id;
+@property (nonatomic,copy) NSNumber *create_time; //创建时间
 
 @end
 

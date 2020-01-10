@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 //震动反馈
 -(void)impactLight;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

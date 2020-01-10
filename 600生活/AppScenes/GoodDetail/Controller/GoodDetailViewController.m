@@ -102,6 +102,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.fd_prefersNavigationBarHidden = YES;
+    
     // Do any additional setup after loading the view from its nib.
     
     __weak GoodDetailViewController* wself = self;
@@ -132,18 +135,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self hiddenNavigationBarWithAnimation:animated];
-    self.fd_prefersNavigationBarHidden = YES;
     
     //检查是app否变活跃 绑定淘宝之后回调
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(appDidBecomeActiveNofificationAction:) name:kAppDidBecomeActiveNofification object:nil];
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self showNavigationBarWithAnimation:animated];
-}
 
 -(void)viewWillLayoutSubviews
 {

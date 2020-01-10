@@ -255,7 +255,7 @@
 //处理网络错误
 -(void)handleNetError
 {
-    
+    NSLog(@"网络异常");
 }
 
 //辅助函数 打印token和userID
@@ -263,6 +263,7 @@
 {
     NSLog(@"当前用户token是:%@",[_manager.requestSerializer valueForHTTPHeaderField:@"XX-Token"]);
     NSLog(@"当前用户id是:%@",[LLUserManager shareManager].currentUser.id);
+    NSLog(@"当前Device-Type是:%@",[_manager.requestSerializer valueForHTTPHeaderField:@"XX-Device-Type"]);
 }
 
 

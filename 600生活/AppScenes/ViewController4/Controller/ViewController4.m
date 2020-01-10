@@ -28,6 +28,7 @@
 #import "IncomeRankViewController.h"  //收益排行
 #import "InviteCodeViewController.h" //填写邀请码
 #import "LoginAndRigistMainVc.h"  //登录
+#import "PYSearchViewController.h"
 
 @interface ViewController4 ()
 @property (strong, nonatomic) IBOutlet UIView *contentView;
@@ -61,14 +62,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.fd_prefersNavigationBarHidden = YES;
     [self setupUI];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self hiddenNavigationBarWithAnimation:animated];
     
     if([LLUserManager shareManager].currentUser == nil){
         __weak ViewController4* wself = self;
@@ -84,11 +84,6 @@
     [Utility shakeToShow:self.incomeRankBtn];
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-     [self showNavigationBar];
-}
 
 -(void)setupUI
 {

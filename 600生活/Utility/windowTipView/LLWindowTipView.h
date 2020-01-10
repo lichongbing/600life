@@ -16,7 +16,8 @@ typedef NS_ENUM(int, WindowTipViewType) {
     WindowTipViewTypeAISearch,   //智能搜索
     WindowTipViewTypeShare,      //分享
     WindowTipViewTypeTaoBao,     //跳转淘宝
-    WindowTipViewTypeSuperiorUser//上级用户
+    WindowTipViewTypeSuperiorUser,//上级用户
+    WindowTipViewTypeNewVersion   //发现新版本
 };
 
 
@@ -49,6 +50,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///上级用户
 @property(nonatomic,strong)SuperiorUserInfo* superiorUserInfo; //上级信息
+
+///发现新版本
+@property (nonatomic,strong) void (^findNewVersionBtnAction)(void);
+
+
+///提醒登录
+@property (nonatomic,strong) void (^goSiginBtnAction)(void);
 
 @end
 

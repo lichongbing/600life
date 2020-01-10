@@ -50,7 +50,7 @@
     
     self.title = self.categoryName;
     
-    _goodSelectToolBar = [[GoodSelectToolBar alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+    _goodSelectToolBar = [[GoodSelectToolBar alloc]initWithGoodSelectToolBarType:GoodSelectToolBarTypeDefault];
     _goodSelectToolBar.top = 0;
     [self.view addSubview:_goodSelectToolBar];
     _goodSelectToolBar.delegate = self;

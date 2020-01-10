@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(DelegateConfig*_Nonnull)sharedConfig;
 
--(void)configAppDatas;
+-(void)configAppDatasWithLaunchOptions:(NSDictionary *)launchOptions;
 
 @end
 

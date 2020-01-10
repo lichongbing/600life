@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 
 
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 # source 'https://github.com/aliyun/aliyun-specs.git'
 # source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
 
@@ -21,7 +21,7 @@ pod 'MJRefresh'
 pod 'IQKeyboardManager'
 pod 'FMDB'
 pod 'SPPageMenu', '~> 3.5.0'
-
+#pod 'PYSearch'
 pod 'SDWebImage'
 #pod 'SDWebImage/GIF'
 
@@ -35,12 +35,15 @@ pod 'SDWebImage'
  pod 'BCUserTrack','5.2.0.11-appkeys'
  pod 'UTDID','1.1.0.16'
  pod 'AlipaySDK',  '2.0.0-bc'
+ 
+ #激光推送
+ pod 'JPush'
 
 #pod 'JSONModel'
 
 #TZScrollViewPopGesture使得scrollView的手势和系统的返回手势并存
 pod 'TZScrollViewPopGesture'
-pod 'PYSearch'
+
 
 
 end

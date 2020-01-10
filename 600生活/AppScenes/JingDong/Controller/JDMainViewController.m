@@ -12,7 +12,8 @@
 #import "JDHomeController.h"  //京东精选
 #import "JDCategorySubViewController.h"  //京东分类
 #import "SPPageMenu.h"
-
+#import "JDJiaDianViewController.h"   //京东家电
+#import "UINavigationController+TZPopGesture.h" //tz_addPopGestureToView 系统的侧滑返回的scorllView的滑动并存
 
 @interface JDMainViewController ()<UIScrollViewDelegate,SPPageMenuDelegate>
 
@@ -22,7 +23,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *navView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *navViewHeightCons;
 
 @property (weak, nonatomic) IBOutlet UIView *redBgView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -60,26 +60,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.fd_prefersNavigationBarHidden = YES;
     // Do any additional setup after loading the view from its nib.
     
     [self setupUI];
-    
+    [self tz_addPopGestureToView:self.scrollView];
     //获取京东分类数据
     [self requestJDMenuDatas];
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self hiddenNavigationBarWithAnimation:animated];
-    self.fd_prefersNavigationBarHidden = YES;
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-//   [self showNavigationBarWithAnimation:animated];
-    [self showNavigationBar];
 }
 
 //设置状态栏颜色
@@ -113,12 +101,15 @@
     self.bannerImageViewHeight = self.bannerImageViewWide * 291 / 713 ;
     self.bannerImageViewTop = self.bannerImageViewCenterY - self.bannerImageViewHeight*0.5;
     _bannerImageView.frame = CGRectMake(self.bannerImageViewLeft, self.bannerImageViewTop, self.bannerImageViewWide, self.bannerImageViewHeight);
+    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bannerTapAction)];
+    _bannerImageView.userInteractionEnabled = YES;
+    [_bannerImageView addGestureRecognizer:tap];
+    
     
     self.contentView.width = kScreenWidth;
     self.contentView.left = 0;
     self.contentView.top = -kStatusBarHeight;
     [self.scrollView addSubview:self.contentView];
-//    _navViewHeightCons.constant = kNavigationBarHeight;
     
     _spBgViewTopCons.constant = _bannerImageView.height * 0.5;
     _spBgViewHeightCons.constant = kScreenHeight;
@@ -283,6 +274,19 @@
 }
 
 - (IBAction)searchBtnAction:(id)sender {
+}
+
+-(void)bannerTapAction
+{
+    for(int i = 0; i < self.jdCategorys.count; i++) {
+        JDCategoryModel* jdCategoryModel = [self.jdCategorys objectAtIndex:i];
+        if(jdCategoryModel.id.integerValue == 4){//京东家电
+            JDJiaDianViewController* vc = [[JDJiaDianViewController alloc]initWithJDCategoryModel:jdCategoryModel];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            return;
+        }
+    }
 }
 
 #pragma mark - SPPageMenu的代理方法

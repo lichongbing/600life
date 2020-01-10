@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.fd_prefersNavigationBarHidden = YES;
     _navTitleView.width = kScreenWidth;
     _navTitleView.height = kNavigationBarHeight;
     [self.view addSubview:_navTitleView];
@@ -34,17 +34,6 @@
     [self.view addSubview:self.categoryMainController.view];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self hiddenNavigationBarWithAnimation:animated];
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self showNavigationBarWithAnimation:animated];
-}
 
 #pragma mark - control action
 

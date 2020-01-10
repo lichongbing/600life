@@ -8,10 +8,14 @@
 
 #import "JDCategorySubViewController.h"
 #import "JDTwoItemGoodTableViewCell.h"
+#import "JDGoodDetailViewController.h"
+#import "BackTopView.h"//返回顶部
 
-@interface JDCategorySubViewController ()
+@interface JDCategorySubViewController ()<UIScrollViewDelegate>
 
 @property(nonatomic,strong)JDCategoryModel*jdCategoryModel;
+
+@property(nonatomic,strong) BackTopView* backTopView; //返回顶部
 
 @end
 
@@ -43,6 +47,7 @@
     self.tableview.width = kScreenWidth;
     self.tableview.height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight - _superVCViewBannerImageViewHeight;
 
+    [self addBackToTopView];
     [self addMJRefresh];
 }
 
@@ -181,7 +186,53 @@
     NSArray* item = mutArr[indexPath.row];
     
     [cell fullDataWithLeftModel:item.firstObject rightModel:item.lastObject];
+    
+    cell.jdTwoItemOneGoodClickedCallback = ^(JDGood * _Nonnull jdGood) {
+        __weak JDCategorySubViewController* wself = self;
+        JDGoodDetailViewController* vc = [[JDGoodDetailViewController alloc]initWithItem_id:jdGood.item_id.toString];
+        vc.hidesBottomBarWhenPushed = YES;
+        [wself.navigationController pushViewController:vc animated:YES];
+    };
     return cell;
+}
+
+#pragma mark - scrollView delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int currentPostion = scrollView.contentOffset.y;
+    
+    if(currentPostion > scrollView.height * 2){
+        if(_backTopView.hidden == YES){
+            _backTopView.hidden = NO;
+        }
+        
+    }else{
+        if(_backTopView.hidden == NO){
+            _backTopView.hidden = YES;
+        }
+    }
+}
+
+#pragma mark - helper
+#pragma mark - 此处有回调
+-(void)addBackToTopView
+{
+    _backTopView = [[BackTopView alloc]init];
+    [self.view bringSubviewToFront:_backTopView];
+    _backTopView.right = kScreenWidth - 20 ;
+//    _backTopView.bottom = self.view.height * 0.8;
+    CGFloat height = kScreenHeight - kNavigationBarHeight - kIPhoneXHomeIndicatorHeight - self.superVCViewBannerImageViewHeight - 40;
+    _backTopView.top = height * 0.8;
+
+    [self.view addSubview:_backTopView];
+
+    __weak JDCategorySubViewController* wself = self;
+    _backTopView.backTopViewClickedCallBack = ^{
+        __strong JDCategorySubViewController* sself = wself;
+           [UIView animateWithDuration:0.3 animations:^{
+               sself.tableview.contentOffset = CGPointMake(0, 0);
+           }];
+    };
 }
 
 -(void)addMJRefresh
@@ -201,5 +252,7 @@
         [wself impactLight];
     }];
 }
+
+
 
 @end

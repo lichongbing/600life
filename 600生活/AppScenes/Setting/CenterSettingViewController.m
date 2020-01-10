@@ -381,6 +381,7 @@
     [[LLUserManager shareManager]insertOrUpdateCurrentUser:currentUser];
     
     LoginAndRigistMainVc* vc = [[LoginAndRigistMainVc alloc]initWithNoBackItem];
+    
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

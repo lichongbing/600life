@@ -8,9 +8,11 @@
 
 #import "IncomeDetailsMainViewController.h"
 #import "IncomeDetailTableViewCell.h"
-#import "LeeDatePickerView.h"
+//#import "LeeDatePickerView.h"
+#import "QFDatePickerView.h"
 #import "IncomeItemModel.h"
 #import "IncomeDetailSubViewController.h"
+#import "UINavigationController+TZPopGesture.h" //tz_addPopGestureToView 系统的侧滑返回的scorllView的滑动并存
 
 @interface IncomeDetailsMainViewController ()<UIScrollViewDelegate>
 
@@ -51,6 +53,7 @@
     self.headerDesLab.text = [NSString stringWithFormat:@"%@月25日到账",dateStr];
     
     [self setupSubVCs];
+    [self tz_addPopGestureToView:self.scrollView];
 }
 
 
@@ -103,17 +106,15 @@
 -(void)rightItemAction
 {
     __weak IncomeDetailsMainViewController* wself= self;
-    [LeeDatePickerView showLeeDatePickerViewWithStyle:LeeDatePickerViewStyle_Single formatterStyle:LeeDatePickerViewDateFormatterStyle_yMd block:^(NSArray<NSDate *> *dateArray) {
-        NSDate* date = dateArray.firstObject;
-        NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-        [formatter setDateFormat:@"YYYY-MM"];
-        NSString* timeStr = [formatter stringFromDate:date];
+    
+    QFDatePickerView *qfDatePickerView = [[QFDatePickerView alloc]initDatePackerWithResponse:^(NSString *timeStr) {
         wself.pageIndex = 1;
         wself.selectTimeStr = timeStr;
         self.headerDateLab.text = [NSString stringWithFormat:@"日期：%@",timeStr];
         wself.list1VC.time = timeStr;
         wself.list2VC.time = timeStr;
     }];
+    [qfDatePickerView show];
 }
 
 -(void)topBtnMoveToLeft

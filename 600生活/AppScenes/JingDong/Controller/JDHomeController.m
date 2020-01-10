@@ -255,7 +255,7 @@
                   return;
               }
               
-              JDGoodDetailViewController* vc = [[JDGoodDetailViewController alloc]init];
+              JDGoodDetailViewController* vc = [[JDGoodDetailViewController alloc]initWithItem_id:jdGood.item_id.toString];
               vc.hidesBottomBarWhenPushed = YES;
               [wself.navigationController pushViewController:vc animated:YES];
           }

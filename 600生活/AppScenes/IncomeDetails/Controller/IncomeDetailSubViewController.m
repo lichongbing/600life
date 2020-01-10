@@ -58,11 +58,7 @@
         [param setValue:time forKey:@"time"];
     }
      
-    [self GetWithUrlStr:kFullUrl(kEarningList) param:param showHud:YES resCache:^(id  _Nullable cacheData) {
-        if(kSuccessCache){
-            [self handleEarningList:pageIndex datas:cacheData[@"data"]];
-        }
-    } success:^(id  _Nullable res) {
+    [self GetWithUrlStr:kFullUrl(kEarningList) param:param showHud:YES resCache:nil success:^(id  _Nullable res) {
         if(kSuccessRes){
             [self handleEarningList:pageIndex datas:res[@"data"]];
         }
@@ -95,9 +91,6 @@
         } else if(self.pageIndex > 1){ //尾部加载
             [self.datasource addObjectsFromArray:tempArray];
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [wself.tableview reloadData];
-        });
     } else { //无数据
         self.pageIndex--; // 此时的pageIndex 取不到数据 应该-1
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -107,6 +100,10 @@
         });
     }
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+       [wself.tableview reloadData];
+    });
+    
     if(self.datasource.count > 0){
         [Utility dismissTipViewOn:self.tableview];
     }else{
@@ -114,6 +111,14 @@
         NSString* str = self.type == 0 ? @"没有个人收益明细哟!" : @"没有推广收益明细哟!";
         [Utility showTipViewOn:self.tableview type:0 iconName:@"tipview无浏览记录" msg:str];
     }
+}
+
+-(void)setTime:(NSString *)time
+{
+    _time = time;
+    self.datasource = [NSMutableArray new];
+    self.pageIndex = 1;
+    [self requestEarningList:self.pageIndex time:time];
 }
 
 #pragma mark - tableview delegate
@@ -125,7 +130,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     IncomeDetailTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"IncomeDetailTableViewCell" forIndexPath:indexPath];
-    [cell fullData:self.datasource[indexPath.row]];
+    if(self.datasource.count > 0){
+        [cell fullData:self.datasource[indexPath.row]];
+    }
     return cell;
 }
 

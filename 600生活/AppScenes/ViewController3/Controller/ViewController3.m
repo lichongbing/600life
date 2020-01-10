@@ -27,15 +27,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.fd_prefersNavigationBarHidden = YES;
+    
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor clearColor];
     _navBarTopCons.constant = kStatusBarHeight;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self hiddenNavigationBarWithAnimation:animated];
     if(self.navigationController.viewControllers.count == 1){
         self.backBtn.hidden = YES;
     }
@@ -43,12 +46,6 @@
     if(!self.categorys){
         [self requestBrandCategorys];
     }
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self showNavigationBarWithAnimation:animated];
 }
 
 

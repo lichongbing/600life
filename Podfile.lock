@@ -24,6 +24,9 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (6.5.3)
+  - JCore (2.1.8)
+  - JPush (3.2.8):
+    - JCore (< 3.0.0, >= 2.0.0)
   - MJRefresh (3.2.0)
   - mtopSDK (3.0.0.4)
   - PGNetworkHelper (2.0.1):
@@ -47,6 +50,7 @@ DEPENDENCIES:
   - BCUserTrack (= 5.2.0.11-appkeys)
   - FMDB
   - IQKeyboardManager
+  - JPush
   - MJRefresh
   - mtopSDK (= 3.0.0.4)
   - PGNetworkHelper (>= 2.0)
@@ -70,6 +74,8 @@ SPEC REPOS:
     - AFNetworking
     - FMDB
     - IQKeyboardManager
+    - JCore
+    - JPush
     - MJRefresh
     - PGNetworkHelper
     - PINCache
@@ -86,6 +92,8 @@ SPEC CHECKSUMS:
   BCUserTrack: f267dfb52a6e67603c33668f2e9384ee01b68a88
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
+  JCore: a7f1dead960d77a97717c73ea8b0aa5b33706491
+  JPush: 8ce888d6dedfa417e90c8b6bc87405a16ce2e699
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   mtopSDK: bf447d4361b0199790e2a2829a1cc0299df71716
   PGNetworkHelper: 829dfea7c1d4b26c4473696147201d56e0c2b136
@@ -96,6 +104,6 @@ SPEC CHECKSUMS:
   TZScrollViewPopGesture: d36355038259e89372a1f4a2db7e9ca675de2278
   UTDID: c28855683c5ea2e77e597cb14609328f7d470d6e
 
-PODFILE CHECKSUM: 4bf015efdae2300ac63f4103daf83033319a560b
+PODFILE CHECKSUM: 7a3a5beeec5fbc24dcb22b228ca473ec5defea9f
 
 COCOAPODS: 1.8.4

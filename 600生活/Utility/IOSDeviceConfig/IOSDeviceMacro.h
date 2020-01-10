@@ -38,4 +38,6 @@
 //低于ios13的版本
 #define kIsIOS13beBelow ([[UIDevice currentDevice].systemVersion doubleValue] < 13.0)
 
+//低于ios12的版本
+#define kIsIOS12beBelow ([[UIDevice currentDevice].systemVersion doubleValue] < 12.0)
 #endif /* IOSDeviceMacro_h */

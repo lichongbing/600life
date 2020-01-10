@@ -10,6 +10,7 @@
 #import "SPPageMenu.h"
 #import "JDOneGoodListViewController.h"
 
+#import <UINavigationController+TZPopGesture.h>
 @interface JDTeSeMainViewController ()
 
 @property(nonatomic,assign)int index;
@@ -41,6 +42,7 @@
     
     self.titleNames = @[@"     好券商品     ",@"     9.9包邮     ",@"     品牌好货     "];
     [self setupPageMenusAndChildVcs];
+    [self tz_addPopGestureToView:self.scrollView];
 }
 
 #pragma mark - UI
