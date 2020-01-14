@@ -124,6 +124,7 @@
 		815288B4239CAFC900195DBA /* UIButton+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 815288B3239CAFC900195DBA /* UIButton+ext.m */; };
 		8179BE6423BB30FF002D3714 /* JDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179BE6223BB30FF002D3714 /* JDMainViewController.m */; };
 		8179BE6523BB30FF002D3714 /* JDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8179BE6323BB30FF002D3714 /* JDMainViewController.xib */; };
+		818E673D23C874D4000FEB56 /* TSShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 818E673B23C874D4000FEB56 /* TSShareHelper.m */; };
 		818F44EA239A3CA900A5C22B /* CollectedGoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F44E9239A3CA900A5C22B /* CollectedGoodModel.m */; };
 		81918D3723C6C4D40032F185 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D2A23C6C4D40032F185 /* UIColor+PYSearchExtension.m */; };
 		81918D3823C6C4D40032F185 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D2B23C6C4D40032F185 /* PYSearchViewController.m */; };
@@ -619,6 +620,8 @@
 		8179BE6123BB30FF002D3714 /* JDMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDMainViewController.h; sourceTree = "<group>"; };
 		8179BE6223BB30FF002D3714 /* JDMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDMainViewController.m; sourceTree = "<group>"; };
 		8179BE6323BB30FF002D3714 /* JDMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JDMainViewController.xib; sourceTree = "<group>"; };
+		818E673B23C874D4000FEB56 /* TSShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSShareHelper.m; sourceTree = "<group>"; };
+		818E673C23C874D4000FEB56 /* TSShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSShareHelper.h; sourceTree = "<group>"; };
 		818F44E8239A3CA900A5C22B /* CollectedGoodModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectedGoodModel.h; sourceTree = "<group>"; };
 		818F44E9239A3CA900A5C22B /* CollectedGoodModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectedGoodModel.m; sourceTree = "<group>"; };
 		81918D2923C6C4D40032F185 /* NSBundle+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PYSearchExtension.h"; sourceTree = "<group>"; };
@@ -1669,6 +1672,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		818E673A23C874D4000FEB56 /* TSShareHelper */ = {
+			isa = PBXGroup;
+			children = (
+				818E673B23C874D4000FEB56 /* TSShareHelper.m */,
+				818E673C23C874D4000FEB56 /* TSShareHelper.h */,
+			);
+			path = TSShareHelper;
+			sourceTree = "<group>";
+		};
 		81918D2823C6C4D40032F185 /* PYSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1999,6 +2011,7 @@
 		819B675A238FD8E8008244C7 /* ThirdParts */ = {
 			isa = PBXGroup;
 			children = (
+				818E673A23C874D4000FEB56 /* TSShareHelper */,
 				81918D2823C6C4D40032F185 /* PYSearch */,
 				81498F6323C59CDA004F33F1 /* QFDatePickerView */,
 				81498F7623C59CDA004F33F1 /* QFTimePickerView */,
@@ -2561,9 +2574,9 @@
 		819B68DB238FD969008244C7 /* AboutUs */ = {
 			isa = PBXGroup;
 			children = (
+				819B68DE238FD969008244C7 /* AboutUsViewController.h */,
 				819B68DC238FD969008244C7 /* AboutUsViewController.m */,
 				819B68DD238FD969008244C7 /* AboutUsViewController.xib */,
-				819B68DE238FD969008244C7 /* AboutUsViewController.h */,
 			);
 			path = AboutUs;
 			sourceTree = "<group>";
@@ -3971,6 +3984,7 @@
 				819B673B238FD8AA008244C7 /* GuidenceViewController.m in Sources */,
 				819B6736238FD8AA008244C7 /* TeachAVPlayerViewController.m in Sources */,
 				8119A86123C41AF100B7FE8F /* GoodDetailViewController.m in Sources */,
+				818E673D23C874D4000FEB56 /* TSShareHelper.m in Sources */,
 				814042BC239DE709003D05E1 /* TreasureGoodTableViewCell.m in Sources */,
 				8119A86623C41B7C00B7FE8F /* JDGoodDetailViewController.m in Sources */,
 				81404266239DE50B003D05E1 /* GaoYongTableViewCell.m in Sources */,

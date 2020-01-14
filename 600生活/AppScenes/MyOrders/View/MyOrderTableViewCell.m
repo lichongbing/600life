@@ -103,7 +103,8 @@
 - (IBAction)copyBtnAction:(id)sender {
     UIPasteboard *board = [UIPasteboard generalPasteboard];
     board.string = self.myOrderModel.trade_id;
-    [[LLHudHelper sharedInstance]tipMessage:@"复制口令成功"];
+    [[NSUserDefaults standardUserDefaults]setValue:self.myOrderModel.trade_id forKey:kAppInnerCopyStr];
+    [[LLHudHelper sharedInstance]tipMessage:@"复制成功"];
 }
 
 //订单查询需要调用

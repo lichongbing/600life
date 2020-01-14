@@ -13,6 +13,7 @@
 #import "LLWindowTipView.h"
 #import "WXApi.h"
 #import "UIImage+ext.h"
+#import "TSShareHelper.h"  //ios源生分享
 
 @interface ShareGoodViewController()
 
@@ -272,11 +273,12 @@
     
     NSString* wenanInfo = [self getAllSelectedWenanInfo];
     
-    [[LLHudHelper sharedInstance]tipMessage:@"复制文案成功"];
+    [[LLHudHelper sharedInstance]tipMessage:@"复制成功"];
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = wenanInfo;
+        [[NSUserDefaults standardUserDefaults]setValue:wenanInfo forKey:kAppInnerCopyStr];
     });
 }
 
@@ -359,15 +361,18 @@
         [view show];
 
         
+        __weak ShareGoodViewController* wself = self;
         view.shareLeftBtnAction = ^{
-            [self shareGoodToWeiChatWithImage:allImage type:1];
+            [wself iosNativeShareImages:allImage];
+//            [wself shareGoodToWeiChatWithImage:allImage type:1];
         };
         
         view.shareCenterBtnAction = ^{
-            [self shareGoodToWeiChatWithImage:allImage type:2];
+            [wself iosNativeShareImages:allImage];
+//            [wself shareGoodToWeiChatWithImage:allImage type:2];
         };
         
-        __weak ShareGoodViewController* wself = self;
+     
         __weak LLWindowTipView* weakView = view;
         view.shareRightBtnAction = ^{
             for(int i = 0; i < mutArr.count; i++){
@@ -377,6 +382,33 @@
             [weakView dismiss];
         };
     }
+}
+
+-(void)iosNativeShareImages:(UIImage*)imagesInOne
+{
+    //保存即将分享的图片 返回该图片的路径
+    NSString* tempImagePath = [self saveTempImageAndGetPath:imagesInOne];
+    [TSShareHelper shareWithType:TSShareHelperShareTypeOthers
+                   andController:self
+                     andFilePath:tempImagePath
+                   andCompletion:^(TSShareHelper *shareHelper, BOOL success) {
+        if (success) {
+            NSLog(@"分享成功");
+        }else{
+            NSLog(@"失败的回调");
+        }
+    }];
+}
+
+-(NSString*)saveTempImageAndGetPath:(UIImage*)image
+{
+    //压缩图片到10M以内 变成1M
+    UIImage* newImage = [UIImage compressImageSize:image toByte:1*1024*1024];
+    //保存到指定路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *tempImagePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"分享图片.png"];
+    [UIImagePNGRepresentation(newImage) writeToFile:tempImagePath atomically:YES];
+    return tempImagePath;
 }
 
 #pragma mark -- <保存到相册>

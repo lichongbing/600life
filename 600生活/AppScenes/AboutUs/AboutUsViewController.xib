@@ -48,9 +48,19 @@
                             <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMi-r3-R3t">
+                            <rect key="frame" x="10" y="16" width="62" height="30"/>
+                            <connections>
+                                <action selector="testBtn1:" destination="-1" eventType="touchUpInside" id="oUX-NV-ULP"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="QMi-r3-R3t" firstAttribute="width" secondItem="qcF-0F-URD" secondAttribute="width" id="2WQ-i8-4D1"/>
+                        <constraint firstItem="QMi-r3-R3t" firstAttribute="height" secondItem="qcF-0F-URD" secondAttribute="height" multiplier="1.66667" id="6Bu-3h-J9m"/>
+                        <constraint firstItem="QMi-r3-R3t" firstAttribute="top" secondItem="qcF-0F-URD" secondAttribute="top" id="DeA-ek-0XF"/>
+                        <constraint firstItem="QMi-r3-R3t" firstAttribute="leading" secondItem="qcF-0F-URD" secondAttribute="leading" id="FZO-MD-Yya"/>
                         <constraint firstAttribute="height" constant="50" id="X7d-Xn-jgL"/>
                         <constraint firstItem="qcF-0F-URD" firstAttribute="leading" secondItem="HEq-oU-Bzc" secondAttribute="leading" constant="10" id="fct-X0-RKY"/>
                         <constraint firstItem="9gQ-5o-Vdc" firstAttribute="centerY" secondItem="HEq-oU-Bzc" secondAttribute="centerY" id="oYk-WV-TwS"/>
@@ -73,12 +83,22 @@
                             <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZf-lc-RIR">
+                            <rect key="frame" x="10" y="16" width="62" height="30"/>
+                            <connections>
+                                <action selector="testBtn2:" destination="-1" eventType="touchUpInside" id="s1X-Hj-bJL"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="iZf-lc-RIR" firstAttribute="height" secondItem="sT6-0p-0z7" secondAttribute="height" multiplier="1.66667" id="9dy-Dq-A3C"/>
+                        <constraint firstItem="iZf-lc-RIR" firstAttribute="leading" secondItem="sT6-0p-0z7" secondAttribute="leading" id="DUK-v9-nSL"/>
                         <constraint firstItem="sT6-0p-0z7" firstAttribute="leading" secondItem="a9o-Ez-u62" secondAttribute="leading" constant="10" id="Dee-UF-3b4"/>
                         <constraint firstAttribute="height" constant="50" id="Eh9-bM-ajr"/>
+                        <constraint firstItem="iZf-lc-RIR" firstAttribute="top" secondItem="sT6-0p-0z7" secondAttribute="top" id="MNi-0I-nog"/>
                         <constraint firstItem="sT6-0p-0z7" firstAttribute="centerY" secondItem="a9o-Ez-u62" secondAttribute="centerY" id="NBU-SV-Kyr"/>
+                        <constraint firstItem="iZf-lc-RIR" firstAttribute="width" secondItem="sT6-0p-0z7" secondAttribute="width" id="t9O-IT-0Hb"/>
                         <constraint firstItem="YeL-3O-NkL" firstAttribute="centerY" secondItem="a9o-Ez-u62" secondAttribute="centerY" id="tz3-gb-AdR"/>
                         <constraint firstAttribute="trailing" secondItem="YeL-3O-NkL" secondAttribute="trailing" constant="10" id="xw5-QK-Hxi"/>
                     </constraints>

@@ -66,11 +66,10 @@
  
     self.fd_prefersNavigationBarHidden = YES;
     
-    BOOL flag = kIsiPhoneX_Series;
-    
     _navViewHeightConstraint.constant = kNavigationBarHeight;
     _navViewTopConstraint.constant = -kStatusBarHeight;
     
+    //lhf - 暂时隐藏
     [self requestCheckVersion];
 }
 
@@ -242,6 +241,7 @@
         view.customerServiceLeftBtnAction = ^(NSString * wxId) {
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
             pasteboard.string = data[@"wx"];
+            [[NSUserDefaults standardUserDefaults]setValue:data[@"wx"] forKey:kAppInnerCopyStr];
             [[LLHudHelper sharedInstance]tipMessage:@"复制成功"];
         };
         
@@ -265,7 +265,6 @@
             [wself handleCheckVersion:res[@"data"]];
         }
     } falsed:^(NSError * _Nullable error) {
-        
     }];
 }
 

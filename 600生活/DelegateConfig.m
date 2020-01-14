@@ -110,18 +110,15 @@
 -(void)configWeChatSDK
 {
     //必须以 /结尾
-    
     //  @"https://www.lbshapp.com/app/"    以前可用的
      BOOL flag = [WXApi registerApp:@"wxb2efb7a9872c79fd" universalLink:@"https://www.lbshapp.com/"];
     NSLog(@"微信sdk注册%@",flag ? @"成功" : @"失败");
 }
 
-
 //配置激光推送
 -(void)configJPushWithLaunchOptions:(NSDictionary *)launchOptions
 {
    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
-    
     if(!kIsIOS12beBelow){//高于ios12
         entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound|JPAuthorizationOptionProvidesAppNotificationSettings;
     }else{
@@ -139,14 +136,24 @@
                  apsForProduction:isProduction
             advertisingIdentifier:nil];
     
-    [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
-        if(resCode == 0){
-            NSLog(@"激光推送registrationID获取成功：%@",registrationID);
-        }
-        else{
-            NSLog(@"激光推送registrationID获取失败，code：%d",resCode);
-        }
-    }];
+//    [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
+//        if(resCode == 0){
+//            NSLog(@"激光推送registrationID获取成功：%@",registrationID);
+//        }
+//        else{
+//            NSLog(@"激光推送registrationID获取失败，code：%d",resCode);
+//        }
+//    }];
+
+    LLUser* user = [LLUserManager shareManager].currentUser;
+    if(user.id.toString.length > 0){
+        NSString* uidStr = user.id.toString;
+        NSSet* set = [NSSet setWithObject:uidStr];
+        [JPUSHService setTags:set completion:^(NSInteger iResCode, NSSet *iTags, NSInteger seq) {
+            NSLog(@"%@",iTags);
+            NSLog(@"%lu",seq);
+        } seq:uidStr.integerValue];
+    }
 }
 
 #pragma mark - 通知权限引导

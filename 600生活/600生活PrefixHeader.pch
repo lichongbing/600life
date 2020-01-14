@@ -67,11 +67,18 @@
 #endif
 
 #define kAppName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+#define kAppVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 #define kAppBuildVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
 //@"itms-apps://itunes.apple.com/cn/app/id1491526847?mt=8"
 
+
+//app在Itunes中的链接
+#define kAppItunesLine @"https://itunes.apple.com/cn/app/id1491526847?mt=8"
+//这个是app内部跳转的
 #define kAppStoreLink @"https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1491526847"
-//#define kAppStoreLink @"https://apps.apple.com/cn/app/600生活/id1491526847"  //这条是在其它浏览器可以打开的
+//这条是在任意浏览器可以打开的 京东需要
+//#define kAppStoreLink @"https://apps.apple.com/cn/app/600生活/id1491526847"
+
 //导航栏高度（状态栏+导航栏高度）
 #define kNavigationBarHeight (kIsiPhoneX_Series ? 88. : 64.)
 //状态栏高度

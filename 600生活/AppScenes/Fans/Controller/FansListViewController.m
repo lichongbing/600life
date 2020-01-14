@@ -184,10 +184,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FanTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FanTableViewCell" forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    if(indexPath.row < self.datasource.count){
-        [cell fullData:self.datasource[indexPath.row]];
-    }
+    [cell fullData:self.datasource[indexPath.row]];
     return cell;
 }
 

@@ -130,7 +130,7 @@
  7:销量由低到高
  8:最新
  */
--(void)requestCategoryDatasWithPageIndex:(NSInteger)pageIndex sort:(int)sort
+-(void)requestCategoryDatasWithPageIndex:(NSInteger)pageIndex sort:(int)sort isShowHud:(BOOL)isShowHud
 {
     NSDictionary* param = @{
         @"cid" : [NSString stringWithFormat:@"%@",self.cid],
@@ -141,7 +141,7 @@
       };
     
     __weak CategoryTypeViewController* wself = self;
-    [self PostWithUrlStr:kFullUrl(kCategoryDetail) param:param showHud:NO resCache:nil success:^(id  _Nullable res) {
+    [self PostWithUrlStr:kFullUrl(kCategoryDetail) param:param showHud:isShowHud resCache:nil success:^(id  _Nullable res) {
         if(kSuccessRes){
             [wself handleCategoryDatasWithPageIndex:pageIndex data:res];
         }
@@ -269,14 +269,14 @@
     self.tableview.mj_header = [LLRefreshGifHeader headerWithRefreshingBlock:^{
         wself.isMJHeaderRefresh = YES; //重要代码
         wself.pageIndex = 1;
-        [wself requestCategoryDatasWithPageIndex:wself.pageIndex sort:self.sort];
+        [wself requestCategoryDatasWithPageIndex:wself.pageIndex sort:self.sort isShowHud:NO];
         [wself impactLight];
     }];
     
     self.tableview.mj_footer = [LLRefreshAutoGifFooter footerWithRefreshingBlock:^{
          wself.isMJFooterRefresh = YES;
          wself.pageIndex++;
-         [wself requestCategoryDatasWithPageIndex:wself.pageIndex sort:self.sort];
+         [wself requestCategoryDatasWithPageIndex:wself.pageIndex sort:self.sort isShowHud:NO];
         [wself impactLight];
     }];
 }
@@ -407,7 +407,7 @@
         } else if (sort == 3){
             self.sort = 2;
         }
-        [self requestCategoryDatasWithPageIndex:self.pageIndex sort:self.sort];
+        [self requestCategoryDatasWithPageIndex:self.pageIndex sort:self.sort isShowHud:YES];
     }
 }
 @end

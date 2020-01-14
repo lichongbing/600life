@@ -21,9 +21,37 @@
 
 @property (weak, nonatomic) IBOutlet LLBaseView *layoutBottomLine;
 
+@property(nonatomic,assign)BOOL isPasteboardContainStr;  //系统粘贴板是否有值
+
 @end
 
 @implementation CheckOrderViewController
+
+-(void)dealloc
+{
+    if(self.isPasteboardContainStr == NO){
+        //如果没有值，应该清空值
+        UIPasteboard *board = [UIPasteboard generalPasteboard];
+        board.strings = @[];
+    }
+}
+
+-(id)init
+{
+    if(self = [super init]){
+        UIPasteboard *board = [UIPasteboard generalPasteboard];
+        if (board.hasStrings) {
+            //do nothing
+            self.isPasteboardContainStr = YES;
+        }else{
+            self.isPasteboardContainStr = NO;
+            //取本地值
+            NSString* appLastClearStr = [[NSUserDefaults standardUserDefaults]valueForKey:kAppLastClearStr];
+            board.string = appLastClearStr;
+        }
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

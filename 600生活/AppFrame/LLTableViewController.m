@@ -299,7 +299,6 @@ typedef NS_ENUM(NSInteger, TableviewRefreshType) {
                 currentUser.isLogin = 0;
                 [[LLUserManager shareManager]insertOrUpdateCurrentUser:currentUser];
                 [wself forceStopVCNetWorkings];
-//                [[LLHudHelper sharedInstance]tipMessage:@"登录过期,请重新登录"];
                  [wself goToLoginVC];
             } else if([res[@"code"]intValue] < 0) { //后台返空
                 [wself forceStopVCNetWorkings];

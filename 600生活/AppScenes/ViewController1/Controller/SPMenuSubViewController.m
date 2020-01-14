@@ -28,6 +28,7 @@
     // Do any additional setup after loading the view.
 }
 
+//仅仅是消除.h中的一个警告 可以不要这个
 -(void)loadDatasWhenUserDone
 {
     

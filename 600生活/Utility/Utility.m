@@ -672,4 +672,17 @@
     [view.layer addAnimation:animation forKey:nil];
 }
 
+/**
+ *字符串是否全是数字0-9组成
+ */
++(BOOL)isNumWithString:(NSString*)str
+{
+    if (str.length == 0) {
+        return NO;
+    }
+    NSString *regex = @"[0-9]*";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    return [pred evaluateWithObject:str];
+}
+
 @end

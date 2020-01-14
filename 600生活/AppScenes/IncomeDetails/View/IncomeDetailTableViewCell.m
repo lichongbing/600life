@@ -69,9 +69,11 @@
 - (IBAction)copyBtnAction:(UIButton*)sender {
 
     [[LLHudHelper sharedInstance]tipMessage:@"复制成功"];
+    __weak IncomeDetailTableViewCell* wself = self;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.string = _incomeItemModel.trade_id;
+        pasteboard.string = wself.incomeItemModel.trade_id;
+        [[NSUserDefaults standardUserDefaults]setValue:wself.incomeItemModel.trade_id forKey:kAppInnerCopyStr];
     });
 }
 

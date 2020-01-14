@@ -95,7 +95,7 @@
 #pragma mark - 网络请求
 
 //获取商品分类数据
--(void)requestCategoryDatasWithPageIndex:(NSInteger)pageIndex sort:(int)sort
+-(void)requestCategoryDatasWithPageIndex:(NSInteger)pageIndex sort:(int)sort isShowHud:(BOOL)isShowHud
 {
     NSDictionary* param = @{
         @"cid" : self.categoryId,
@@ -106,7 +106,7 @@
       };
     
     __weak CategoryGoodListViewController* wself = self;
-    [self PostWithUrlStr:kFullUrl(kCategoryDetail) param:param showHud:YES resCache:^(id  _Nullable cacheData) {
+    [self PostWithUrlStr:kFullUrl(kCategoryDetail) param:param showHud:isShowHud resCache:^(id  _Nullable cacheData) {
         if(kSuccessCache){
             [wself handleCategoryDatasWithPageIndex:pageIndex data:cacheData];
         }
@@ -163,29 +163,6 @@
     }else{
         [Utility dismissTipViewOn:self.tableview];
     }
-}
-
-#pragma mark - helper
-
--(void)addMJRefresh
-{
-    __weak CategoryGoodListViewController* wself = self;
-    self.tableview.mj_header = [LLRefreshGifHeader headerWithRefreshingBlock:^{
-        wself.isMJHeaderRefresh = YES; //重要代码
-        //获取评论数据
-        wself.pageIndex = 1;
-       [wself requestCategoryDatasWithPageIndex:wself.pageIndex sort:wself.sort];
-        [wself impactLight];
-    }];
-    
-    self.tableview.mj_footer = [LLRefreshAutoGifFooter footerWithRefreshingBlock:^{
-         wself.isMJFooterRefresh = YES;
-        //获取评论数据
-        wself.pageIndex++;
-        [wself requestCategoryDatasWithPageIndex:wself.pageIndex sort:wself.sort];
-        [wself impactLight];
-    }];
-    [self.tableview.mj_header beginRefreshing];
 }
 
 
@@ -250,8 +227,30 @@
         } else if (sort == 3){
             self.sort = 2;
         }
-      [self requestCategoryDatasWithPageIndex:self.pageIndex sort:self.sort];
+      [self requestCategoryDatasWithPageIndex:self.pageIndex sort:self.sort isShowHud:YES];
     }
 }
 
+#pragma mark - helper
+
+-(void)addMJRefresh
+{
+    __weak CategoryGoodListViewController* wself = self;
+    self.tableview.mj_header = [LLRefreshGifHeader headerWithRefreshingBlock:^{
+        wself.isMJHeaderRefresh = YES; //重要代码
+        //获取评论数据
+        wself.pageIndex = 1;
+       [wself requestCategoryDatasWithPageIndex:wself.pageIndex sort:wself.sort isShowHud:NO];
+        [wself impactLight];
+    }];
+    
+    self.tableview.mj_footer = [LLRefreshAutoGifFooter footerWithRefreshingBlock:^{
+         wself.isMJFooterRefresh = YES;
+        //获取评论数据
+        wself.pageIndex++;
+        [wself requestCategoryDatasWithPageIndex:wself.pageIndex sort:wself.sort isShowHud:NO];
+        [wself impactLight];
+    }];
+    [self.tableview.mj_header beginRefreshing];
+}
 @end

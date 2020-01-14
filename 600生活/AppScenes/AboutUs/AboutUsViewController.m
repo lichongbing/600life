@@ -15,6 +15,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *versionLab; //构建版本lab
 @property (weak, nonatomic) IBOutlet UILabel *versionInfo;
 
+
+//内测用
+@property(nonatomic,assign)int test1Counter; //当前版本 点击数
+@property(nonatomic,assign)int test2Counter; //更新版本 点击数
+
 @end
 
 @implementation AboutUsViewController
@@ -23,11 +28,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"关于我们";
-    self.versionLab.text = [NSString stringWithFormat:@"v%@",kAppBuildVersion];
+    self.versionLab.text = [NSString stringWithFormat:@"v%@",kAppVersion];
     [self requestCheckVersion];
 }
 
 #pragma mark - 网络请求
+//获取测试服务器最新版本
 -(void)requestCheckVersion
 {
     NSDictionary* param = @{
@@ -93,7 +99,7 @@
 {
     __weak AboutUsViewController* wself = self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        wself.versionInfo.text = [NSString stringWithFormat:@"有新版本:v%@",maxVersion];
+        wself.versionInfo.text = [NSString stringWithFormat:@"建议更新版本:v%@",maxVersion];
         LLWindowTipView* view = [[LLWindowTipView alloc]initWithType:WindowTipViewTypeNewVersion];
         __weak LLWindowTipView* wview = view;
         view.findNewVersionBtnAction = ^{
@@ -128,5 +134,44 @@
        vc.hidesBottomBarWhenPushed = YES;
        [self.navigationController pushViewController:vc animated:YES];
 }
+
+//当前版本
+- (IBAction)testBtn1:(id)sender {
+    _test2Counter = 0;
+    _test1Counter++;
+}
+
+//更新版本
+- (IBAction)testBtn2:(id)sender {
+    if(_test1Counter == 2){
+        _test2Counter++;
+        [self check];
+    }else{
+        _test1Counter = 0;
+        _test2Counter = 0;
+    }
+}
+
+-(void)check
+{
+    if(_test1Counter == 2 && _test2Counter == 5){
+        [self showBuildVersion];
+        _test1Counter = 0;
+        _test2Counter = 0;
+    }
+}
+
+-(void)showBuildVersion
+{
+    NSString* title = @"内测信息";
+    NSString* server = [kBaseUrl containsString:@"test"] ? @"测试服务器" : @"正式服务器";
+    NSString* msg = [NSString stringWithFormat:@"\n版本:%@\n服务器:%@",kAppBuildVersion,server];
+    [Utility ShowAlert:title message:msg buttonName:@[@"内测用户前往",@"好的"] sureAction:^{
+        NSString* urlStr = @"https://fir.im/un43";
+        NSURL* url = [NSURL URLWithString:urlStr];
+        [[UIApplication sharedApplication]openURL:url options:@{} completionHandler:nil];
+    } cancleAction:nil];
+}
+
 
 @end

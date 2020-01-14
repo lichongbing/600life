@@ -133,6 +133,12 @@
 +(void)dismissTipViewOn:(UIView*)superView;
 
 
-
 + (void) shakeToShow:(UIView*)view;
+
+
+
+/**
+ *字符串是否全是数字0-9组成
+ */
++(BOOL)isNumWithString:(NSString*)str;
 @end

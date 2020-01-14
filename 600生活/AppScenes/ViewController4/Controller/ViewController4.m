@@ -220,6 +220,7 @@
         view.customerServiceLeftBtnAction = ^(NSString * wxId) {
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
             pasteboard.string = data[@"wx"];
+            [[NSUserDefaults standardUserDefaults]setValue:data[@"wx"] forKey:kAppInnerCopyStr];
             [[LLHudHelper sharedInstance]tipMessage:@"复制成功"];
         };
         
@@ -238,7 +239,8 @@
     if([LLUserManager shareManager].currentUser.invite_code.length > 0){
         UIPasteboard *board = [UIPasteboard generalPasteboard];
         board.string = [LLUserManager shareManager].currentUser.invite_code;
-        [[LLHudHelper sharedInstance]tipMessage:@"复制邀请码成功"];
+        [[NSUserDefaults standardUserDefaults]setValue:[LLUserManager shareManager].currentUser.invite_code forKey:kAppInnerCopyStr];
+        [[LLHudHelper sharedInstance]tipMessage:@"复制成功"];
     }
 }
 

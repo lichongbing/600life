@@ -9,6 +9,7 @@
 #import "LLViewController.h"
 #import "Utility.h"  //判断相机相册权限
 #import "CheckResultViewController.h"  //如果当前vc是订单查询vc 系统粘贴板不能清空
+#import "ViewController1.h"  //导入ViewController1 防止所有LLViewController都去判断系统粘贴板
 /**
 下面是智能搜索需要用到的
 */
@@ -41,8 +42,13 @@ typedef void (^ Success)(void);// 成功Block
     [super viewWillAppear:animated];
     
     //用户是否复制了文字到剪切板
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userPasteboardNofificationAction:) name:kCheckUserPasteboardNofification object:nil];
+    UIViewController* vc = [Utility getCurrentUserVC];
+    
+    if([self isKindOfClass:[vc class]]){
+      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userPasteboardNofificationAction:) name:kCheckUserPasteboardNofification object:nil];
+    }
 }
+
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -160,9 +166,7 @@ typedef void (^ Success)(void);// 成功Block
     }
 }
 
-
 #pragma mark - 通知
-
 -(void)userPasteboardNofificationAction:(NSNotification*)notification
 {
     BOOL islogin = [LLUserManager shareManager].currentUser.isLogin;
@@ -190,29 +194,51 @@ typedef void (^ Success)(void);// 成功Block
             searchContent = [searchContent substringToIndex:20000];
         }
         
+        //是否展示tipView 默认展示
+        BOOL isShowWindowTipView = YES;
         
-        //去重
-        static NSString* oldBoardStr = nil;
-        if([oldBoardStr isEqualToString:searchContent]){
-            return;
-        }else{
-            oldBoardStr = searchContent;
+        //是否清空系统粘贴板 默认清空
+        BOOL isClearPasteboard = YES;
+        
+        //排除除app内部复制字符串的情况 不展示tipview  不清空系统粘贴板内容
+        NSString* appInnerCopyStr = [[NSUserDefaults standardUserDefaults]valueForKey:kAppInnerCopyStr];
+        if([appInnerCopyStr isEqualToString:searchContent]){
+            isShowWindowTipView = NO; //不展示
+            isClearPasteboard = NO;  //不清空
+        }
+      
+        if(isShowWindowTipView){
+            [self showWindowTipViewAISearch:searchContent];
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            LLWindowTipView* view = [[LLWindowTipView alloc]initWithType:WindowTipViewTypeAISearch];
-            view.searchStr = searchContent;
-            __weak LLViewController* wself = self;
-            __weak LLWindowTipView* wview = view;
-            view.aiSearchSureBtnAction = ^() {
-                SearchResultListController* vc = [[SearchResultListController alloc]initWithKeyWords:wview.searchStr];
-                vc.hidesBottomBarWhenPushed = YES;
-                [wself.navigationController pushViewController:vc animated:YES];
-                [wview dismiss];
-            };
-            [view show];
-        });
+        if(isClearPasteboard){
+            //保存系统粘贴板的值
+            [[NSUserDefaults standardUserDefaults]setValue:searchContent forKey:kAppLastClearStr];
+            //清空系统粘贴板
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0) , ^{
+                board.strings = @[]; //清空字符串
+            });
+        }
     }
+}
+
+-(void)showWindowTipViewAISearch:(NSString*)searchContent
+{
+    __weak LLViewController* wself = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        LLWindowTipView* view = [[LLWindowTipView alloc]initWithType:WindowTipViewTypeAISearch];
+        view.searchStr = searchContent;
+        //展示
+        __strong LLViewController* sself = wself;
+        __weak LLWindowTipView* wview = view;
+        view.aiSearchSureBtnAction = ^() {
+            SearchResultListController* vc = [[SearchResultListController alloc]initWithKeyWords:wview.searchStr];
+            vc.hidesBottomBarWhenPushed = YES;
+            [sself.navigationController pushViewController:vc animated:YES];
+            [wview dismiss];
+        };
+        [view show];
+    });
 }
 
 -(void)impactLight

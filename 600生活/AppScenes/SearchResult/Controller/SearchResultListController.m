@@ -78,8 +78,8 @@
     [self addMJRefresh];
     
     //请求数据
-    self.pageIndex = 1;
-    [self requestSearchGoodsWithKeyWords:self.keywords sort:1 PageIndex:self.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N"];
+//    self.pageIndex = 1;
+//    [self requestSearchGoodsWithKeyWords:self.keywords sort:1 PageIndex:self.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N"];
 }
 
 
@@ -130,6 +130,7 @@
                           start_price:(NSString*  __nullable)start_price //折扣价上限
                             end_price:(NSString* __nullable)end_price //折扣价下限
                              is_tmall:(NSString*)is_tmall //是否是天猫Y-天猫，N-全部
+                            isShowHud:(BOOL)isShowHud//是否展示hud
 {
     NSMutableDictionary* param = [NSMutableDictionary new];
     [param setValue:keywords forKey:@"keyword"];
@@ -148,7 +149,7 @@
     [param setValue:is_tmall forKey:@"is_tmall"];
     
     __weak SearchResultListController* wself = self;
-    [self PostWithUrlStr:kFullUrl(kSearchGoods) param:param showHud:YES resCache:^(id  _Nullable cacheData) {
+    [self PostWithUrlStr:kFullUrl(kSearchGoods) param:param showHud:isShowHud resCache:^(id  _Nullable cacheData) {
         if(kSuccessCache){
             [wself handleSearchGoodsWithPageIndex:pageIndex data:cacheData];
         }
@@ -255,7 +256,7 @@
         [self.zhongHeView showOnSupperView:self.view frame:CGRectMake(0, top, kScreenWidth, self.view.height - top)];
     }  else {   //大于0的情况
         self.pageIndex = 1;
-        [self requestSearchGoodsWithKeyWords:self.keywords sort:sort PageIndex:self.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N"];
+        [self requestSearchGoodsWithKeyWords:self.keywords sort:sort PageIndex:self.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N" isShowHud:YES];
     }
 }
 
@@ -267,14 +268,14 @@
     self.tableview.mj_header = [LLRefreshGifHeader headerWithRefreshingBlock:^{
         wself.isMJHeaderRefresh = YES; //重要代码
         wself.pageIndex = 1;
-        [wself requestSearchGoodsWithKeyWords:self.keywords sort:self.sort PageIndex:wself.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N"];
+        [wself requestSearchGoodsWithKeyWords:self.keywords sort:self.sort PageIndex:wself.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N" isShowHud:NO];
         [wself impactLight];
     }];
     
     self.tableview.mj_footer = [LLRefreshAutoGifFooter footerWithRefreshingBlock:^{
          wself.isMJFooterRefresh = YES;
         wself.pageIndex++;
-         [wself requestSearchGoodsWithKeyWords:self.keywords sort:self.sort PageIndex:wself.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N"];
+         [wself requestSearchGoodsWithKeyWords:self.keywords sort:self.sort PageIndex:wself.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N" isShowHud:NO];
         [wself impactLight];
     }];
     [self.tableview.mj_header beginRefreshing];
@@ -285,7 +286,7 @@
 {
     if(searchBar.text.length > 0){
         self.pageIndex = 1;
-        [self requestSearchGoodsWithKeyWords:self.keywords sort:1 PageIndex:self.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N"];
+        [self requestSearchGoodsWithKeyWords:self.keywords sort:1 PageIndex:self.pageIndex is_counpon:0 start_price:nil end_price:nil is_tmall:@"N" isShowHud:YES];
         [searchBar endEditing:YES];
     }
 }

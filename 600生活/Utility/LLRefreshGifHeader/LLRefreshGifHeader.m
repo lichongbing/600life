@@ -19,7 +19,7 @@
 {
     [super prepare];
     if(self.imagesArr.count > 0){
-        [self setImages:@[self.imagesArr.firstObject] duration:1 forState:MJRefreshStatePulling];
+        [self setImages:[[self.imagesArray reverseObjectEnumerator] allObjects] duration:1 forState:MJRefreshStatePulling];
     }
     
     [self setImages:self.imagesArray duration:1 forState:MJRefreshStateRefreshing];

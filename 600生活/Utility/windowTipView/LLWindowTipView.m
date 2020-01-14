@@ -107,16 +107,19 @@
         //微信
         if(self.shareLeftBtnAction){
             self.shareLeftBtnAction();
+            [self dismiss];
         }
     }else if(index == 1){
         //朋友圈
         if(self.shareCenterBtnAction){
             self.shareCenterBtnAction();
+            [self dismiss];
         }
     }else if(index == 2){
         //下载图
         if(self.shareRightBtnAction){
             self.shareRightBtnAction();
+            [self dismiss];
         }
     }
 }

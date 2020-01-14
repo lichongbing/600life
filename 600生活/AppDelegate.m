@@ -25,40 +25,6 @@
 
 @implementation AppDelegate
 
-//配置激光推送
--(void)configJPushWithLaunchOptions:(NSDictionary *)launchOptions
-{
-    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
-    
-    if(!kIsIOS12beBelow){//高于ios12
-        entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound|JPAuthorizationOptionProvidesAppNotificationSettings;
-    }else{
-        entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
-    }
-    
-    id pDelegate = kAppDelegate;
-    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
-    
-    NSString* appKey = @"f7f8e5d63d78ea332d88f83e";
-    NSString* channel = @"Publish channel";
-    BOOL isProduction = NO;
-    [JPUSHService setupWithOption:launchOptions appKey:appKey
-                          channel:channel
-                 apsForProduction:isProduction
-            advertisingIdentifier:nil];
-    
-    [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
-        if(resCode == 0){
-            NSLog(@"激光推送registrationID获取成功：%@",registrationID);
-        }
-        else{
-            NSLog(@"激光推送registrationID获取失败，code：%d",resCode);
-        }
-    }];
-    
-    // 检测通知授权情况。可选项，不一定要放在此处，可以运行一定时间后再调用
-    [self performSelector:@selector(checkNotificationAuthorization) withObject:nil afterDelay:5];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

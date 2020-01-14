@@ -20,6 +20,8 @@
 #define kMasterRushedOrderId  @"kMasterRushedOrderId"  //导师抢到了订单
 #define kIsTodaySenderMakeFreeOrder @"kIsTodaySenderMakeFreeOrder" //今天是否下过了免费单
 #define kFirstNoticeNotifacation   @"kFirstNoticeNotifacation"    //是否提醒开启通知
+#define kAppInnerCopyStr @"kAppInnerCopyStr"    //app内部复制了字符串(不让tipView展示)
+#define kAppLastClearStr @"kAppLastClearStr"    //系统粘贴板上一次被清空的字符串
 
 #pragma mark - ViewTag
 

@@ -13,7 +13,7 @@
 
 #import "MKQRCode.h"  //二维码生成
 #import "WXApi.h"
-
+#import "TSShareHelper.h"  //ios源生分享
 
 @interface InviteNewUserViewController ()<iCarouselDelegate,iCarouselDataSource>
 
@@ -119,7 +119,8 @@
 - (IBAction)copyBtnAction:(id)sender {
     UIPasteboard *board = [UIPasteboard generalPasteboard];
     board.string = _data[@"text"];
-    [[LLHudHelper sharedInstance]tipMessage:@"复制口令成功"];
+    [[NSUserDefaults standardUserDefaults]setValue:_data[@"text"] forKey:kAppInnerCopyStr];
+    [[LLHudHelper sharedInstance]tipMessage:@"复制成功"];
 }
 
 - (IBAction)shareBtnAction:(id)sender {
@@ -129,22 +130,26 @@
     __weak InviteNewUserViewController* wself = self;
     
     view.shareLeftBtnAction = ^{
-        NSInteger index = wself.calourseView.currentItemIndex;
-        //获取当前的imageView
-        UIImageView* oldImageView = (UIImageView*)[wself.imageViewArr objectAtIndex:index];
-        //将当前选中的imageView以及子空间全部获取，产生新的iamg
-        UIImage* newImageViewImage = [UIImageView getNewImageWithSuperImageView:oldImageView];
-        [wself shareImageToWeiChatWithImage:newImageViewImage type:1];
+        [wself iosNativeShareOneImage];
+        //下面是分享到微信到消息的代码 不用了
+//        NSInteger index = wself.calourseView.currentItemIndex;
+//        //获取当前的imageView
+//        UIImageView* oldImageView = (UIImageView*)[wself.imageViewArr objectAtIndex:index];
+//        //将当前选中的imageView以及子空间全部获取，产生新的iamg
+//        UIImage* newImageViewImage = [UIImageView getNewImageWithSuperImageView:oldImageView];
+//        [wself shareImageToWeiChatWithImage:newImageViewImage type:1];
     };
     
     //朋友圈
     view.shareCenterBtnAction = ^{
-        NSInteger index = wself.calourseView.currentItemIndex;
-        //获取当前的imageView
-        UIImageView* oldImageView = (UIImageView*)[wself.imageViewArr objectAtIndex:index];
-        //将当前选中的imageView以及子空间全部获取，产生新的iamg
-        UIImage* newImageViewImage = [UIImageView getNewImageWithSuperImageView:oldImageView];
-        [wself shareImageToWeiChatWithImage:newImageViewImage type:2];
+         [wself iosNativeShareOneImage];
+        //下面是分享到微信朋友圈代码 不用了
+//        NSInteger index = wself.calourseView.currentItemIndex;
+//        //获取当前的imageView
+//        UIImageView* oldImageView = (UIImageView*)[wself.imageViewArr objectAtIndex:index];
+//        //将当前选中的imageView以及子空间全部获取，产生新的iamg
+//        UIImage* newImageViewImage = [UIImageView getNewImageWithSuperImageView:oldImageView];
+//        [wself shareImageToWeiChatWithImage:newImageViewImage type:2];
     };
     
     //保存图片
@@ -233,4 +238,39 @@
           [alert show];
       }
 }
+
+
+//ios 原生分享
+-(void)iosNativeShareOneImage
+{
+    //保存即将分享的图片 返回该图片的路径
+    NSString* tempImagePath = [self saveTempImageAndGetPath];
+    [TSShareHelper shareWithType:TSShareHelperShareTypeOthers
+                   andController:self
+                     andFilePath:tempImagePath
+                   andCompletion:^(TSShareHelper *shareHelper, BOOL success) {
+        if (success) {
+            NSLog(@"分享成功");
+        }else{
+            NSLog(@"失败的回调");
+        }
+    }];
+}
+
+-(NSString*)saveTempImageAndGetPath
+{
+    //准备分享的图片
+    NSInteger index = self.calourseView.currentItemIndex;
+    //获取当前的imageView
+    UIImageView* oldImageView = (UIImageView*)[self.imageViewArr objectAtIndex:index];
+    //压缩图片到10M以内 变成1M
+    UIImage* newImage = [UIImage compressImageSize:oldImageView.image toByte:1*1024*1024];
+    //保存到指定路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *tempImagePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"分享海报.png"];
+    [UIImagePNGRepresentation(newImage) writeToFile:tempImagePath atomically:YES];
+    return tempImagePath;
+}
+
+
 @end

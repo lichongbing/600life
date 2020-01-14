@@ -22,6 +22,7 @@
     
     [self setImages:self.imagesArray duration:1 forState:MJRefreshStateRefreshing];
     self.refreshingTitleHidden = YES;
+    [self setTitle:@"" forState:MJRefreshStateIdle];
 }
 
 -(NSMutableArray*)imagesArr
