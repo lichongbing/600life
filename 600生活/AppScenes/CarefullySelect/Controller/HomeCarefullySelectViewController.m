@@ -8,7 +8,8 @@
 
 #import "HomeCarefullySelectViewController.h"
 #import "LLBaseView.h"
-#import "SPButton.h"
+//#import "SPButton.h"
+#import "HYX_BtnTopImgBottomLab.h"
 #import "KHAdView.h"  //图片广告轮播
 #import "YMNoticeScrollView.h"  //头条 文字广告轮播
 
@@ -553,20 +554,17 @@
         //控件top
         CGFloat controlTop = kControlSpaceTop + row*controlHeight + row*kControlSpaceV;
         
-        SPButton* spButton = [self.activityBgView viewWithTag:(10+i)];
-        spButton.frame = CGRectMake(controlLeft, controlTop, controlWidth, controlHeight);
-        spButton.imagePosition = SPButtonImagePositionTop;
-        spButton.imageTitleSpace = 10;
+        HYX_BtnTopImgBottomLab* spButton = [[HYX_BtnTopImgBottomLab alloc]initWithFrame:CGRectMake(controlLeft, controlTop, controlWidth, controlHeight)];
+        spButton.tag =10+i;
         spButton.hidden = NO;
-
+        [self.activityBgView addSubview:spButton];
+        
         HomePageActivityModel* homePageActivityModel = self.homePageModel.activity_list[i];
-        [spButton setTitle:homePageActivityModel.name forState:UIControlStateNormal];
+        spButton.btn_bottomLab.text =homePageActivityModel.name;
         
         [spButton addTarget:self action:@selector(activityItemsBtnsAction:) forControlEvents:UIControlEventTouchUpInside];
         
-        [spButton sd_setImageWithURL:[NSURL URLWithString:homePageActivityModel.icon] forState:UIControlStateNormal placeholderImage:kPlaceHolderImg];
-        
-        spButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [spButton.btn_topImg sd_setImageWithURL:[NSURL URLWithString:homePageActivityModel.icon] placeholderImage:kPlaceHolderImg];
         
         if(imagesBgViewHeight < spButton.bottom){
             imagesBgViewHeight = spButton.bottom;
