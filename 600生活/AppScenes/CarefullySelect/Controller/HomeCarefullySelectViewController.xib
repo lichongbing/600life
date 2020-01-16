@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -785,8 +785,8 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" tag="282" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHj-6L-HsH">
-                                    <rect key="frame" x="0.0" y="0.0" width="141.5" height="265.5"/>
+                                <button opaque="NO" tag="282" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHj-6L-HsH">
+                                    <rect key="frame" x="5" y="0.0" width="141.5" height="265.5"/>
                                     <connections>
                                         <action selector="bestGoodItemBtnAction:" destination="-1" eventType="touchUpInside" id="aBx-Me-cPa"/>
                                     </connections>
@@ -1256,45 +1256,45 @@
                                                 <constraint firstAttribute="height" constant="0.5" id="eOe-YR-9df"/>
                                             </constraints>
                                         </view>
+                                        <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRD-1h-nJ5">
+                                            <rect key="frame" x="0.0" y="-107" width="85" height="188"/>
+                                            <connections>
+                                                <action selector="rankBtnAction:" destination="-1" eventType="touchUpInside" id="Nyg-rH-UvG"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="XRD-1h-nJ5" secondAttribute="bottom" constant="-29.5" id="Ehk-XJ-dbl"/>
                                         <constraint firstItem="MRw-hK-Uua" firstAttribute="leading" secondItem="h93-32-KBs" secondAttribute="trailing" constant="1" id="F6x-UI-8st"/>
+                                        <constraint firstItem="XRD-1h-nJ5" firstAttribute="leading" secondItem="8aw-zb-rAr" secondAttribute="leading" id="KDK-L0-csG"/>
                                         <constraint firstItem="stl-MG-nxE" firstAttribute="top" secondItem="hj4-0s-FB7" secondAttribute="top" id="KqT-e0-JtQ"/>
                                         <constraint firstItem="h93-32-KBs" firstAttribute="leading" secondItem="hj4-0s-FB7" secondAttribute="trailing" constant="1" id="MAs-W9-EdA"/>
                                         <constraint firstItem="h93-32-KBs" firstAttribute="centerY" secondItem="8aw-zb-rAr" secondAttribute="centerY" constant="-5" id="MLz-sq-Crk"/>
                                         <constraint firstItem="nhX-1k-lLa" firstAttribute="leading" secondItem="stl-MG-nxE" secondAttribute="leading" constant="-5" id="N32-On-vEl"/>
                                         <constraint firstItem="MRw-hK-Uua" firstAttribute="centerX" secondItem="8aw-zb-rAr" secondAttribute="centerX" id="Omp-xt-HFC"/>
                                         <constraint firstItem="stl-MG-nxE" firstAttribute="leading" secondItem="MRw-hK-Uua" secondAttribute="trailing" constant="1" id="U2e-ca-vaj"/>
+                                        <constraint firstItem="XRD-1h-nJ5" firstAttribute="top" secondItem="8aw-zb-rAr" secondAttribute="top" constant="-107" id="c69-Ob-8Ed"/>
                                         <constraint firstItem="hj4-0s-FB7" firstAttribute="centerY" secondItem="h93-32-KBs" secondAttribute="centerY" id="cXE-EC-GlH"/>
                                         <constraint firstItem="MRw-hK-Uua" firstAttribute="centerY" secondItem="8aw-zb-rAr" secondAttribute="centerY" id="rSF-ft-b2k"/>
+                                        <constraint firstAttribute="trailing" secondItem="XRD-1h-nJ5" secondAttribute="trailing" id="y2j-nF-Eny"/>
                                         <constraint firstItem="nhX-1k-lLa" firstAttribute="trailing" secondItem="stl-MG-nxE" secondAttribute="trailing" constant="5" id="yX4-Nq-Ihw"/>
                                         <constraint firstItem="nhX-1k-lLa" firstAttribute="centerY" secondItem="stl-MG-nxE" secondAttribute="centerY" id="zkN-F6-dKh"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRD-1h-nJ5">
-                                    <rect key="frame" x="0.0" y="0.0" width="85" height="188"/>
-                                    <connections>
-                                        <action selector="rankBtnAction:" destination="-1" eventType="touchUpInside" id="Nyg-rH-UvG"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="YbD-da-Uq8" firstAttribute="leading" secondItem="kzn-VK-Nai" secondAttribute="leading" id="1sI-5t-VgD"/>
                                 <constraint firstAttribute="trailing" secondItem="YbD-da-Uq8" secondAttribute="trailing" id="2gb-sP-v2e"/>
                                 <constraint firstItem="YbD-da-Uq8" firstAttribute="top" secondItem="kzn-VK-Nai" secondAttribute="top" id="505-lR-cKW"/>
-                                <constraint firstItem="XRD-1h-nJ5" firstAttribute="leading" secondItem="kzn-VK-Nai" secondAttribute="leading" id="60h-gl-z2R"/>
                                 <constraint firstItem="4XP-nH-qF9" firstAttribute="top" secondItem="kzn-VK-Nai" secondAttribute="top" id="Ghu-KC-WVD"/>
                                 <constraint firstItem="Li0-fw-frn" firstAttribute="leading" secondItem="kzn-VK-Nai" secondAttribute="leading" constant="10" id="JIS-qC-zF5"/>
                                 <constraint firstItem="Li0-fw-frn" firstAttribute="top" secondItem="8aw-zb-rAr" secondAttribute="bottom" id="KI6-XH-Bmy"/>
                                 <constraint firstAttribute="bottom" secondItem="Li0-fw-frn" secondAttribute="bottom" constant="10" id="Kj6-oe-cjk"/>
-                                <constraint firstItem="XRD-1h-nJ5" firstAttribute="top" secondItem="kzn-VK-Nai" secondAttribute="top" id="MD7-kt-rPv"/>
                                 <constraint firstItem="lRl-ka-Xfc" firstAttribute="top" secondItem="YbD-da-Uq8" secondAttribute="bottom" constant="5" id="Mhn-NF-hbA"/>
-                                <constraint firstAttribute="bottom" secondItem="XRD-1h-nJ5" secondAttribute="bottom" id="O1n-WF-Nrv"/>
                                 <constraint firstAttribute="trailing" secondItem="Li0-fw-frn" secondAttribute="trailing" constant="10" id="Sv9-tx-BjD"/>
                                 <constraint firstItem="8aw-zb-rAr" firstAttribute="top" secondItem="lRl-ka-Xfc" secondAttribute="bottom" id="TlZ-m0-7Tf"/>
-                                <constraint firstAttribute="trailing" secondItem="XRD-1h-nJ5" secondAttribute="trailing" id="XhR-N3-ibx"/>
                                 <constraint firstAttribute="trailing" secondItem="lRl-ka-Xfc" secondAttribute="trailing" constant="5" id="YNE-Ff-Pu7"/>
                                 <constraint firstAttribute="trailing" secondItem="8aw-zb-rAr" secondAttribute="trailing" id="e24-N2-JT7"/>
                                 <constraint firstItem="8aw-zb-rAr" firstAttribute="leading" secondItem="kzn-VK-Nai" secondAttribute="leading" id="ieb-is-V2o"/>
@@ -2030,7 +2030,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="tei-la-Zew"/>
-            <point key="canvasLocation" x="806.25" y="964.43661971830988"/>
+            <point key="canvasLocation" x="351" y="912"/>
         </view>
     </objects>
     <resources>

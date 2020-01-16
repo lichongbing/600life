@@ -36,6 +36,7 @@
 - (void)initialize {
     _imagePosition = SPButtonImagePositionLeft;
     _imageTitleSpace = 0.0;
+    
 }
 -(void)awakeFromNib{// by aaron
     [super awakeFromNib];

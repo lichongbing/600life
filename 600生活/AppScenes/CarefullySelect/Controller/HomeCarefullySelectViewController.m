@@ -717,10 +717,7 @@
             [wself deInitGlobalQueueTimer];
         });
     }
-    
 
-    
-    
     //时间列表
     for(UIView* subView in self.rushBgView.subviews){
         if(subView){

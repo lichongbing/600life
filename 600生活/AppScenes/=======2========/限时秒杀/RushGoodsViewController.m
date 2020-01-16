@@ -22,9 +22,14 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet LLBaseView *layoutBottomLine;
+@property (weak, nonatomic) IBOutlet UILabel *labNextStartTime;
 
 @property(nonatomic,strong)NSArray* rushTimes;//开枪时间
 @property(nonatomic,strong)NSString* currentClickedTime; //保存当前点击的开枪时间段
+@property(atomic,strong) NSTimer* timer;  //秒杀倒计时
+@property(nonatomic,assign) NSInteger timerCounter; //计数器  触发timer 初始为0
+@property(nonatomic,strong) NSCalendar* calendar; //计算剩余时间
+@property(nonatomic,assign) double double_nextStartTime; //下一场开始时间
 
 @end
 
@@ -51,18 +56,43 @@
     [self GetWithUrlStr:kFullUrl(kGetRushTimelist) param:nil showHud:YES resCache:nil success:^(id  _Nullable res) {
         if(kSuccessRes){
             NSDictionary* dic = res[@"data"];
+            self.double_nextStartTime = [dic[@"next_start_time"]doubleValue];
             if([[dic allKeys]containsObject:@"time_list"]){
-                [wself handleTimeList:dic[@"time_list"]];
+                [wself handleTimeList:dic[@"time_list"] addNextStartTime:self.double_nextStartTime];
             }
         }
     } falsed:^(NSError * _Nullable error) {
     }];
 }
 
--(void)handleTimeList:(NSArray*)list
+-(void)handleTimeList:(NSArray*)list addNextStartTime:(double )double_nextSartTime
 {
- 
     self.rushTimes = [[NSArray alloc]initWithArray:list];
+    
+    NSDate* endDate = [NSDate dateWithTimeIntervalSince1970:double_nextSartTime];
+    NSDate* nowDate = [NSDate date];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSCalendarUnit type0 = NSCalendarUnitSecond;
+    NSDateComponents *cmps0 = [calendar components:type0 fromDate:nowDate toDate:endDate options:0];
+    NSInteger newSeconds = cmps0.second; //新的相差的秒数
+    if(newSeconds > 0){
+        self.timerCounter = newSeconds;
+        __weak RushGoodsViewController* wself = self;
+        //当前线程为主线程，timer操作放到子线程中去
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [wself deInitGlobalQueueTimer];
+            [wself initTimer];
+        });
+    }else{
+        __weak RushGoodsViewController* wself = self;
+        //当前线程为主线程，timer操作放到子线程中去
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [wself deInitGlobalQueueTimer];
+        });
+    }
+    
     
     __weak RushGoodsViewController* wself = self;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -70,8 +100,78 @@
     });
 }
 
+#pragma mark - getter setter
+
+-(NSCalendar*)calendar
+{
+    if(_calendar == nil){
+        _calendar = [NSCalendar currentCalendar];
+    }
+    return _calendar;
+}
+#pragma mark - timer
+-(void)initTimer
+{
+    if (!_timer) {
+        _timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
+        [_timer fire];
+    }
+}
+
+-(void)deInitGlobalQueueTimer
+{
+    if(_timer){
+        [_timer invalidate];
+          _timer = nil;
+    }
+}
+
+-(void)timerAction:(NSTimer*)timer
+{
+    //action在子线程中
+    if (self.timerCounter > 0) {
+        self.timerCounter--;
+        __weak RushGoodsViewController* wself = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSDate* endDate = [NSDate dateWithTimeIntervalSince1970:wself.double_nextStartTime];
+            NSDate* nowDate = [NSDate date];
+            
+            //时分秒的格式
+            NSCalendarUnit type = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+            NSDateComponents *cmps = [wself.calendar components:type fromDate:nowDate toDate:endDate options:0];
+//            NSLog(@"%ld小时%ld分钟%ld秒",cmps.hour, cmps.minute, cmps.second);
+            NSString* hStr = [NSString stringWithFormat:@"%ld",cmps.hour];
+            if(hStr.length == 1){
+                hStr = [NSString stringWithFormat:@"0%@",hStr];
+            }
+            
+            NSString* mStr = [NSString stringWithFormat:@"%ld",cmps.minute];
+            if(mStr.length == 1){
+                mStr = [NSString stringWithFormat:@"0%@",mStr];
+            }
+            
+            NSString* sStr = [NSString stringWithFormat:@"%ld",cmps.second];
+            if(sStr.length == 1){
+                sStr = [NSString stringWithFormat:@"0%@",sStr];
+            }
+            wself.labNextStartTime.text = [NSString stringWithFormat:@"距离结束 %@:%@:%@",hStr,mStr,sStr];
+//            wself.rushEndH.text = hStr;
+//            wself.rushEndM.text = mStr;
+//            wself.rushEndS.text = sStr;
+        });
+    } else if (self.timerCounter == 0) {
+        [self deInitGlobalQueueTimer]; //析构timer
+    }
+}
+
 -(void)requestGoodsListWithTime:(NSString*)time pageIndex:(NSInteger)pageIndex
 {
+    if (pageIndex ==1) {
+            self.datasource=[NSMutableArray new];
+            [self.tableview reloadData];
+    }
     NSDictionary* param = @{
         @"page":[NSNumber numberWithInteger:pageIndex],
         @"page_size":[NSNumber numberWithInteger:10],
@@ -82,7 +182,11 @@
     [self GetWithUrlStr:kFullUrl(kGetRushGoodsList) param:param showHud:YES resCache:nil success:^(id  _Nullable res) {
         if(kSuccessRes){
             NSArray* datas = res[@"data"];
-            [wself GoodsListWithDatas:datas pageIndex:pageIndex];
+            if (datas.count<=0) {
+                [[LLHudHelper sharedInstance]tipMessage:@"没有商品哦！" delay:2.0];
+            }else{
+                [wself GoodsListWithDatas:datas pageIndex:pageIndex];
+            }
         }
     } falsed:^(NSError * _Nullable error) {
     }];

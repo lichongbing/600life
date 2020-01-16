@@ -18,6 +18,10 @@
 #import "LLTabBarController.h"
 //引导页
 #import "GuidenceViewController.h"
+//京东联盟
+#import <JDSDK/JDKeplerSDK.h>
+#define Value_AppKey @"715f298a4e3c45851fce272ac0456542"
+#define Value_AppSecret @"fb75c0384dc44c03b00b65bf253d4c00"
 
 @interface AppDelegate ()<WXApiDelegate,JPUSHRegisterDelegate>
 
@@ -49,6 +53,8 @@
     
     //初始化数据
     [[DelegateConfig sharedConfig]configAppDatasWithLaunchOptions:launchOptions];
+    //京东联盟
+    [[KeplerApiManager sharedKPService]asyncInitSdk:Value_AppKey secretKey:Value_AppSecret sucessCallback:^(){}failedCallback:^(NSError *error){}];
 
     return YES;
 }

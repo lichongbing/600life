@@ -122,6 +122,10 @@
 		815288AC239C9A0E00195DBA /* kDefaultImgNameGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 815288AB239C9A0E00195DBA /* kDefaultImgNameGif.gif */; };
 		815288B0239CA84800195DBA /* UIImageView+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 815288AF239CA84800195DBA /* UIImageView+ext.m */; };
 		815288B4239CAFC900195DBA /* UIButton+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 815288B3239CAFC900195DBA /* UIButton+ext.m */; };
+		8179230C23D0004000F07820 /* JDSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8179230A23D0003F00F07820 /* JDSDK.bundle */; };
+		8179230D23D0004000F07820 /* JDSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8179230B23D0003F00F07820 /* JDSDK.framework */; };
+		8179230F23D0009A00F07820 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8179230E23D0009A00F07820 /* JavaScriptCore.framework */; };
+		8179231223D007B900F07820 /* HYX_BtnTopImgBottomLab.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179231123D007B900F07820 /* HYX_BtnTopImgBottomLab.m */; };
 		8179BE6423BB30FF002D3714 /* JDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179BE6223BB30FF002D3714 /* JDMainViewController.m */; };
 		8179BE6523BB30FF002D3714 /* JDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8179BE6323BB30FF002D3714 /* JDMainViewController.xib */; };
 		818E673D23C874D4000FEB56 /* TSShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 818E673B23C874D4000FEB56 /* TSShareHelper.m */; };
@@ -617,6 +621,11 @@
 		815288AF239CA84800195DBA /* UIImageView+ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ext.m"; sourceTree = "<group>"; };
 		815288B2239CAFC900195DBA /* UIButton+ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ext.h"; sourceTree = "<group>"; };
 		815288B3239CAFC900195DBA /* UIButton+ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ext.m"; sourceTree = "<group>"; };
+		8179230A23D0003F00F07820 /* JDSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JDSDK.bundle; sourceTree = "<group>"; };
+		8179230B23D0003F00F07820 /* JDSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JDSDK.framework; sourceTree = "<group>"; };
+		8179230E23D0009A00F07820 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		8179231023D007B900F07820 /* HYX_BtnTopImgBottomLab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYX_BtnTopImgBottomLab.h; sourceTree = "<group>"; };
+		8179231123D007B900F07820 /* HYX_BtnTopImgBottomLab.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYX_BtnTopImgBottomLab.m; sourceTree = "<group>"; };
 		8179BE6123BB30FF002D3714 /* JDMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDMainViewController.h; sourceTree = "<group>"; };
 		8179BE6223BB30FF002D3714 /* JDMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDMainViewController.m; sourceTree = "<group>"; };
 		8179BE6323BB30FF002D3714 /* JDMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JDMainViewController.xib; sourceTree = "<group>"; };
@@ -1194,6 +1203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8179230F23D0009A00F07820 /* JavaScriptCore.framework in Frameworks */,
 				812FCB3023B0A42D00AD0217 /* UserNotifications.framework in Frameworks */,
 				812FCB3223B0A43700AD0217 /* libresolv.tbd in Frameworks */,
 				812FCB2E23B0A42600AD0217 /* AdSupport.framework in Frameworks */,
@@ -1211,6 +1221,7 @@
 				8107855D23ACB77700C911A1 /* libWeChatSDK.a in Frameworks */,
 				8150BFAD2390B12C0053CDBC /* CoreMotion.framework in Frameworks */,
 				8150BFA92390B1160053CDBC /* libc++.tbd in Frameworks */,
+				8179230D23D0004000F07820 /* JDSDK.framework in Frameworks */,
 				8150BFA72390B10F0053CDBC /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1221,6 +1232,7 @@
 		05D4C561A0081FB0EAC073E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8179230E23D0009A00F07820 /* JavaScriptCore.framework */,
 				812FCB3123B0A43700AD0217 /* libresolv.tbd */,
 				812FCB2F23B0A42D00AD0217 /* UserNotifications.framework */,
 				812FCB2D23B0A42600AD0217 /* AdSupport.framework */,
@@ -1609,6 +1621,15 @@
 				815288B3239CAFC900195DBA /* UIButton+ext.m */,
 			);
 			path = UIButton;
+			sourceTree = "<group>";
+		};
+		8179230923D0001E00F07820 /* JingDSDk */ = {
+			isa = PBXGroup;
+			children = (
+				8179230A23D0003F00F07820 /* JDSDK.bundle */,
+				8179230B23D0003F00F07820 /* JDSDK.framework */,
+			);
+			path = JingDSDk;
 			sourceTree = "<group>";
 		};
 		8179BE5D23BB30C2002D3714 /* JingDong */ = {
@@ -2011,6 +2032,7 @@
 		819B675A238FD8E8008244C7 /* ThirdParts */ = {
 			isa = PBXGroup;
 			children = (
+				8179230923D0001E00F07820 /* JingDSDk */,
 				818E673A23C874D4000FEB56 /* TSShareHelper */,
 				81918D2823C6C4D40032F185 /* PYSearch */,
 				81498F6323C59CDA004F33F1 /* QFDatePickerView */,
@@ -2978,6 +3000,8 @@
 		819B696D238FD969008244C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8179231023D007B900F07820 /* HYX_BtnTopImgBottomLab.h */,
+				8179231123D007B900F07820 /* HYX_BtnTopImgBottomLab.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3804,6 +3828,7 @@
 				8119A86223C41AF100B7FE8F /* GoodDetailViewController.xib in Resources */,
 				819B6A99238FD969008244C7 /* IncomeDetailTableViewCell.xib in Resources */,
 				814042A8239DE677003D05E1 /* HotRecommendViewController.xib in Resources */,
+				8179230C23D0004000F07820 /* JDSDK.bundle in Resources */,
 				81B717AE23953C0C000B1408 /* TeachViewController.xib in Resources */,
 				819B6AE0238FD969008244C7 /* CategoryTypeViewController.xib in Resources */,
 				819B6B44238FD969008244C7 /* StoreDetailViewController.xib in Resources */,
@@ -4056,6 +4081,7 @@
 				81EE887823A723DE002CE26F /* SuperiorUserInfo.m in Sources */,
 				819B688E238FD8E8008244C7 /* LunarFormatter.m in Sources */,
 				819B689F238FD8E8008244C7 /* MBProgressHUD.m in Sources */,
+				8179231223D007B900F07820 /* HYX_BtnTopImgBottomLab.m in Sources */,
 				815288B0239CA84800195DBA /* UIImageView+ext.m in Sources */,
 				819B688D238FD8E8008244C7 /* CZPhotoPreviewViewController.m in Sources */,
 				81498F7923C59CDA004F33F1 /* QFDatePickerView.m in Sources */,
@@ -4331,6 +4357,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.2.13;
 				DEVELOPMENT_TEAM = 247M82J5AW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/600生活/ThirdParts/JingDSDk",
+				);
 				GCC_PREFIX_HEADER = "/Users/ios/Documents/600生活/600生活/600生活PrefixHeader.pch";
 				INFOPLIST_FILE = "600生活/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4450,6 +4480,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.2.13;
 				DEVELOPMENT_TEAM = 247M82J5AW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/600生活/ThirdParts/JingDSDk",
+				);
 				GCC_PREFIX_HEADER = "/Users/ios/Documents/600生活/600生活/600生活PrefixHeader.pch";
 				INFOPLIST_FILE = "600生活/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

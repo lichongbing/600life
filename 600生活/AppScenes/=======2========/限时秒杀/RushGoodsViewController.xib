@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="colorBg" destination="huZ-zC-QG2" id="f5z-9K-w9h"/>
                 <outlet property="headerView" destination="OQg-oZ-h4a" id="9VH-XQ-UbB"/>
+                <outlet property="labNextStartTime" destination="zhc-oF-1fL" id="nMn-Tt-opn"/>
                 <outlet property="layoutBottomLine" destination="KLs-g8-02p" id="zxF-wR-Kc5"/>
                 <outlet property="scrollView" destination="QlL-fu-zyc" id="Nt4-0a-lkh"/>
                 <outlet property="statuBarHeightCons" destination="Ucd-r1-ufD" id="x2T-vH-cne"/>
@@ -86,21 +87,21 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht4-14-KVt" userLabel="时间Bg">
                             <rect key="frame" x="0.0" y="114" width="320" height="50"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离下场 20 : 12 : 56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhc-oF-1fL">
-                                    <rect key="frame" x="98" y="17" width="124.5" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离结束 00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhc-oF-1fL">
+                                    <rect key="frame" x="103.5" y="17" width="113" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="限时秒杀timeLeft" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-O5-G2h">
-                                    <rect key="frame" x="5" y="22.5" width="88" height="5"/>
+                                    <rect key="frame" x="10.5" y="22.5" width="88" height="5"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="5" id="mZY-NA-nnA"/>
                                         <constraint firstAttribute="width" constant="88" id="uct-nz-WLd"/>
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="限时秒杀timeRight" translatesAutoresizingMaskIntoConstraints="NO" id="T2k-0d-KgZ">
-                                    <rect key="frame" x="227.5" y="22.5" width="88" height="5"/>
+                                    <rect key="frame" x="221.5" y="22.5" width="88" height="5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="88" id="4MG-3d-yOE"/>
                                         <constraint firstAttribute="height" constant="5" id="qSj-jB-dLB"/>
@@ -158,7 +159,7 @@
                 <constraint firstItem="rIs-ac-acQ" firstAttribute="top" secondItem="OQg-oZ-h4a" secondAttribute="top" id="qPu-L1-sTK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="1046.25" y="-101.40845070422536"/>
+            <point key="canvasLocation" x="876" y="-132"/>
         </view>
     </objects>
     <resources>
