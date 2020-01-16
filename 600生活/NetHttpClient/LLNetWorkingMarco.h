@@ -12,8 +12,8 @@
 #define kTimeOutInterval 10.0
 
 //#define kFirstUrl @"http://192.168.3.5/"     //本地测试服
-#define kFirstUrl @"https://test.lbshapp.com/"  //测试服
-//#define kFirstUrl @"https://api.lbshapp.com/"    //正式服
+//#define kFirstUrl @"https://test.lbshapp.com/"  //测试服
+#define kFirstUrl @"https://api.lbshapp.com/"    //正式服
 
 #define kBaseUrl kFirstUrl
 

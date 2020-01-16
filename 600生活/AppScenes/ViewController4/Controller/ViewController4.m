@@ -110,7 +110,7 @@
         wself.tableview.tableHeaderView = wself.contentView;
     };
     
-     [self addMJRefresh];
+    [self addMJRefresh];
 }
 
 #pragma mark - 网络请求
@@ -178,23 +178,22 @@
         }
         
         //这个月预估收入
-        wself.thisMonthMoneyLab.text = [NSString stringWithFormat:@"￥%@",[LLUserManager shareManager].currentUser.month_forecast];
+//        [self formatDecimalNumber:[LLUserManager shareManager].currentUser.month_forecast]
+        wself.thisMonthMoneyLab.text = [NSString stringWithFormat:@"￥%@",[self formatDecimalNumber:[LLUserManager shareManager].currentUser.month_forecast]];
         //今日收入
-        wself.todayMoneyLab.text = [NSString stringWithFormat:@"￥%@",[LLUserManager shareManager].currentUser.today_earnings];
-        
+        wself.todayMoneyLab.text = [NSString stringWithFormat:@"￥%@", [self formatDecimalNumber:[LLUserManager shareManager].currentUser.today_earnings]];
         //上个月收入
-        wself.lastMonthMoneyLab.text = [NSString stringWithFormat:@"￥%@",[LLUserManager shareManager].currentUser.last_month_settlement];
+        wself.lastMonthMoneyLab.text = [NSString stringWithFormat:@"￥%@", [self formatDecimalNumber:[LLUserManager shareManager].currentUser.last_month_settlement]];
         //上个月预估收入
-        wself.lastMonthEscMoneyLab.text = [NSString stringWithFormat:@"￥%@",[LLUserManager shareManager].currentUser.last_month_forecast];
+        wself.lastMonthEscMoneyLab.text = [NSString stringWithFormat:@"￥%@", [self formatDecimalNumber:[LLUserManager shareManager].currentUser.last_month_forecast]];
         //余额 balance
-        wself.remainMoneyLab.text = [NSString stringWithFormat:@"可用余额￥%@",[LLUserManager shareManager].currentUser.balance];
+        wself.remainMoneyLab.text = [NSString stringWithFormat:@"可用余额￥%@", [self formatDecimalNumber:[LLUserManager shareManager].currentUser.balance]];
     });
 }
 
 //获取专属客服二维码和微信号
 -(void)requestClientQRCode
 {
-    
     [self GetWithUrlStr:kFullUrl(kServiceQrcode) param:nil showHud:YES resCache:^(id  _Nullable cacheData) {
         if(kSuccessCache){
             [self handleClientQRCode:cacheData[@"data"]];
@@ -204,7 +203,7 @@
             [self handleClientQRCode:res[@"data"]];
         }
     } falsed:^(NSError * _Nullable error) {
-       
+        
     }];
 }
 
@@ -313,7 +312,7 @@
         return;
     }
     
-     NSInteger tag = btn.tag;
+    NSInteger tag = btn.tag;
     if(tag == 10){//收益
         IncomeViewController* vc = [IncomeViewController new];
         vc.hidesBottomBarWhenPushed = YES;
@@ -329,7 +328,7 @@
         
     } else if (tag == 13) {  //邀请
         
-       //有邀请码
+        //有邀请码
         InviteNewUserViewController* vc = [InviteNewUserViewController new];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
@@ -373,17 +372,17 @@
         IncomeRankViewController* vc = [[IncomeRankViewController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
-//        [[LLHudHelper sharedInstance]tipMessage:@"请联系专属客服"];
-//        return;
-//        FeedBackViewController* vc = [FeedBackViewController new];
-//        vc.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:vc animated:YES];
+        //        [[LLHudHelper sharedInstance]tipMessage:@"请联系专属客服"];
+        //        return;
+        //        FeedBackViewController* vc = [FeedBackViewController new];
+        //        vc.hidesBottomBarWhenPushed = YES;
+        //        [self.navigationController pushViewController:vc animated:YES];
     }
     
     if(tag == 12){//600收藏
-           MyCollectionsViewController* vc = [MyCollectionsViewController new];
-           vc.hidesBottomBarWhenPushed = YES;
-           [self.navigationController pushViewController:vc animated:YES];
+        MyCollectionsViewController* vc = [MyCollectionsViewController new];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
     if(tag == 11){ //订单查询
@@ -397,14 +396,14 @@
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
-//        NSString *mp4Path = [[NSBundle mainBundle]pathForResource:@"qidong.mp4"ofType:nil];
-//        TeachAVPlayerViewController* vc = [[TeachAVPlayerViewController alloc]initWithFilePath:mp4Path];
-//        vc.modalPresentationStyle = 0;
-//        [self presentViewController:vc animated:YES completion:nil];
-//        __weak TeachAVPlayerViewController* wvc = vc;
-//        vc.didClickedEnterMainCallBack = ^{
-//            [wvc dismissViewControllerAnimated:YES completion:nil];
-//        };
+        //        NSString *mp4Path = [[NSBundle mainBundle]pathForResource:@"qidong.mp4"ofType:nil];
+        //        TeachAVPlayerViewController* vc = [[TeachAVPlayerViewController alloc]initWithFilePath:mp4Path];
+        //        vc.modalPresentationStyle = 0;
+        //        [self presentViewController:vc animated:YES completion:nil];
+        //        __weak TeachAVPlayerViewController* wvc = vc;
+        //        vc.didClickedEnterMainCallBack = ^{
+        //            [wvc dismissViewControllerAnimated:YES completion:nil];
+        //        };
     }
 }
 
@@ -414,14 +413,23 @@
 -(void)addMJRefresh
 {
     __weak ViewController4* wself = self;
-   
+    
     self.isMJHeaderRefresh = YES;
     self.tableview.mj_header = [LLRefreshGifHeader headerWithRefreshingBlock:^{
         [wself requestGetUserInfo];
         [wself impactLight];
     }];
 }
-
-
-
+//字符串解析转金额问题------保留2位小数，三位数一个都好
+- (NSString *)formatDecimalNumber:(NSString *)string {
+    if (!string || string.length == 0) {
+        return string;
+    }
+    NSNumber *number = @([string doubleValue]);
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = kCFNumberFormatterDecimalStyle;
+    formatter.positiveFormat = @"###,##0.00";
+    NSString *amountString = [formatter stringFromNumber:number];
+    return amountString;
+}
 @end

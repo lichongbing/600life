@@ -54,6 +54,7 @@
                 [self handleFAQ:res[@"data"]];
            }
        } falsed:^(NSError * _Nullable error) {
+           
        }];
 }
 

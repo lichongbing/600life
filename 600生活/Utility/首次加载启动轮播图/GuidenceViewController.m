@@ -81,11 +81,13 @@
     enterBtn .width = 110;
     enterBtn.height = 35;
     enterBtn.centerX = superView.width * 0.5;
-    if(kIsiPhoneX_Series){
-        enterBtn.bottom = superView.height * 0.88;
-    }else{
-        enterBtn.bottom = superView.height * 0.91;
-    }
+    CGFloat kSH = kScreenHeight;
+    enterBtn.bottom =kSH - 30;
+//    if(kIsiPhoneX_Series){
+//        enterBtn.bottom = superView.height * 0.88;
+//    }else{
+//        enterBtn.bottom = superView.height * 0.91;
+//    }
     
     enterBtn.layer.borderWidth = 1;
     enterBtn.layer.borderColor = [UIColor redColor].CGColor;

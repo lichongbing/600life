@@ -95,9 +95,7 @@
             wself.fansCount = fansCount;
         }
     } falsed:^(NSError * _Nullable error) {
-        
     }];
-
 }
 
 //用最后一个粉丝的id分页 如果希望获取pid的下一级粉丝 就需要传递pid

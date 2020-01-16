@@ -54,6 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL isIOS13;
 
 @property (nonatomic, readonly) BOOL isPortrait;
+
 @end
 
 NS_ASSUME_NONNULL_END

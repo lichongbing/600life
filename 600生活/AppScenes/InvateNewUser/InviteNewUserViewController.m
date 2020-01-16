@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet iCarousel *calourseView;
 @property(nonatomic,strong)NSArray* imageViewArr;
+@property(nonatomic,strong)NSArray* imageViewArr_img;
  //被选中的calourseView的子项
 
 @property(nonatomic,strong)NSDictionary* data; //网络数据
@@ -32,7 +33,9 @@
     self.title = @"邀请好友";
     self.view.backgroundColor = [UIColor whiteColor];
     self.calourseView.width = kScreenWidth - 50;
-    
+    id traget = self.navigationController.interactivePopGestureRecognizer.delegate;
+ UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc]initWithTarget:traget action:nil];
+[self.view addGestureRecognizer:pan];
     [self requestInviteUser];
 }
 
@@ -69,6 +72,7 @@
     _data = data;
     NSArray* imageUrls = data[@"image"];
     NSMutableArray* mutArr = [NSMutableArray new];
+    NSMutableArray* mutArr_img = [NSMutableArray new];
     for(int i = 0; i < imageUrls.count; i++){
         CGFloat left = 20;
         CGFloat top = 20;
@@ -77,29 +81,29 @@
         imageV.contentMode = UIViewContentModeScaleAspectFit;
         [imageV sd_setImageWithURL:[NSURL URLWithString:imageUrls[i]] placeholderImage:kPlaceHolderImg];
         [mutArr addObject:imageV];
-//        //二维码
-//        UIImageView* qrImageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-//        qrImageV.tag = 10+i;
-//        [imageV addSubview:qrImageV];
-//        qrImageV.hidden = YES;
-//        qrImageV.centerX = imageV.width * 0.5;
-//        qrImageV.centerY = imageV.height * 0.75;
-//
-//        //生成二维码
-//        MKQRCode *mkCode = [[MKQRCode alloc] init];
-//        [mkCode setInfo:data[@"downUrl"] withSize:qrImageV.width];
-//        qrImageV.image = [mkCode generateImage];
-//
-//        //口令
-//        UILabel* lab = [UILabel new];
-//        [imageV addSubview:lab];
-//        lab.width = 150;
-//        lab.height = 35;
-//        lab.centerX = imageV.width * 0.5;
-//        lab.top = qrImageV.bottom + 15;
-//        lab.backgroundColor = [UIColor whiteColor];
-//        lab.text = [NSString stringWithFormat:@"邀请码%@",[LLUserManager shareManager].currentUser.invite_code];
-//        lab.textAlignment = NSTextAlignmentCenter;
+        //二维码
+        UIImageView* qrImageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        qrImageV.tag = 10+i;
+        [imageV addSubview:qrImageV];
+        qrImageV.hidden = YES;
+        qrImageV.centerX = imageV.width * 0.5;
+        qrImageV.centerY = imageV.height * 0.75;
+
+        //生成二维码
+        MKQRCode *mkCode = [[MKQRCode alloc] init];
+        [mkCode setInfo:data[@"downUrl"] withSize:qrImageV.width];
+        qrImageV.image = [mkCode generateImage];
+
+        //口令
+        UILabel* lab = [UILabel new];
+        [imageV addSubview:lab];
+        lab.width = 150;
+        lab.height = 35;
+        lab.centerX = imageV.width * 0.5;
+        lab.top = qrImageV.bottom + 15;
+        lab.backgroundColor = [UIColor whiteColor];
+        lab.text = [NSString stringWithFormat:@"邀请码%@",[LLUserManager shareManager].currentUser.invite_code];
+        lab.textAlignment = NSTextAlignmentCenter;
     }
     
     if(mutArr.count > 0){
@@ -155,7 +159,11 @@
     //保存图片
     view.shareRightBtnAction = ^{
         NSInteger index = wself.calourseView.currentItemIndex;
-        UIImage* image = ((UIImageView*)[wself.imageViewArr objectAtIndex:index]).image;
+        //获取当前的imageView
+        UIImageView* oldImageView = (UIImageView*)[wself.imageViewArr objectAtIndex:index];
+        //将当前选中的imageView以及子空间全部获取，产生新的iamg
+        UIImage* image = [UIImageView getNewImageWithSuperImageView:oldImageView];
+//        UIImage* image = ((UIImageView*)[wself.imageViewArr objectAtIndex:index]).image;
          UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     };
 }
@@ -263,8 +271,12 @@
     NSInteger index = self.calourseView.currentItemIndex;
     //获取当前的imageView
     UIImageView* oldImageView = (UIImageView*)[self.imageViewArr objectAtIndex:index];
+    //将当前选中的imageView以及子空间全部获取，产生新的iamg
+    UIImage* newImageViewImage = [UIImageView getNewImageWithSuperImageView:oldImageView];
+    //获取当前的imageView
+//    UIImageView* oldImageView = (UIImageView*)[self.imageViewArr objectAtIndex:index];
     //压缩图片到10M以内 变成1M
-    UIImage* newImage = [UIImage compressImageSize:oldImageView.image toByte:1*1024*1024];
+    UIImage* newImage = [UIImage compressImageSize:newImageViewImage toByte:1*1024*1024];
     //保存到指定路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *tempImagePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"分享海报.png"];

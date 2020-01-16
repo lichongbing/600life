@@ -9,6 +9,7 @@
 #import "CreateEventViewController.h"
 #import "LeeDatePickerView.h"
 #import "EventManager.h"
+#import <EventKit/EventKit.h>
 
 @interface CreateEventViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *contentTf;
@@ -28,18 +29,34 @@
     self.title = @"提醒设置";
     self.contentTf.delegate = self;
 }
-
+#pragma 选择时间的控件
 - (IBAction)timeBtn:(id)sender {
-    __weak CreateEventViewController* wself= self;
-       [LeeDatePickerView showLeeDatePickerViewWithStyle:LeeDatePickerViewStyle_Single formatterStyle:LeeDatePickerViewDateFormatterStyle_yMdHm block:^(NSArray<NSDate *> *dateArray) {
-           NSDate* date = dateArray.firstObject;
-           wself.selectDate = date;
-           NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-           [formatter setDateFormat:@"YYYY-MM-dd HH:mm"];
-           NSString* timeStr = [formatter stringFromDate:date];
-           wself.timeTf.text = timeStr;
-           [wself checkSureBtnOk];
-       }];
+    //判断用户是否打开访问日历的权限
+    // EKEntityTypeEvent    代表日历    // EKEntityTypeReminder 代表备忘
+    EKAuthorizationStatus ekAuthStatus = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
+//    if (ekAuthStatus == EKAuthorizationStatusNotDetermined) {
+//        EKEventStore *store = [[EKEventStore alloc] init];
+//        [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+//            NSLog(@"========%i",granted);
+//        }];
+//    } else
+    if (ekAuthStatus == EKAuthorizationStatusRestricted || ekAuthStatus == EKAuthorizationStatusDenied ||ekAuthStatus == EKAuthorizationStatusNotDetermined ) {
+       //NO
+        NSString* str = [NSString stringWithFormat:@"前往设置600生活,打开访问日历的权限"];
+        [[LLHudHelper sharedInstance]tipMessage:str delay:2.0];
+    } else {
+//       YES
+       __weak CreateEventViewController* wself= self;
+           [LeeDatePickerView showLeeDatePickerViewWithStyle:LeeDatePickerViewStyle_Single formatterStyle:LeeDatePickerViewDateFormatterStyle_yMdHm block:^(NSArray<NSDate *> *dateArray) {
+               NSDate* date = dateArray.firstObject;
+               wself.selectDate = date;
+               NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+               [formatter setDateFormat:@"YYYY-MM-dd HH:mm"];
+               NSString* timeStr = [formatter stringFromDate:date];
+               wself.timeTf.text = timeStr;
+               [wself checkSureBtnOk];
+           }];
+    }
 }
 
 #pragma mark - textfiel delegate

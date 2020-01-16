@@ -28,7 +28,6 @@
     
     self.title = @"收益排行";
     
- 
     self.tableHeaderView.width = kScreenWidth - 15 * 2;
     
     [self.tableview removeFromSuperview];
@@ -103,7 +102,7 @@
     
     
     NSMutableArray* mutArr = [NSMutableArray new];
-    NSArray* list = data[@"data"];
+    NSArray* list = [[NSArray alloc]initWithArray:data[@"data"]];
     for(int i = 0; i < list.count; i++){
         NSError* err = nil;
         IncomeRankModel* incomeRankModel = [[IncomeRankModel alloc]initWithDictionary:list[i] error:&err];

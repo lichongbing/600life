@@ -87,7 +87,10 @@
 #define kTabbarHeight (kIsiPhoneX_Series ? 83. : 49.)
 //ipx home区域高度 只有x系列才有这个高度
 #define kIPhoneXHomeIndicatorHeight (kIsiPhoneX_Series ? 34.0 : 0.)
-
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+//屏幕的物理尺寸
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 
 #define RGB(A,B,C) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]

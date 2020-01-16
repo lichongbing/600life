@@ -54,7 +54,6 @@ NS_ASSUME_NONNULL_BEGIN
 ///发现新版本
 @property (nonatomic,strong) void (^findNewVersionBtnAction)(void);
 
-
 ///提醒登录
 @property (nonatomic,strong) void (^goSiginBtnAction)(void);
 

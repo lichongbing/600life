@@ -35,13 +35,17 @@
 
 -(void)fullData:(FansModel*)fansModel
 {
+    //头像
     [self.headIcon sd_setImageWithURL:[NSURL URLWithString:fansModel.avatar] placeholderImage:kPlaceHolderUser];
     
+    //昵称
     self.nameLab.text = fansModel.user_nickname;
 
     //电话
     self.telLab.text = fansModel.mobile;
+    
     //时间
-    self.timeLab.text = [Utility getDateStrWithTimesStampNumber:fansModel.create_time Format:@"YYYY-MM-DD"];
+    self.timeLab.text = [Utility getDateStrWithTimesStampNumber:fansModel.create_time Format:@"YYYY-MM-dd"];
 }
+
 @end
