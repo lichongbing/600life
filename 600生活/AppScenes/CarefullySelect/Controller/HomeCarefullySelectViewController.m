@@ -567,7 +567,7 @@
         [spButton.btn_topImg sd_setImageWithURL:[NSURL URLWithString:homePageActivityModel.icon] placeholderImage:kPlaceHolderImg];
         
         if(imagesBgViewHeight < spButton.bottom){
-            imagesBgViewHeight = spButton.bottom;
+            imagesBgViewHeight = spButton.bottom+12;
         }
         
         _adViewBgViewHeightCons.constant = imagesBgViewHeight + 12;

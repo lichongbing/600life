@@ -128,6 +128,7 @@
 		8179231223D007B900F07820 /* HYX_BtnTopImgBottomLab.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179231123D007B900F07820 /* HYX_BtnTopImgBottomLab.m */; };
 		8179BE6423BB30FF002D3714 /* JDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179BE6223BB30FF002D3714 /* JDMainViewController.m */; };
 		8179BE6523BB30FF002D3714 /* JDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8179BE6323BB30FF002D3714 /* JDMainViewController.xib */; };
+		818AF6CE23D1A7F7005A85BD /* SH_MyCollectionVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 818AF6CD23D1A7F7005A85BD /* SH_MyCollectionVc.m */; };
 		818E673D23C874D4000FEB56 /* TSShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 818E673B23C874D4000FEB56 /* TSShareHelper.m */; };
 		818F44EA239A3CA900A5C22B /* CollectedGoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F44E9239A3CA900A5C22B /* CollectedGoodModel.m */; };
 		81918D3723C6C4D40032F185 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81918D2A23C6C4D40032F185 /* UIColor+PYSearchExtension.m */; };
@@ -629,6 +630,8 @@
 		8179BE6123BB30FF002D3714 /* JDMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDMainViewController.h; sourceTree = "<group>"; };
 		8179BE6223BB30FF002D3714 /* JDMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDMainViewController.m; sourceTree = "<group>"; };
 		8179BE6323BB30FF002D3714 /* JDMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JDMainViewController.xib; sourceTree = "<group>"; };
+		818AF6CC23D1A7F7005A85BD /* SH_MyCollectionVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SH_MyCollectionVc.h; sourceTree = "<group>"; };
+		818AF6CD23D1A7F7005A85BD /* SH_MyCollectionVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SH_MyCollectionVc.m; sourceTree = "<group>"; };
 		818E673B23C874D4000FEB56 /* TSShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSShareHelper.m; sourceTree = "<group>"; };
 		818E673C23C874D4000FEB56 /* TSShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSShareHelper.h; sourceTree = "<group>"; };
 		818F44E8239A3CA900A5C22B /* CollectedGoodModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectedGoodModel.h; sourceTree = "<group>"; };
@@ -1693,6 +1696,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		818AF6C823D1A25D005A85BD /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				818AF6CA23D1A765005A85BD /* Controller */,
+				818AF6CB23D1A765005A85BD /* Model */,
+				818AF6C923D1A764005A85BD /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		818AF6C923D1A764005A85BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		818AF6CA23D1A765005A85BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				818AF6CC23D1A7F7005A85BD /* SH_MyCollectionVc.h */,
+				818AF6CD23D1A7F7005A85BD /* SH_MyCollectionVc.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		818AF6CB23D1A765005A85BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		818E673A23C874D4000FEB56 /* TSShareHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1799,6 +1835,7 @@
 				819B6745238FD8CC008244C7 /* Categorys */,
 				819B6707238FD8AA008244C7 /* Utility */,
 				819B66F7238FD84E008244C7 /* AppFrame */,
+				818AF6C823D1A25D005A85BD /* Mine */,
 				819B668E238FD58A008244C7 /* AppDelegate.h */,
 				819B668F238FD58A008244C7 /* AppDelegate.m */,
 				819B6691238FD58A008244C7 /* SceneDelegate.h */,
@@ -4072,6 +4109,7 @@
 				819B689D238FD8E8008244C7 /* FSCalendarAppearance.m in Sources */,
 				819B6AFB238FD969008244C7 /* MsgTableViewCell.m in Sources */,
 				819B6741238FD8AA008244C7 /* IOSDeviceConfig.m in Sources */,
+				818AF6CE23D1A7F7005A85BD /* SH_MyCollectionVc.m in Sources */,
 				819B6A89238FD969008244C7 /* SearchHistoryViewController.m in Sources */,
 				819B673F238FD8AA008244C7 /* ClearCacheTool.m in Sources */,
 				819B6870238FD8E8008244C7 /* JTCalendarDelegateManager.m in Sources */,

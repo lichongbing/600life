@@ -95,7 +95,12 @@
         }
     } success:^(id  _Nullable res) {
         if(kSuccessRes){
+            NSArray *ary = res[@"data"];
+            if (pageIndex == 1 && ary.count == 0) {
+                  [self.datasource removeAllObjects];
+              }
             [self handleMyCollectedGoods:pageIndex datas:res[@"data"]];
+            
         }
     } falsed:^(NSError * _Nullable error) {
       
