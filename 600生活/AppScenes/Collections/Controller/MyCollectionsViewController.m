@@ -81,6 +81,9 @@
 //收藏
 -(void)requestMyCollectedGoods:(NSInteger)pageIndex
 {
+    if (pageIndex == 1) {
+        [self.datasource removeAllObjects];
+    }
      NSDictionary* param = @{
            @"page":[NSNumber numberWithInteger:pageIndex],
            @"page_size":@"10"
