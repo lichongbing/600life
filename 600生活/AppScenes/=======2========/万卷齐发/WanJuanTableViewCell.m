@@ -65,7 +65,7 @@
     self.title1.text = [NSString stringWithFormat:@"\t  %@",couponGood1.title];
     
     self.oldPrice1.text = [NSString stringWithFormat:@"￥%@",couponGood1.price];//原价
-    self.freshPrice1.text = [NSString stringWithFormat:@" 券后价%@ ",couponGood1.quanhou_price];//券后价
+    self.freshPrice1.text = [NSString stringWithFormat:@"%@ ",couponGood1.quanhou_price];//券后价
 //    self.sealCount1.text = [NSString stringWithFormat:@"已售 %@",couponGood1.volume];
     [self.quanBtn1 setTitle:[NSString stringWithFormat:@"        ￥%@ ",couponGood1.coupon_money] forState:UIControlStateNormal];
 //    self.earning1.text = [NSString stringWithFormat:@" 预计收益￥%@ ",couponGood1.earnings];
@@ -81,7 +81,7 @@
     self.title2.text = [NSString stringWithFormat:@"\t  %@",couponGood2.title];
     
     self.oldPrice2.text = [NSString stringWithFormat:@"￥%@",couponGood2.price];//原价
-    self.freshPrice2.text = [NSString stringWithFormat:@" 券后价%@ ",couponGood2.quanhou_price];//券后价
+    self.freshPrice2.text = [NSString stringWithFormat:@"%@ ",couponGood2.quanhou_price];//券后价
 //    self.sealCount2.text = [NSString stringWithFormat:@"已售 %@",couponGood2.volume];
     [self.quanBtn2 setTitle:[NSString stringWithFormat:@"        ￥%@ ",couponGood2.coupon_money] forState:UIControlStateNormal];
 //    self.earning2.text = [NSString stringWithFormat:@" 预计收益￥%@ ",couponGood2.earnings];
