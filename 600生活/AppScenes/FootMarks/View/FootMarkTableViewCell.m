@@ -50,7 +50,7 @@
     self.titleLab.text = footMarkGoodModel.title;
     
     //券后价
-    self.quanhouPriceLab.text = footMarkGoodModel.price;
+    self.quanhouPriceLab.text = footMarkGoodModel.quanhou_price;
     
     //旧价格
     self.priceLab.text = [NSString stringWithFormat:@"原价￥%@",footMarkGoodModel.price];
@@ -59,7 +59,7 @@
     self.cellCountLab.text = [NSString stringWithFormat:@"已售 %@",footMarkGoodModel.volume];
     
     //券价值 左边8个空格
-    [self.quanBtn setTitle:[NSString stringWithFormat:@"        ￥%@ ",footMarkGoodModel.quanhou_price] forState:UIControlStateNormal];
+    [self.quanBtn setTitle:[NSString stringWithFormat:@"        ￥%@ ",footMarkGoodModel.coupon_money] forState:UIControlStateNormal];
 }
 
 -(void)clearUI

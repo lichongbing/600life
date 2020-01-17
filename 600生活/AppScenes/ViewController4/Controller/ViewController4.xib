@@ -473,7 +473,7 @@
                                         <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-Vn-yvj" customClass="SPButton">
                                             <rect key="frame" x="222" y="0.0" width="74" height="81"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="收益排行" image="MyCenter意见反馈">
+                                            <state key="normal" title="收益排行" image="mine_shouyi_sort">
                                                 <color key="titleColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -705,7 +705,6 @@
     <resources>
         <image name="MyCenter关于我们" width="22" height="22"/>
         <image name="MyCenter客服" width="22" height="22"/>
-        <image name="MyCenter意见反馈" width="22" height="22"/>
         <image name="MyCenter收藏" width="22" height="22"/>
         <image name="MyCenter新手帮助" width="22" height="22"/>
         <image name="MyCenter查询" width="22" height="22"/>
@@ -719,5 +718,6 @@
         <image name="UserCenter_邀请" width="29" height="29"/>
         <image name="center_invite" width="366" height="106.5"/>
         <image name="kDefaultUserIconName" width="48" height="48"/>
+        <image name="mine_shouyi_sort" width="19.5" height="19.5"/>
     </resources>
 </document>
