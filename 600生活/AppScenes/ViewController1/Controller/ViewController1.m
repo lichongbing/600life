@@ -318,7 +318,7 @@
         LLWindowTipView* view = [[LLWindowTipView alloc]initWithType:WindowTipViewTypeNewVersion];
         __weak LLWindowTipView* wview = view;
         view.findNewVersionBtnAction = ^{
-            NSURL* url = [NSURL URLWithString:kAppStoreLink];
+            NSURL* url = [NSURL URLWithString:kAppItunesLine];
             [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
             [wview dismiss];
         };

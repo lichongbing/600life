@@ -62,7 +62,7 @@
     self.sellCountLab.text = [NSString stringWithFormat:@"已售 %@",gaoYongGood.volume];
     
     //券价值//8个空格+1个空格
-    [self.quanBtn setTitle:[NSString stringWithFormat:@"        ￥%@ ",gaoYongGood.quanhou_price] forState:UIControlStateNormal];
+    [self.quanBtn setTitle:[NSString stringWithFormat:@"        ￥%@ ",gaoYongGood.coupon_money] forState:UIControlStateNormal];
     
     //预计收益
     self.incomeLab.text = [NSString stringWithFormat:@" 预计收益 %@ ",gaoYongGood.earnings];
