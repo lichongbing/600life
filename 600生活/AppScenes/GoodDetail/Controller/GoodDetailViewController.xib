@@ -303,7 +303,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI9-pp-Wcx" customClass="SPButton">
-                            <rect key="frame" x="226" y="67" width="37" height="30"/>
+                            <rect key="frame" x="214" y="67" width="37" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="DIj-YH-Yxu"/>
                             </constraints>
@@ -318,12 +318,12 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9e-3D-Sfc" customClass="SPButton">
-                            <rect key="frame" x="273" y="67" width="37" height="30"/>
+                            <rect key="frame" x="261" y="67" width="49" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="rXU-4Q-Lpv"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="运费" image="Good圈钩">
+                            <state key="normal" title="运费险" image="Good圈钩">
                                 <color key="titleColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>

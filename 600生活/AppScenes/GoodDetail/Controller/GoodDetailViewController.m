@@ -329,7 +329,7 @@
     [self loading];
     
     //广告
-    if(self.goodModel.pict_url){
+    if(self.goodModel.small_images){
         [self resetupAdView];
     }
     
@@ -390,8 +390,7 @@
 //广告
 -(void)resetupAdView
 {
-    NSString* adUrl = self.goodModel.pict_url;
-    [self.adView setUpOnlineImagesWithSource:@[adUrl] PlaceHolder:kPlaceHolderImg ClickHandler:^(NSInteger index, NSString *imgSrc, UIImage *img) {
+    [self.adView setUpOnlineImagesWithSource:self.goodModel.small_images PlaceHolder:kPlaceHolderImg ClickHandler:^(NSInteger index, NSString *imgSrc, UIImage *img) {
     }];
 }
 

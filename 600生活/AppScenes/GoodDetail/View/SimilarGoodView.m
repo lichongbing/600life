@@ -57,6 +57,7 @@
     
     self.freshPriceLab.text = smilarGoodModel.quanhou_price;
     self.oldPriceLab.text = [NSString stringWithFormat:@"￥%@",smilarGoodModel.price];
-    [self.quanBtn setTitle:[NSString stringWithFormat:@"      ￥%@",smilarGoodModel.quanhou_price] forState:UIControlStateNormal];
+    //优惠券的价值
+    [self.quanBtn setTitle:[NSString stringWithFormat:@"      ￥%@",smilarGoodModel.coupon_money] forState:UIControlStateNormal];
 }
 @end
