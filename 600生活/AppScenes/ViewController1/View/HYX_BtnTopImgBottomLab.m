@@ -9,6 +9,7 @@
 #import "HYX_BtnTopImgBottomLab.h"
 
 @implementation HYX_BtnTopImgBottomLab
+
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     CGFloat btn_W = frame.size.width;

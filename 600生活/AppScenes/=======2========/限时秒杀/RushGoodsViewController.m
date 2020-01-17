@@ -404,9 +404,27 @@
         if([times[i][@"check"] intValue] == 1){ //如果check字段是1说明正在抢
             [self rushTimeBeginWithCell:cell];
         }
+        
+        //优化代码 如果是最后一个cell 优化当前抢购cell滑动的位置
+             if(i == times.count -1){
+                 [self scrollRushTimeBeginCell:times];
+             }
     }
 }
-
+#pragma 滚动到当前抢购中的坐标
+-(void)scrollRushTimeBeginCell:(NSArray*)times
+{
+    for(int i = 0; i < times.count; i++) {
+        if([times[i][@"check"] intValue] == 1){ //如果check字段是1说明正在抢
+                     UIView* cell = [self.scrollView viewWithTag:(10+i)];
+                     UILabel* timeLab = [cell viewWithTag:1];
+                     if([timeLab.text isEqualToString:@"20:00"] || [timeLab.text isEqualToString:@"17:00"]){
+                         CGFloat x = self.scrollView.contentSize.width - self.scrollView.width;
+                         self.scrollView.contentOffset = CGPointMake(x, 0);
+                     }
+            }
+    }
+}
 -(void)rushTimeBeginWithCell:(UIView*)cell
 {
     cell.backgroundColor = [UIColor whiteColor];
