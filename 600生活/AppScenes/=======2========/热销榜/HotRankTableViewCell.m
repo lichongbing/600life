@@ -66,7 +66,7 @@
     self.sellCountLab.text = [NSString stringWithFormat:@"已售 %@",hotRankGoodModel.volume];
     
     //券价值//8个空格+1个空格
-    [self.quanBtn setTitle:[NSString stringWithFormat:@"        ￥%@ ",hotRankGoodModel.quanhou_price] forState:UIControlStateNormal];
+    [self.quanBtn setTitle:[NSString stringWithFormat:@"        ￥%@ ",hotRankGoodModel.coupon_money] forState:UIControlStateNormal];
 //    
     //预计收益
     self.incomeLab.text = [NSString stringWithFormat:@" 预计收益 %@ ",hotRankGoodModel.earnings];

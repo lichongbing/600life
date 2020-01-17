@@ -60,7 +60,7 @@
     self.sellCountLab.text = [NSString stringWithFormat:@"已售 %@",nineOpintNineGood.volume];
     
     //券价值//8个空格+1个空格
-    [self.quanBtn setTitle:[NSString stringWithFormat:@"        ￥%@ ",nineOpintNineGood.quanhou_price] forState:UIControlStateNormal];
+    [self.quanBtn setTitle:[NSString stringWithFormat:@"        ￥%@ ",nineOpintNineGood.coupon_money] forState:UIControlStateNormal];
 
     //预计收益
     self.incomeLab.text = [NSString stringWithFormat:@" 预计收益 %@ ",nineOpintNineGood.earnings];
